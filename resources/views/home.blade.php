@@ -85,7 +85,7 @@
             modern serta lingkungan yang aman dan nyaman, kami mendukung<br />
             tumbuh kembang anak secara optimal.
         </p>
-        <img class="img-fluid" src="{{ asset() }}" />
+        <img class="img-fluid" src="#" />
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
