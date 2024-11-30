@@ -49,19 +49,19 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Register</a>
+                        <a class="nav-link" href="/">Registrasi</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Teacher's Profile</a>
+                        <a class="nav-link" href="#">Profil Guru</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Events</a>
+                        <a class="nav-link" href="#">Acara</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Activities</a>
+                        <a class="nav-link" href="#">Aktivitas</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">About Us</a>
+                        <a class="nav-link" href="/tentangkami">Tentang Kami</a>
                     </li>
                 </ul>
             </div>
@@ -75,6 +75,7 @@
     </div>
     <div class="header-content" style="padding: 50px;">
         <h2>Ayo Daftar!</h2>
+        <img src="#" class="img-fluid rounded float-end" style="padding: 50px;" />
         <p style="font-size: large;">
             Bersama TK Islam Kinasih, temukan pendidikan terbaik untuk buah<br />
             hati Anda dengan kurikulum berbasis nilai-nilai Islami untuk<br />
@@ -85,6 +86,7 @@
             modern serta lingkungan yang aman dan nyaman, kami mendukung<br />
             tumbuh kembang anak secara optimal.
         </p>
+
         <img class="img-fluid" src="#" />
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
