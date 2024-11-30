@@ -11,6 +11,9 @@ use App\Http\Controllers\EventController;
 Route::get('/', function () {
     return view('home');
 });
+Route::get('/tentangkami', function () {
+    return view('aboutUs');
+});
 
 Route::get('/students', [StudentController::class, 'index']);
 Route::get('/teachers', [TeacherController::class, 'index']);
@@ -26,6 +29,4 @@ Route::get('/register', [StudentController::class, 'create'])->name('register');
 Route::get('/teachers', [TeacherController::class, 'index'])->name('teachers.index');
 Route::get('/events', [EventController::class, 'index'])->name('events.index');
 Route::get('/activities', [ActivityController::class, 'index'])->name('activities.index');
-Route::get('/about', function () {
-    return view('about'); // Create an about.blade.php view
-})->name('about');
+
