@@ -69,8 +69,8 @@
     </nav>
 
     <div class="container welcome-section">
-        <h1>Welcome to TK Islam Kinasih</h1>
-        <p>Your journey to learning begins here!</p>
+        <h1>Selamat Datang di TK Islam Kinasih</h1>
+        <p>Perjalanan Anda untuk belajar dimulai di sini!</p>
         <button class="btn btn-success">Daftar</button>
     </div>
     <div class="header-content" style="padding: 50px;">
