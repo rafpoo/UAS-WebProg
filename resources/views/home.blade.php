@@ -33,6 +33,18 @@
             border-radius: 10px;
             margin-top: 30px;
         }
+
+    .menu-icon {
+      display: inline-block;
+      margin: auto auto;
+    }
+
+    .menu-icon-bar {
+      width: 25px;
+      height: 3px;
+      background-color: rgba(46,145,50,0.7);
+      margin: 4px 0;
+    }
     </style>
 </head>
 
@@ -43,7 +55,7 @@
             <a class="navbar-brand" href="#">
                 <img src="{{ asset('path/to/logo.png') }}" alt="School Logo"> TK Islam Kinasih
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler btn btn-success" style="border: solid rgba(46,145,50,0.7) 2px;" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
