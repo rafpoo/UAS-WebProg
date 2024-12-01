@@ -14,7 +14,7 @@
         }
 
         .navbar {
-            background-color: rgba(0, 0, 0, 0.6);
+            background-color: #4F998A;
         }
 
         .navbar-brand img {
@@ -42,7 +42,7 @@
     .menu-icon-bar {
       width: 25px;
       height: 3px;
-      background-color: rgba(46,145,50,0.7);
+      background-color: rgba(255,255,255,1.0);
       margin: 4px 0;
     }
     </style>
@@ -55,7 +55,7 @@
             <a class="navbar-brand" href="#">
                 <img src="{{ asset('path/to/logo.png') }}" alt="School Logo"> TK Islam Kinasih
             </a>
-            <button class="navbar-toggler btn btn-success" style="border: solid rgba(46,145,50,0.7) 2px;" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler btn btn-success" style="border: solid rgba(255,255,255,1.0) 2px;" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
