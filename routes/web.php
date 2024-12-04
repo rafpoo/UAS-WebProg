@@ -9,10 +9,10 @@ use App\Http\Controllers\ActivityController;
 use App\Http\Controllers\EventController;
 
 Route::get('/', function () {
-    return view('home');
+    return view('user.home');
 });
 Route::get('/tentangkami', function () {
-    return view('aboutUs');
+    return view('user.aboutUs');
 });
 
 Route::get('/students', [StudentController::class, 'index']);
