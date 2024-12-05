@@ -2,6 +2,7 @@
 
 // routes/web.php
 
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\TeacherController;
@@ -13,6 +14,22 @@ Route::get('/', function () {
 });
 Route::get('/tentangkami', function () {
     return view('user.aboutUs');
+});
+
+// PPDB
+Route::get('/PPDB', function () {
+    return view('user.ppdb');
+});
+
+Route::post('/submit-ppdb', function (Request $request) {
+    // Simpan data ke database (contoh)
+    \App\Models\Ppdb::create($request->all());
+
+    return back()->with('success', 'Pendaftaran berhasil disimpan!');
+});
+
+Route::get('/admin/login', function () {
+    return view('admin.login');
 });
 
 Route::get('/students', [StudentController::class, 'index']);

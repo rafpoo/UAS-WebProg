@@ -50,7 +50,7 @@
 
 <body>
 
-    @include('partials.navbar')
+    <?php echo $__env->make('partials.navbar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 
     <div class="container welcome-section">
         <h1>Selamat Datang di TK Islam Kinasih</h1>
@@ -77,3 +77,4 @@
 </body>
 
 </html>
+<?php /**PATH C:\xampp\htdocs\uaz\UAS-WebProg\resources\views/user/home.blade.php ENDPATH**/ ?>
