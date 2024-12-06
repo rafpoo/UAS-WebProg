@@ -58,15 +58,19 @@
         }
 
         .illustration {
-            background-color: #488875;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            padding-top: 20px; /* Memberikan ruang atas */
+            padding-bottom: 20px; /* Memberikan ruang bawah */
+            display: flex; /* Gunakan flexbox untuk pengaturan vertikal */
+            flex-direction: column; /* Tumpuk gambar secara vertikal */
+            align-items: center; /* Agar gambar rata tengah */
+            gap: 35px; /* Jarak antar gambar */
         }
 
         .illustration img {
-            max-width: 90%;
-            height: auto;
+            max-width: 90%; /* Sesuaikan gambar dengan ukuran kolom */
+            height: auto; /* Pertahankan rasio gambar */
+            border-radius: 8px; /* Opsional: Sudut melengkung */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Opsional: Bayangan gambar */
         }
 
         .btn-daftar {
@@ -87,9 +91,6 @@
 <body>
     @include('partials.navbar')
     <br />
-    
-
-    
 
     <div class="container py-5">
         <div class="row justify-content-center align-items-center">
@@ -157,7 +158,9 @@
 
                         <!-- Illustration Section -->
                         <div class="col-md-6 illustration">
-                            <img src="{{ asset('images/illustration.png') }}" alt="Illustration">
+                            <img src="{{ URL('images/illustration.jpg') }}" alt="Illustration 1" class="img-fluid mb-3">
+                            <img src="{{ URL('images/illustration2.jpg') }}" alt="Illustration 2" class="img-fluid mb-3">
+                            <img src="{{ URL('images/illustration3.jpg') }}" alt="Illustration 3" class="img-fluid mb-3">
                         </div>
                     </div>
                 </div>
