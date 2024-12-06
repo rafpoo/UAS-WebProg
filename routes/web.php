@@ -21,6 +21,10 @@ Route::get('/PPDB', function () {
     return view('user.ppdb');
 });
 
+Route::get('/Acara', function () {
+    return view('user.acara');
+});
+
 Route::post('/submit-ppdb', function (Request $request) {
     // Simpan data ke database (contoh)
     \App\Models\Ppdb::create($request->all());
@@ -46,4 +50,3 @@ Route::get('/register', [StudentController::class, 'create'])->name('register');
 Route::get('/teachers', [TeacherController::class, 'index'])->name('teachers.index');
 Route::get('/events', [EventController::class, 'index'])->name('events.index');
 Route::get('/activities', [ActivityController::class, 'index'])->name('activities.index');
-
