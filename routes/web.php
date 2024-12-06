@@ -25,6 +25,10 @@ Route::get('/Acara', function () {
     return view('user.acara');
 });
 
+Route::get('/Galeri', function () {
+    return view('user.galeri');
+});
+
 Route::post('/submit-ppdb', function (Request $request) {
     // Simpan data ke database (contoh)
     \App\Models\Ppdb::create($request->all());
