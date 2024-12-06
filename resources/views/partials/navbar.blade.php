@@ -21,6 +21,9 @@
                     <a class="nav-link" href="#">Aktivitas</a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" href="/Gallery">Gallery</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="/tentangkami">Tentang Kami</a>
                 </li>
             </ul>
