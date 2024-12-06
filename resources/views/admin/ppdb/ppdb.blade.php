@@ -8,6 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TK Islam Kinasih</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
     <style>
         body {
             background: linear-gradient(135deg, #85C7B3 0%, #68A895 100%);
@@ -90,6 +92,18 @@
 
     <div class="container">
         <h1 style="color: rgb(5, 70, 56);">Data PPDB</h1>
+    
+        <!-- Form Pencarian -->
+        <form method="GET" action="{{ route('ppdb.index') }}" class="mb-3 d-flex">
+            <input type="text" name="search" class="form-control me-2" placeholder="Cari berdasarkan Nama, Email, dll." value="{{ request()->get('search') }}">
+            
+            <!-- Tombol Pencarian dengan Ikon -->
+            <button type="submit" class="btn btn-primary">
+                <i class="bi bi-search"></i>
+            </button>
+        </form>
+    
+        <!-- Tabel Data PPDB -->
         @if($ppdbs->isEmpty())
             <p>Tidak ada data tersedia.</p>
         @else
@@ -99,7 +113,7 @@
                         @foreach (array_keys($ppdbs->first()->toArray()) as $column)
                             <th>{{ ucfirst(str_replace('_', ' ', $column)) }}</th>
                         @endforeach
-                        <th>Actions</th> <!-- Tambahkan kolom Actions -->
+                        <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -110,13 +124,13 @@
                             @endforeach
                             <td>
                                 <!-- Tombol Edit -->
-                                <a href="{{ route('ppdb.edit', $ppdb->id) }}" class="btn btn-sm btn-primary">Edit</a>
+                                <a href="{{ route('ppdb.edit', $ppdb->id) }}" class="btn btn-sm btn-primary"><i class="bi bi-pencil-square"></i></a>
                                 
                                 <!-- Tombol Delete -->
                                 <form action="{{ route('ppdb.destroy', $ppdb->id) }}" method="POST" style="display: inline-block;">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Yakin ingin menghapus data ini?')">Delete</button>
+                                    <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Yakin ingin menghapus data ini?')"><i class="bi bi-trash3"></i></button>
                                 </form>
                             </td>
                         </tr>
@@ -125,6 +139,8 @@
             </table>
         @endif
     </div>
+    
+    
     
 
     

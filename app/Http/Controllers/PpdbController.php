@@ -11,13 +11,35 @@ class PpdbController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    // public function index()
+    // {
+    //     $ppdbs = PPDB::all();
+
+    //     // Kirim data ke view
+    //     return view('admin.ppdb.ppdb', compact('ppdbs'));
+    // }
+    public function index(Request $request)
     {
-        $ppdbs = PPDB::all();
+        // Ambil query pencarian dari input user
+        $search = $request->get('search');
+
+        // Jika ada query pencarian, filter data
+        if ($search) {
+            $ppdbs = PPDB::where('nama', 'like', "%$search%")
+                ->orWhere('tempat_lahir', 'like', "%$search%")
+                ->orWhere('alamat', 'like', "%$search%")
+                ->orWhere('nama_orang_tua', 'like', "%$search%" )
+                ->orWhere('no_telepon', 'like', "%$search%" )
+                ->get();
+        } else {
+            // Jika tidak ada pencarian, ambil semua data
+            $ppdbs = PPDB::all();
+        }
 
         // Kirim data ke view
         return view('admin.ppdb.ppdb', compact('ppdbs'));
     }
+
 
     /**
      * Show the form for creating a new resource.
