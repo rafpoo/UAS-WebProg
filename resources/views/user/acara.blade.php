@@ -66,6 +66,7 @@
 <body>
 
   @include('partials.navbar')
+  
   <h1 style="text-align: center;">Event</h1>
   <p style="text-align: center;">
     Event di Taman Kanak-Kanak (TK) merupakan bagian penting<br />
