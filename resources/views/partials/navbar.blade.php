@@ -15,7 +15,7 @@
                     <a class="nav-link" href="#">Profil Guru</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Acara</a>
+                    <a class="nav-link" href="/Acara">Acara</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Aktivitas</a>
