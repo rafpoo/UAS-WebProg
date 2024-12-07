@@ -1,4 +1,4 @@
-<footer class="text-white py-5" style="border-radius: 30px 30px 0 0; background-color: #114137">
+<footer class="text-white py-5" style="background-color: #114137">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <div class="container">
         <div class="row">
