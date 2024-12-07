@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TK Islam Kinasih</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
   <style>
     body {
       background: linear-gradient(135deg, #85C7B3 0%, #68A895 100%);
@@ -67,6 +68,7 @@
 
   <?php echo $__env->make('partials.navbar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
   
+  <div class="container">
   <h1 style="text-align: center;">Event</h1>
   <p style="text-align: center;">
     Event di Taman Kanak-Kanak (TK) merupakan bagian penting<br />
@@ -74,22 +76,35 @@
     pengalaman belajar yang menyenangkan sekaligus mendukung<br />
     perkembangan anak secara holistik. Berikut adalah contoh<br />
     keterangan mengenai event yang sering diadakan di TK:<br />
-  </p>
-  <div class="row row-cols-1 row-cols-md-3 g-4">
-    <?php $__currentLoopData = $events; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $event): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-      <div class="col">
-        <div class="card h-100">
-          <img src="<?php echo e($event->gambar); ?>" class="card-img-top" alt="<?php echo e($event->nama); ?>">
-          <div class="card-body">
-            <h5 class="card-title"><?php echo e($event->nama); ?></h5>
-            <h6 class="card-description"><?php echo e($event->date); ?></h6>
-            <p class="card-text"><?php echo e($event->decription); ?></p>
-          </div>
-        </div>
-      </div>
-    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
     
-  </div>
+  </p>
+  
+  
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        <?php $__currentLoopData = $events; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $event): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+            <div class="col">
+                <div class="card h-100">
+                    <!-- Gambar -->
+                    <img src="<?php echo e(asset('storage/' . $event->image)); ?>" 
+                         class="card-img-top img-fluid" 
+                         alt="<?php echo e($event->title); ?>" 
+                         style="object-fit: cover; height: 200px;">
+                    
+                    <!-- Body Card -->
+                    <div class="card-body">
+                        <h5 class="card-title"><?php echo e($event->title); ?></h5>
+                        <h6 class="card-subtitle mb-2 text-muted"><?php echo e($event->date); ?></h6>
+                        <p class="card-text"><?php echo e($event->descriptions); ?></p>
+                    </div>
+
+                    <!-- Footer Card -->
+                    
+                </div>
+            </div>
+        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+    </div>
+</div>
+
   
 
 
