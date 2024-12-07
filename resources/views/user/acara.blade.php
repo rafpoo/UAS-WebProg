@@ -76,7 +76,19 @@
     keterangan mengenai event yang sering diadakan di TK:<br />
   </p>
   <div class="row row-cols-1 row-cols-md-3 g-4">
-    <div class="col">
+    @foreach($events as $event)
+      <div class="col">
+        <div class="card h-100">
+          <img src="{{$event->gambar}}" class="card-img-top" alt="{{$event->nama}}">
+          <div class="card-body">
+            <h5 class="card-title">{{$event->nama}}</h5>
+            <h6 class="card-description">{{$event->date}}</h6>
+            <p class="card-text">{{$event->decription}}</p>
+          </div>
+        </div>
+      </div>
+    @endforeach
+    {{-- <div class="col">
       <div class="card h-100">
         <img src="https://mdbcdn.b-cdn.net/img/new/standard/city/044.webp" class="card-img-top" />
         <div class="card-body">
@@ -108,9 +120,9 @@
           </p>
         </div>
       </div>
-    </div>
+    </div> --}}
   </div>
-  </div>
+  
 
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>

@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg">
     <div class="container">
-        <a class="navbar-brand" href="/">
+        <a class="navbar-brand" href="/admin">
             <img src="<?php echo e(URL('images/LogoTK.jpg')); ?>" alt="School Logo">
             <h3 style="color: white;">TK Islam Kinasih</h3>
         </a>
@@ -16,16 +16,24 @@
                     <a class="nav-link" href="#">Profil Guru</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/Acara">Acara</a>
+                    <a class="nav-link" href="/admin/acara">Acara</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Aktivitas</a>
+                    <a class="nav-link" href="/admin/aktivitas">Aktivitas</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/Gallery">Gallery</a>
+                    <a class="nav-link" href="/admin/Galeri">Gallery</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/tentangkami">Tentang Kami</a>
+                    <a class="nav-link" href="/admin/tentangkami">Tentang Kami</a>
+                </li>
+                <li class="nav-item">
+                    <form method="POST" action="<?php echo e(route('logout')); ?>">
+                        <?php echo csrf_field(); ?>
+                        <button type="submit" class="px-4 py-2 btn btn-danger rounded hover:bg-red-700">
+                            Logout
+                        </button>
+                    </form>                 
                 </li>
             </ul>
         </div>

@@ -21,14 +21,30 @@ Route::get('/tentangkami', function () {
 });
 
 // ADMIN
-Route::get('/admin', function () {
-    return view('admin.home');
-})->middleware('auth');
+Route::prefix('admin') // Menambahkan prefix 'admin' pada setiap URL route
+    ->middleware(['auth', 'verified']) // Menambahkan middleware untuk semua route di grup ini
+    ->group(function () {
+        Route::get('/', function () {
+            return view('admin.home');
+        })->name('dashboard');
+        
+        Route::get('/tentangkami', function () {
+            return view('admin.aboutUs');
+        });
 
-Route::get('/admin/PPDB', [PPDBController::class, 'index'])->name('ppdb.index');
-Route::get('/admin/ppdb/{id}/edit', [PPDBController::class, 'edit'])->name('ppdb.edit');
-Route::delete('/admin/ppdb/{id}', [PPDBController::class, 'destroy'])->name('ppdb.destroy');
-Route::put('/admin/PPDB/{id}', [PPDBController::class, 'update'])->name('ppdb.update');
+        Route::get('/PPDB', [PPDBController::class, 'index'])->name('ppdb.index');
+        Route::get('/ppdb/{id}/edit', [PPDBController::class, 'edit'])->name('ppdb.edit');
+        Route::delete('/ppdb/{id}', [PPDBController::class, 'destroy'])->name('ppdb.destroy');
+        Route::put('/PPDB/{id}', [PPDBController::class, 'update'])->name('ppdb.update');
+        Route::get('/acara', [EventController::class, 'indexAdmin'])->name('admin.acara.index');
+        Route::get('/edit/{id}', [EventController::class, 'edit'])->name('admin.acara.edit');
+        Route::put('/admin/update/{id}', [EventController::class, 'update'])->name('admin.acara.update');
+        Route::get('/acara/create', [EventController::class, 'create'])->name('admin.acara.create');
+        Route::post('/acara/store', [EventController::class, 'store'])->name('admin.acara.store');
+        Route::get('/acara/{id}/edit', [EventController::class, 'edit'])->name('admin.acara.edit');
+        Route::delete('/acara/{id}', [EventController::class, 'destroy'])->name('admin.acara.destroy');
+    });
+
 
 
 // PPDB
@@ -36,9 +52,13 @@ Route::get('/PPDB', function () {
     return view('user.ppdb');
 });
 
-Route::get('/Acara', function () {
-    return view('user.acara');
-});
+// ACARA
+
+Route::get('/acara', [EventController::class, 'index'])->name('user.acara.index');
+
+// Route::get('/Acara', function () {
+//     return view('user.acara');
+// });
 
 Route::get('/Galeri', function () {
     return view('user.galeri');
@@ -53,18 +73,18 @@ Route::post('/submit-ppdb', function (Request $request) {
 
 Route::get('/dashboard', function () {
     return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+});
 
-Route::post('/students', [StudentController::class, 'store']);
-Route::post('/teachers', [TeacherController::class, 'store']);
-Route::post('/activities', [ActivityController::class, 'store']);
-Route::post('/events', [EventController::class, 'store']);
+// Route::post('/students', [StudentController::class, 'store']);
+// Route::post('/teachers', [TeacherController::class, 'store']);
+// Route::post('/activities', [ActivityController::class, 'store']);
+// Route::post('/events', [EventController::class, 'store']);
 
 
-Route::get('/register', [StudentController::class, 'create'])->name('register');
-Route::get('/teachers', [TeacherController::class, 'index'])->name('teachers.index');
-Route::get('/events', [EventController::class, 'index'])->name('events.index');
-Route::get('/activities', [ActivityController::class, 'index'])->name('activities.index');
+// Route::get('/register', [StudentController::class, 'create'])->name('register');
+// Route::get('/teachers', [TeacherController::class, 'index'])->name('teachers.index');
+// Route::get('/events', [EventController::class, 'index'])->name('events.index');
+// Route::get('/activities', [ActivityController::class, 'index'])->name('activities.index');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

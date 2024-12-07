@@ -87,7 +87,7 @@
     </style>
 </head>
 <body>
-    <?php echo $__env->make('partials.navbar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+    <?php echo $__env->make('partials.adminnav', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
     <br />
 
     <div class="container">
@@ -99,46 +99,59 @@
             
             <!-- Tombol Pencarian dengan Ikon -->
             <button type="submit" class="btn btn-primary">
-                <i class="bi bi-search"></i>
+                <i class="bi bi-search"></i> Cari
             </button>
         </form>
-    
-        <!-- Tabel Data PPDB -->
         <?php if($ppdbs->isEmpty()): ?>
             <p>Tidak ada data tersedia.</p>
         <?php else: ?>
-            <table class="table table-striped">
-                <thead>
-                    <tr>
-                        <?php $__currentLoopData = array_keys($ppdbs->first()->toArray()); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $column): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                            <th><?php echo e(ucfirst(str_replace('_', ' ', $column))); ?></th>
-                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                        <th>Actions</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php $__currentLoopData = $ppdbs; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $ppdb): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+            <!-- Tabel Data PPDB dengan Tabel Responsif -->
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
                         <tr>
-                            <?php $__currentLoopData = $ppdb->toArray(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $value): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                <td><?php echo e($value); ?></td>
+                            <?php $__currentLoopData = array_keys($ppdbs->first()->toArray()); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $column): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                <th><?php echo e(ucfirst(str_replace('_', ' ', $column))); ?></th>
                             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                            <td>
-                                <!-- Tombol Edit -->
-                                <a href="<?php echo e(route('ppdb.edit', $ppdb->id)); ?>" class="btn btn-sm btn-primary"><i class="bi bi-pencil-square"></i></a>
-                                
-                                <!-- Tombol Delete -->
-                                <form action="<?php echo e(route('ppdb.destroy', $ppdb->id)); ?>" method="POST" style="display: inline-block;">
-                                    <?php echo csrf_field(); ?>
-                                    <?php echo method_field('DELETE'); ?>
-                                    <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Yakin ingin menghapus data ini?')"><i class="bi bi-trash3"></i></button>
-                                </form>
-                            </td>
+                            <th>Actions</th>
                         </tr>
-                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                </tbody>
-            </table>
-        <?php endif; ?>
-    </div>
+                    </thead>
+                    <tbody>
+                        <?php $__currentLoopData = $ppdbs; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $ppdb): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                            <tr>
+                                <?php $__currentLoopData = $ppdb->toArray(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $value): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                    <td><?php echo e($value); ?></td>
+                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                <td>
+                                    <!-- Tombol Edit -->
+                                    <a href="<?php echo e(route('ppdb.edit', $ppdb->id)); ?>" class="btn btn-sm btn-primary"><i class="bi bi-pencil-square">Edit</i></a>
+                                    
+                                    <!-- Tombol Delete -->
+                                    <form action="<?php echo e(route('ppdb.destroy', $ppdb->id)); ?>" method="POST" style="display: inline-block;">
+                                        <?php echo csrf_field(); ?>
+                                        <?php echo method_field('DELETE'); ?>
+                                        <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Yakin ingin menghapus data ini?')"><i class="bi bi-trash3">Del</i></button>
+                                    </form>
+                                </td>
+                            </tr>
+                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                    </tbody>
+                </table>
+            </div>
+        
+            <!-- Menampilkan navigasi halaman -->
+                <div class="d-flex justify-content-center">
+                    <?php echo e($ppdbs->links()); ?>
+
+                </div>
+            <?php endif; ?>
+        </div>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
     
     
     

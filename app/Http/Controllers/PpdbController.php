@@ -30,10 +30,10 @@ class PpdbController extends Controller
                 ->orWhere('alamat', 'like', "%$search%")
                 ->orWhere('nama_orang_tua', 'like', "%$search%" )
                 ->orWhere('no_telepon', 'like', "%$search%" )
-                ->get();
+                ->paginate(15);
         } else {
             // Jika tidak ada pencarian, ambil semua data
-            $ppdbs = PPDB::all();
+            $ppdbs = PPDB::paginate(15);
         }
 
         // Kirim data ke view

@@ -76,41 +76,21 @@
     keterangan mengenai event yang sering diadakan di TK:<br />
   </p>
   <div class="row row-cols-1 row-cols-md-3 g-4">
-    <div class="col">
-      <div class="card h-100">
-        <img src="https://mdbcdn.b-cdn.net/img/new/standard/city/044.webp" class="card-img-top" />
-        <div class="card-body">
-          <h5 class="card-title">Seni</h5>
-          <p class="card-text">
-            Kegiatan pembelajaran adalah inti dari proses pendidikan yang dirancang untuk memberikan pengalaman belajar kepada peserta didik, baik secara akademis, emosional, maupun sosial.
-          </p>
+    <?php $__currentLoopData = $events; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $event): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+      <div class="col">
+        <div class="card h-100">
+          <img src="<?php echo e($event->gambar); ?>" class="card-img-top" alt="<?php echo e($event->nama); ?>">
+          <div class="card-body">
+            <h5 class="card-title"><?php echo e($event->nama); ?></h5>
+            <h6 class="card-description"><?php echo e($event->date); ?></h6>
+            <p class="card-text"><?php echo e($event->decription); ?></p>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="col">
-      <div class="card h-100">
-        <img src="https://mdbcdn.b-cdn.net/img/new/standard/city/043.webp" class="card-img-top" />
-        <div class="card-body">
-          <h5 class="card-title">Interaksi</h5>
-          <p class="card-text">
-            Kegiatan pembelajaran adalah inti dari proses pendidikan yang dirancang untuk memberikan pengalaman belajar kepada peserta didik, baik secara akademis, emosional, maupun sosial.
-          </p>
-        </div>
-      </div>
-    </div>
-    <div class="col">
-      <div class="card h-100">
-        <img src="https://mdbcdn.b-cdn.net/img/new/standard/city/042.webp" class="card-img-top" />
-        <div class="card-body">
-          <h5 class="card-title">Diskusi</h5>
-          <p class="card-text">
-            Kegiatan pembelajaran adalah inti dari proses pendidikan yang dirancang untuk memberikan pengalaman belajar kepada peserta didik, baik secara akademis, emosional, maupun sosial.
-          </p>
-        </div>
-      </div>
-    </div>
+    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+    
   </div>
-  </div>
+  
 
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>

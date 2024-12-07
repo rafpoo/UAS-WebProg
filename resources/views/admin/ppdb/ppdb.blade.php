@@ -87,7 +87,7 @@
     </style>
 </head>
 <body>
-    @include('partials.navbar')
+    @include('partials.adminnav')
     <br />
 
     <div class="container">
@@ -99,46 +99,58 @@
             
             <!-- Tombol Pencarian dengan Ikon -->
             <button type="submit" class="btn btn-primary">
-                <i class="bi bi-search"></i>
+                <i class="bi bi-search"></i> Cari
             </button>
         </form>
-    
-        <!-- Tabel Data PPDB -->
         @if($ppdbs->isEmpty())
             <p>Tidak ada data tersedia.</p>
         @else
-            <table class="table table-striped">
-                <thead>
-                    <tr>
-                        @foreach (array_keys($ppdbs->first()->toArray()) as $column)
-                            <th>{{ ucfirst(str_replace('_', ' ', $column)) }}</th>
-                        @endforeach
-                        <th>Actions</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach ($ppdbs as $ppdb)
+            <!-- Tabel Data PPDB dengan Tabel Responsif -->
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
                         <tr>
-                            @foreach ($ppdb->toArray() as $value)
-                                <td>{{ $value }}</td>
+                            @foreach (array_keys($ppdbs->first()->toArray()) as $column)
+                                <th>{{ ucfirst(str_replace('_', ' ', $column)) }}</th>
                             @endforeach
-                            <td>
-                                <!-- Tombol Edit -->
-                                <a href="{{ route('ppdb.edit', $ppdb->id) }}" class="btn btn-sm btn-primary"><i class="bi bi-pencil-square"></i></a>
-                                
-                                <!-- Tombol Delete -->
-                                <form action="{{ route('ppdb.destroy', $ppdb->id) }}" method="POST" style="display: inline-block;">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Yakin ingin menghapus data ini?')"><i class="bi bi-trash3"></i></button>
-                                </form>
-                            </td>
+                            <th>Actions</th>
                         </tr>
-                    @endforeach
-                </tbody>
-            </table>
-        @endif
-    </div>
+                    </thead>
+                    <tbody>
+                        @foreach ($ppdbs as $ppdb)
+                            <tr>
+                                @foreach ($ppdb->toArray() as $value)
+                                    <td>{{ $value }}</td>
+                                @endforeach
+                                <td>
+                                    <!-- Tombol Edit -->
+                                    <a href="{{ route('ppdb.edit', $ppdb->id) }}" class="btn btn-sm btn-primary"><i class="bi bi-pencil-square">Edit</i></a>
+                                    
+                                    <!-- Tombol Delete -->
+                                    <form action="{{ route('ppdb.destroy', $ppdb->id) }}" method="POST" style="display: inline-block;">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Yakin ingin menghapus data ini?')"><i class="bi bi-trash3">Del</i></button>
+                                    </form>
+                                </td>
+                            </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
+        
+            <!-- Menampilkan navigasi halaman -->
+                <div class="d-flex justify-content-center">
+                    {{ $ppdbs->links() }}
+                </div>
+            @endif
+        </div>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
     
     
     
