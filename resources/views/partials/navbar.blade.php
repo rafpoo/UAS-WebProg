@@ -13,7 +13,7 @@
                     <a class="nav-link" href="/PPDB">PPDB</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Profil Guru</a>
+                    <a class="nav-link" href="/guru">Profil Guru</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/acara">Acara</a>
