@@ -64,6 +64,10 @@ Route::get('/Galeri', function () {
     return view('user.galeri');
 });
 
+Route::get('/guru', function () {
+    return view('user.guru');
+});
+
 Route::post('/submit-ppdb', function (Request $request) {
     // Simpan data ke database (contoh)
     \App\Models\Ppdb::create($request->all());
