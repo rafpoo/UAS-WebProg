@@ -78,5 +78,7 @@
             <button type="submit" class="btn btn-primary">Tambahkan</button>
         </form>
     </div>
+
+    @include('partials.footer')
 </body>
 </html>

@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg">
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top">
     <div class="container">
         <a class="navbar-brand" href="/admin">
             <img src="<?php echo e(URL('images/LogoTK.jpg')); ?>" alt="School Logo">

@@ -169,6 +169,7 @@
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+    <?php echo $__env->make('partials.footer', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 </body>
 </html>
 <?php /**PATH C:\xampp\htdocs\uaz\UAS-WebProg\resources\views/user/ppdb.blade.php ENDPATH**/ ?>
