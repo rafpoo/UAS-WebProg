@@ -9,10 +9,38 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
   <style>
     body {
-      background: linear-gradient(135deg, #85C7B3 0%, #68A895 100%);
-      color: white;
-      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #68A895 0%, #4F998A 100%);
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-attachment: fixed;
     }
+    .container {
+    background: rgba(255, 255, 255, 0.05); /* Sedikit background transparan */
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 30px;
+}
+/* Variasi warna untuk elemen lain */
+.features .feature {
+    background-color: rgba(76, 127, 112, 0.7); /* Sedikit transparan */
+    transition: background-color 0.3s ease;
+}
+
+.features .feature:hover {
+    background-color: rgba(76, 127, 112, 0.9);
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+}
 
     .navbar {
       background-color: #4F998A;

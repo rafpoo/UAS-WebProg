@@ -218,7 +218,7 @@ nav a:hover {
     <div class="container">
       <div class="form-container">
         <form id="ppdbForm" action="/submit-ppdb" method="POST">
-          @csrf
+          <?php echo csrf_field(); ?>
           <h2>Form Pendaftaran</h2>
 
           <label for="nama">Nama Lengkap</label>
@@ -307,3 +307,4 @@ nav a:hover {
 </script>
   </body>
 </html>
+<?php /**PATH C:\Users\ziyad\Downloads\UAS-WebProg-main\resources\views/user/ppdb.blade.php ENDPATH**/ ?>

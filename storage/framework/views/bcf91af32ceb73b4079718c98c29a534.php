@@ -422,4 +422,4 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
-</html><?php /**PATH C:\xampp\htdocs\uazz\UAS-WebProg\resources\views/user/home.blade.php ENDPATH**/ ?>
+</html><?php /**PATH C:\Users\ziyad\Downloads\UAS-WebProg-main\resources\views/user/home.blade.php ENDPATH**/ ?>

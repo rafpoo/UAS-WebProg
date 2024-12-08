@@ -11,7 +11,9 @@ use App\Http\Controllers\PPDBController;
 
 
 
-
+Route::get('/profil-guru', function () {
+    return view('user.guru');
+})->name('profil-guru');
 
 Route::get('/', function () {
     return view('user.home');
@@ -68,12 +70,7 @@ Route::get('/guru', function () {
     return view('user.guru');
 });
 
-Route::post('/submit-ppdb', function (Request $request) {
-    // Simpan data ke database (contoh)
-    \App\Models\Ppdb::create($request->all());
-
-    return back()->with('success', 'Pendaftaran berhasil disimpan!');
-});
+Route::post('/submit-ppdb', [PpdbController::class, 'store']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
