@@ -204,27 +204,53 @@
     </head>
     <body>
 
-    <?php echo $__env->make('partials.navbar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+    @include('partials.adminnav')
     <div class="container">
     <div class="header">
         <h1>Data Guru</h1>
         <p>TK Islam Kinasih</p>
     </div>
+    <div class="row row-cols-1 row-cols-md-3 g-4" style="display: flex; justify-content: center; margin-top: 20px;">
+        <a href="{{ route('admin.guru.create') }}" class="btn btn-warning">
+            Tambah Guru Baru
+        </a>
+    </div>
     <div class="container">
+        
             <div class="staff-profiles">
-                
-                <?php $__currentLoopData = $teachers; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $teacher): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                {{-- 
+                </div> --}}
+                @foreach($teachers as $teacher)
                     <div class="staff-card">
-                        <img src="<?php echo e($teacher->photo ? asset('storage/' . $teacher->photo) : asset('storage/teachers/default-profile.jpg')); ?>" 
+                        <img src="{{ $teacher->photo ? asset('storage/' . $teacher->photo) : asset('storage/teachers/default-profile.jpg') }}" 
                         class="card-img-top img-fluid" 
-                        alt="<?php echo e($teacher->nama); ?>" 
+                        alt="{{ $teacher->nama }}" 
                         style="object-fit: cover; height: 300px;"><br /><br />
-                        <h2><?php echo e($teacher->nama); ?></h2>
-                        <div class="details role"><?php echo e($teacher->jabatan); ?></div>
-                        <div class="details additional-info"><?php echo e($teacher->tanggal_bergabung); ?></div>
-                        <div class="experience"><?php echo e($teacher->keterangan); ?></div>
+                        <h2>{{ $teacher->nama }}</h2>
+                        <div class="details role">{{ $teacher->jabatan }}</div>
+                        <div class="details additional-info">{{ $teacher->tanggal_bergabung }}</div>
+                        <div class="experience">{{ $teacher->keterangan }}</div><br />
+                        <div class="d-flex justify-content-between">
+                            <!-- Tombol Edit -->
+                            <form action="{{ route('admin.guru.edit', $teacher->id) }}" method="GET">
+                                <button type="submit" class="btn btn-warning btn-md">
+                                    <i class="bi bi-pencil-square"></i>Edit
+                                </button>
+                            </form>
+                            {{-- <a href="{{ route('admin.guru.edit', $teacher->id) }}" class="btn btn-warning btn-md"><i class="bi bi-pencil-square"></i>Edit</a> --}}
+    
+                            <!-- Tombol Delete -->
+                            <form action="{{ route('admin.guru.destroy', $teacher->id) }}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger btn-md"
+                                        onclick="return confirm('Apakah Anda yakin ingin menghapus guru ini?')">
+                                    <i class="bi bi-trash3"></i>Delete
+                                </button>
+                            </form>
+                        </div>
                     </div>
-                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                @endforeach
 
         </div>
 
@@ -238,7 +264,16 @@
         </div>
     </div>
     </div>
-    
-    <?php echo $__env->make('partials.footer', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+    {{-- <footer style="background-color: #1a7f72; color: white; padding: 20px; display: flex; justify-content: center; align-items: center;">
+    <div style="text-align: center;">
+        <p style="margin: 0;">© 2023 TK Islam Kinasih</p>
+        <div style="display: flex; justify-content: center; gap: 20px; margin-top: 10px;">
+        <a href="https://wa.me/62895615460275" target="_blank" style="color: white; font-size: 20px;"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://www.instagram.com/tkislamkinasih" target="_blank" style="color: white; font-size: 20px;"><i class="fab fa-instagram"></i></a>
+        <a href="https://youtu.be/1TFblh9GS6A" target="_blank" style="color: white; font-size: 20px;"><i class="fab fa-youtube"></i></a>
+        </div>
+    </div>
+    </footer> --}}
+    @include('partials.footer')
     </body>
-</html><?php /**PATH C:\xampp\htdocs\uazz\UAS-WebProg\resources\views/user/guru.blade.php ENDPATH**/ ?>
+</html>

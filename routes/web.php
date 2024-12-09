@@ -39,12 +39,19 @@ Route::prefix('admin') // Menambahkan prefix 'admin' pada setiap URL route
         Route::delete('/ppdb/{id}', [PPDBController::class, 'destroy'])->name('ppdb.destroy');
         Route::put('/PPDB/{id}', [PPDBController::class, 'update'])->name('ppdb.update');
         Route::get('/acara', [EventController::class, 'indexAdmin'])->name('admin.acara.index');
-        Route::get('/edit/{id}', [EventController::class, 'edit'])->name('admin.acara.edit');
-        Route::put('/admin/update/{id}', [EventController::class, 'update'])->name('admin.acara.update');
+        Route::put('/acara/update/{id}', [EventController::class, 'update'])->name('admin.acara.update');
         Route::get('/acara/create', [EventController::class, 'create'])->name('admin.acara.create');
         Route::post('/acara/store', [EventController::class, 'store'])->name('admin.acara.store');
         Route::get('/acara/{id}/edit', [EventController::class, 'edit'])->name('admin.acara.edit');
         Route::delete('/acara/{id}', [EventController::class, 'destroy'])->name('admin.acara.destroy');
+        Route::get('/guru', [TeacherController::class, 'indexAdmin'])->name('admin.guru.index');
+        Route::get('/guru/create', [TeacherController::class, 'create'])->name('admin.guru.create');
+        Route::post('/guru/store', [TeacherController::class, 'store'])->name('admin.guru.store');
+        Route::get('/guru/{id}/edit', [TeacherController::class, 'edit'])->name('admin.guru.edit');
+        Route::delete('/guru/{id}', [TeacherController::class, 'destroy'])->name('admin.guru.destroy');
+        Route::put('/guru/update/{id}', [TeacherController::class, 'update'])->name('admin.guru.update');
+        Route::delete('/guru/{id}/photo', [TeacherController::class, 'destroyPhoto'])->name('admin.guru.photo.destroy');
+        
     });
 
 
@@ -66,9 +73,11 @@ Route::get('/Galeri', function () {
     return view('user.galeri');
 });
 
-Route::get('/guru', function () {
-    return view('user.guru');
-});
+Route::get('/guru', [TeacherController::class, 'index'])->name('user.acara.index');
+
+// Route::get('/guru', function () {
+//     return view('user.guru');
+// });
 
 Route::post('/submit-ppdb', [PpdbController::class, 'store']);
 

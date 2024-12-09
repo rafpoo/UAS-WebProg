@@ -212,98 +212,21 @@
     </div>
     <div class="container">
             <div class="staff-profiles">
-                <div class="staff-card">
-                    <h2>Betty Sumartini, M.Pd</h2>
-                    <div class="details role">Kepala TK</div>
-                    <div class="details education">Pendidikan: Magister Pendidikan</div>
-                    <div class="details additional-info">Bergabung: 01-Jan-2019</div>
-                    <div class="experience">Pengalaman Mengajar: 12+ Tahun</div>
-                </div>
-                <div class="staff-card">
-                    <h2>Sri Rahmawati, S.Pd</h2>
-                    <div class="details role">Guru Kelas</div>
-                    <div class="details education">Pendidikan: Sarjana Pendidikan</div>
-                    <div class="details additional-info">Bergabung: 17/08/2017</div>
-                    <div class="experience">Spesialisasi: Pendidikan Anak Usia Dini</div>
-                </div>
-                <div class="staff-card">
-                    <h2>Qomariah Maklar, S.Pd</h2>
-                    <div class="details role">Guru Kelas</div>
-                    <div class="details education">Pendidikan: Sarjana Pendidikan</div>
-                    <div class="details additional-info">Bergabung: 14/07/2018</div>
-                    <div class="experience">Keahlian: Pengembangan Kreativitas Anak</div>
-                </div>
-                <div class="staff-card">
-                    <h2>Nurul Dalilah Syafhira, S.Pd</h2>
-                    <div class="details role">Guru Kelas</div>
-                    <div class="details education">Pendidikan: Sarjana Pendidikan</div>
-                    <div class="details additional-info">Bergabung: 07-Jan-2019</div>
-                    <div class="experience">Fokus: Pembelajaran Interaktif</div>
-                </div>
-                <div class="staff-card">
-                    <h2>Juliana Andrew, S.Pd</h2>
-                    <div class="details role">Guru Kelas</div>
-                    <div class="details education">Pendidikan: Sarjana Pendidikan</div>
-                    <div class="details additional-info">Bergabung: 14-Feb-2020</div>
-                    <div class="experience">Keahlian: Metode Pengajaran Inovatif</div>
-                </div>
-                <div class="staff-card">
-                    <h2>Insanirha Fahiyah Mutona</h2>
-                    <div class="details role">Guru Pendamping</div>
-                    <div class="details education">Pendidikan: SMA</div>
-                    <div class="details additional-info">Bergabung: 14-Jul-2022</div>
-                    <div class="experience">Peran: Asisten Pengajar</div>
-                </div>
-                <div class="staff-card">
-                    <h2>Wafa Ajeng Mawaddah, S.Pd</h2>
-                    <div class="details role">Guru Kelas</div>
-                    <div class="details education">Pendidikan: Sarjana Pendidikan</div>
-                    <div class="details additional-info">Bergabung: 10-Jul-2023</div>
-                    <div class="experience">Spesialisasi: Pengembangan Karakter Anak</div>
-                </div>
-                <div class="staff-card">
-                    <h2>Puput Reva Aqila</h2>
-                    <div class="details role">Guru Pendamping</div>
-                    <div class="details education">Pendidikan: Paket C</div>
-                    <div class="details additional-info">Bergabung: 01/10/2017</div>
-                    <div class="experience">Peran: Asisten Pendidik</div>
-                </div>
-                <div class="staff-card">
-                    <h2>Oki Puji Lestari, S.Pd</h2>
-                    <div class="details role">Tata Usaha</div>
-                    <div class="details education">Pendidikan: Sarjana Pendidikan</div>
-                    <div class="details additional-info">Bergabung: 13-Sep-2016</div>
-                    <div class="experience">Keahlian: Administrasi Pendidikan</div>
-                </div>
-                <div class="staff-card">
-                    <h2>Kowiyah</h2>
-                    <div class="details role">Tenaga Kebersihan</div>
-                    <div class="details education">Pendidikan: Sekolah Dasar</div>
-                    <div class="details additional-info">Bergabung: 01-Jul-2013</div>
-                    <div class="experience">Masa Kerja: 10+ Tahun</div>
-                </div>
-                <div class="staff-card">
-                    <h2>Murtapiah</h2>
-                    <div class="details role">Tenaga Kebersihan</div>
-                    <div class="details education">Pendidikan: Tidak Tersedia</div>
-                    <div class="details additional-info">Bergabung: 01 Juli 2022</div>
-                    <div class="experience">Peran: Pemeliharaan Fasilitas</div>
-                </div>
-                <div class="staff-card">
-                    <h2>Hamidah</h2>
-                    <div class="details role">Tenaga Kebersihan</div>
-                    <div class="details education">Pendidikan: SMA</div>
-                    <div class="details additional-info">Bergabung: 15 Juli 2023</div>
-                    <div class="experience">Peran: Kebersihan dan Kerapihan</div>
-                </div>
-                <div class="staff-card">
-                    <h2>Ferdiansyah Pratama Putra</h2>
-                    <div class="details role">Satpam</div>
-                    <div class="details education">Pendidikan: SMA</div>
-                    <div class="details additional-info">Bergabung: 01 Juli 2023</div>
-                    <div class="experience">Keahlian: Keamanan dan Pengawasan</div>
-                </div>
-            </div>
+                {{-- 
+                </div> --}}
+                @foreach($teachers as $teacher)
+                    <div class="staff-card">
+                        <img src="{{ $teacher->photo ? asset('storage/' . $teacher->photo) : asset('storage/teachers/default-profile.jpg') }}" 
+                        class="card-img-top img-fluid" 
+                        alt="{{ $teacher->nama }}" 
+                        style="object-fit: cover; height: 300px;"><br /><br />
+                        <h2>{{ $teacher->nama }}</h2>
+                        <div class="details role">{{ $teacher->jabatan }}</div>
+                        <div class="details additional-info">{{ $teacher->tanggal_bergabung }}</div>
+                        <div class="experience">{{ $teacher->keterangan }}</div>
+                    </div>
+                @endforeach
+
         </div>
 
     <div class="about-section">
@@ -328,4 +251,4 @@
     </footer> --}}
     @include('partials.footer')
     </body>
-    </html>
+</html>

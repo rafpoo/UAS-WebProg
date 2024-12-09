@@ -204,13 +204,19 @@
     </head>
     <body>
 
-    <?php echo $__env->make('partials.navbar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+    <?php echo $__env->make('partials.adminnav', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
     <div class="container">
     <div class="header">
         <h1>Data Guru</h1>
         <p>TK Islam Kinasih</p>
     </div>
+    <div class="row row-cols-1 row-cols-md-3 g-4" style="display: flex; justify-content: center; margin-top: 20px;">
+        <a href="<?php echo e(route('admin.guru.create')); ?>" class="btn btn-warning">
+            Tambah Guru Baru
+        </a>
+    </div>
     <div class="container">
+        
             <div class="staff-profiles">
                 
                 <?php $__currentLoopData = $teachers; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $teacher): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
@@ -222,7 +228,26 @@
                         <h2><?php echo e($teacher->nama); ?></h2>
                         <div class="details role"><?php echo e($teacher->jabatan); ?></div>
                         <div class="details additional-info"><?php echo e($teacher->tanggal_bergabung); ?></div>
-                        <div class="experience"><?php echo e($teacher->keterangan); ?></div>
+                        <div class="experience"><?php echo e($teacher->keterangan); ?></div><br />
+                        <div class="d-flex justify-content-between">
+                            <!-- Tombol Edit -->
+                            <form action="<?php echo e(route('admin.guru.edit', $teacher->id)); ?>" method="GET">
+                                <button type="submit" class="btn btn-warning btn-md">
+                                    <i class="bi bi-pencil-square"></i>Edit
+                                </button>
+                            </form>
+                            
+    
+                            <!-- Tombol Delete -->
+                            <form action="<?php echo e(route('admin.guru.destroy', $teacher->id)); ?>" method="POST">
+                                <?php echo csrf_field(); ?>
+                                <?php echo method_field('DELETE'); ?>
+                                <button type="submit" class="btn btn-danger btn-md"
+                                        onclick="return confirm('Apakah Anda yakin ingin menghapus guru ini?')">
+                                    <i class="bi bi-trash3"></i>Delete
+                                </button>
+                            </form>
+                        </div>
                     </div>
                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
@@ -241,4 +266,4 @@
     
     <?php echo $__env->make('partials.footer', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
     </body>
-</html><?php /**PATH C:\xampp\htdocs\uazz\UAS-WebProg\resources\views/user/guru.blade.php ENDPATH**/ ?>
+</html><?php /**PATH C:\xampp\htdocs\uazz\UAS-WebProg\resources\views/admin/guru/guru.blade.php ENDPATH**/ ?>

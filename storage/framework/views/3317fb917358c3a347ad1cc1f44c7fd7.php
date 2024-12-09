@@ -319,7 +319,7 @@
 </head>
 
 <body>
-    @include('partials.adminnav')
+    <?php echo $__env->make('partials.adminnav', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 
     <div class="container">
         <div class="header">
@@ -335,7 +335,7 @@
             <div class="carousel-inner">
                 <div class="carousel-item active">
                     <div class="carousel-overlay"></div>
-                    <img src="{{ URL('images/illustration.jpg') }}" class="d-block w-100 carousel-image" alt="Slide 1">
+                    <img src="<?php echo e(URL('images/illustration.jpg')); ?>" class="d-block w-100 carousel-image" alt="Slide 1">
                     <div class="carousel-caption-center">
                         <h1>Bermain Sambil Belajar</h1>
                         <p>Pengalaman pendidikan yang menyenangkan</p>
@@ -343,7 +343,7 @@
                 </div>
                 <div class="carousel-item">
                     <div class="carousel-overlay"></div>
-                    <img src="{{ URL('images/illustration3.jpg') }}" class="d-block w-100 carousel-image" alt="Slide 2">
+                    <img src="<?php echo e(URL('images/illustration3.jpg')); ?>" class="d-block w-100 carousel-image" alt="Slide 2">
                     <div class="carousel-caption-center">
                         <h1>Lingkungan Belajar Aman</h1>
                         <p>Tempat terbaik untuk tumbuh kembang anak</p>
@@ -351,7 +351,7 @@
                 </div>
                 <div class="carousel-item">
                     <div class="carousel-overlay"></div>
-                    <img src="{{ URL('images/illustration2.jpg') }}" class="d-block w-100 carousel-image" alt="Slide 3">
+                    <img src="<?php echo e(URL('images/illustration2.jpg')); ?>" class="d-block w-100 carousel-image" alt="Slide 3">
                     <div class="carousel-caption-center">
                         <h1>Kurikulum Islami</h1>
                         <p>Membentuk generasi cerdas dan berakhlak mulia</p>
@@ -417,9 +417,9 @@
     </div>
 </div>
 
-    @include('partials.footer')
+    <?php echo $__env->make('partials.footer', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
-</html>
+</html><?php /**PATH C:\xampp\htdocs\uazz\UAS-WebProg\resources\views/admin/home.blade.php ENDPATH**/ ?>
