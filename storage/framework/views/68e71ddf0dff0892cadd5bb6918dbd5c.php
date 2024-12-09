@@ -35,11 +35,11 @@
 
     <div class="container mt-5">
         <div class="row justify-content-center">
-            <div class="col-md-6">
+            
                 <div class="card shadow">
-                    <div class="card-body">
+                    <div class="card-body p-4"> <!-- Tambahkan padding -->
                         <div class="text-center mb-4">
-                            <img src="<?php echo e(URL('images/LogoTK.jpg')); ?>" alt="Logo" class="img-fluid mb-2" style="max-width: 150px;" />
+                            <img src="<?php echo e(URL('images/LogoTK.jpg')); ?>" alt="Logo" class="img-fluid mb-2 mx-auto" style="max-width: 150px;" />
                             <h4 class="admin-title">ADMIN TK ISLAM KINASIH</h4>
                         </div>
 
@@ -88,9 +88,6 @@ unset($__errorArgs, $__bag); ?>
                             </div>
 
                             <div class="d-flex justify-content-between align-items-center">
-                                
-                                
-
                                 <button type="submit" class="btn btn-primary">
                                     <?php echo e(__('Log in')); ?>
 
@@ -99,7 +96,7 @@ unset($__errorArgs, $__bag); ?>
                         </form>
                     </div>
                 </div>
-            </div>
+            
         </div>
     </div>
 

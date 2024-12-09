@@ -7,11 +7,11 @@
 
     <div class="container mt-5">
         <div class="row justify-content-center">
-            <div class="col-md-6">
+            {{-- <div class="col-md-8 col-lg-5"> <!-- Perbaikan lebar kolom --> --}}
                 <div class="card shadow">
-                    <div class="card-body">
+                    <div class="card-body p-4"> <!-- Tambahkan padding -->
                         <div class="text-center mb-4">
-                            <img src="{{ URL('images/LogoTK.jpg') }}" alt="Logo" class="img-fluid mb-2" style="max-width: 150px;" />
+                            <img src="{{ URL('images/LogoTK.jpg') }}" alt="Logo" class="img-fluid mb-2 mx-auto" style="max-width: 150px;" />
                             <h4 class="admin-title">ADMIN TK ISLAM KINASIH</h4>
                         </div>
 
@@ -45,13 +45,6 @@
                             </div>
 
                             <div class="d-flex justify-content-between align-items-center">
-                                {{-- Uncomment if password reset is needed --}}
-                                {{-- @if (Route::has('password.request'))
-                                    <a href="{{ route('password.request') }}" class="text-decoration-none">
-                                        {{ __('Forgot your password?') }}
-                                    </a>
-                                @endif --}}
-
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('Log in') }}
                                 </button>
@@ -59,7 +52,7 @@
                         </form>
                     </div>
                 </div>
-            </div>
+            {{-- </div> --}}
         </div>
     </div>
 

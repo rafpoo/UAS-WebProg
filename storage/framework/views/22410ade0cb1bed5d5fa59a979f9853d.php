@@ -27,6 +27,14 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/admin/tentangkami">Tentang Kami</a>
                 </li>
+                <li class="nav-item">
+                  <form method="POST" action="<?php echo e(route('logout')); ?>">
+                      <?php echo csrf_field(); ?>
+                      <button type="submit" class="px-4 py-2 btn btn-danger rounded hover:bg-red-700">
+                          Logout
+                      </button>
+                  </form>                 
+              </li>
             </ul>
         </div>
     </div>
