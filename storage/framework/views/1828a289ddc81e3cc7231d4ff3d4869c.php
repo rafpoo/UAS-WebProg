@@ -50,35 +50,7 @@
 
 <body>
 
-  <nav class="navbar navbar-expand-lg">
-    <div class="container">
-      <a class="navbar-brand" href="#">
-        <img src="<?php echo e(asset('path/to/logo.png')); ?>" alt="School Logo"> TK Islam Kinasih
-      </a>
-      <button class="navbar-toggler btn btn-success" style="border: solid rgba(255,255,255,1.0) 2px;" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="/">Registrasi</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Profil Guru</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Acara</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Aktivitas</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/tentangkami">Tentang Kami</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+  <?php echo $__env->make('partials.navbar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 
   <div class="container welcome-section">
     <h1>Tentang Kami</h1>
@@ -106,6 +78,9 @@
       maupun spiritual.
     </p>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+  </div>
+
+  <?php echo $__env->make('partials.footer', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 </body>
 
 </html>
