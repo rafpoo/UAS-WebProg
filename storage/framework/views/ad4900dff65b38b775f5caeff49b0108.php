@@ -198,63 +198,67 @@
     <?php echo $__env->make('partials.footer', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
-    <script>
-        // Modifikasi lightbox untuk menambahkan navigasi scroll foto
-        lightbox.option({
-            'resizeDuration': 200,
-            'wrapAround': false,
-            'disableScrolling': true,
-            'fadeDuration': 300,
-            'albumLabel': 'Gambar %1 dari %2' // Tambahkan label album
-        });
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
+<script>
+  // Konfigurasi Lightbox
+  lightbox.option({
+    resizeDuration: 200,
+    wrapAround: true,
+    fadeDuration: 300,
+    albumLabel: 'Gambar %1 dari %2',
+  });
 
-        // Tambahkan event listener untuk navigasi keyboard
-        document.addEventListener('keydown', function(event) {
-            const lightboxOverlay = document.querySelector('.lb-container');
-            
-            if (lightboxOverlay) {
-                // Jika lightbox sedang terbuka
-                switch(event.key) {
-                    case 'ArrowUp':
-                        // Scroll foto ke atas
-                        lightboxOverlay.scrollTop -= 50;
-                        event.preventDefault();
-                        break;
-                    case 'ArrowDown':
-                        // Scroll foto ke bawah
-                        lightboxOverlay.scrollTop += 50;
-                        event.preventDefault();
-                        break;
-                }
-            }
-        });
+  // Tambahkan navigasi keyboard untuk Lightbox
+  document.addEventListener('keydown', function (event) {
+    const lightboxOverlay = document.querySelector('.lb-container');
 
-        // Tambahkan petunjuk scroll pada overlay lightbox
-        document.addEventListener('lightbox.show', function() {
-            const lightboxContainer = document.querySelector('.lb-container');
-            if (lightboxContainer) {
-                const scrollHint = document.createElement('div');
-                scrollHint.innerHTML = 'Gunakan ↑ ↓ untuk scroll foto';
-                scrollHint.style.position = 'absolute';
-                scrollHint.style.bottom = '10px';
-                scrollHint.style.left = '50%';
-                scrollHint.style.transform = 'translateX(-50%)';
-                scrollHint.style.color = 'white';
-                scrollHint.style.background = 'rgba(0,0,0,0.5)';
-                scrollHint.style.padding = '5px 10px';
-                scrollHint.style.borderRadius = '5px';
-                scrollHint.style.fontSize = '12px';
-                scrollHint.style.zIndex = '9999';
-                lightboxContainer.appendChild(scrollHint);
+    if (lightboxOverlay) {
+      switch (event.key) {
+        case 'ArrowUp': // Scroll ke atas
+          lightboxOverlay.scrollTop -= 50;
+          event.preventDefault();
+          break;
+        case 'ArrowDown': // Scroll ke bawah
+          lightboxOverlay.scrollTop += 50;
+          event.preventDefault();
+          break;
+      }
+    }
+  });
 
-                // Hapus petunjuk setelah beberapa detik
-                setTimeout(() => {
-                    scrollHint.remove();
-                }, 3000);
-            }
-       });
-    </script>
+  // Tambahkan petunjuk scroll saat Lightbox muncul
+  document.body.addEventListener('click', function (event) {
+    if (event.target.matches('[data-lightbox]')) {
+      const observer = new MutationObserver(() => {
+        const lightboxContainer = document.querySelector('.lb-container');
+        if (lightboxContainer) {
+          // Petunjuk scroll
+          const scrollHint = document.createElement('div');
+          scrollHint.textContent = 'Gunakan ↑ ↓ untuk scroll foto';
+          scrollHint.style.cssText = `
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 12px;
+            z-index: 9999;
+          `;
+          lightboxContainer.appendChild(scrollHint);
+
+          // Hapus petunjuk setelah 3 detik
+          setTimeout(() => scrollHint.remove(), 3000);
+
+          observer.disconnect(); // Hentikan observer
+        }
+      });
+      observer.observe(document.body, { childList: true, subtree: true });
+    }
+  });
+</script>
 
 </html>
 <?php /**PATH C:\xampp\htdocs\uazzz\UAS-WebProg\resources\views/user/galeri.blade.php ENDPATH**/ ?>
