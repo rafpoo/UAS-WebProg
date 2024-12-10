@@ -75,7 +75,7 @@
 </head>
 <body>
     <!-- Navbar (Existing Implementation) -->
-    @include('partials.navbar')
+    <?php echo $__env->make('partials.navbar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 
     <div class="container mx-auto px-8 py-16">
         <!-- Header Section -->
@@ -109,21 +109,21 @@
                     <div>
                         <h3 class="font-semibold text-4xl mb-8 text-green-800">Misi</h3>
                         <ul class="space-y-8">
-                            @php
+                            <?php
                             $misis = [
                                 "Menyediakan sarana untuk mengembangkan kecerdasan dan potensi anak sejak dini",
                                 "Mewujudkan kegiatan bermakna untuk mengembangkan keterampilan menolong diri sendiri",
                                 "Menjalin kemitraan dengan para pakar (Ulama, dokter, psikolog, seniman, atlet)",
                                 "Mewujudkan Taman kanak-kanak yang bersih, hijau, nyaman dan dinamis"
                             ];
-                            @endphp
+                            ?>
 
-                            @foreach($misis as $misi)
+                            <?php $__currentLoopData = $misis; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $misi): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                 <li class="bg-gray-50 p-6 rounded-2xl border border-opacity-20 border-green-600 flex items-center">
                                     <i class="fas fa-leaf mr-6 text-2xl text-green-600"></i>
-                                    <span class="text-gray-800 text-xl">{{ $misi }}</span>
+                                    <span class="text-gray-800 text-xl"><?php echo e($misi); ?></span>
                                 </li>
-                            @endforeach
+                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                         </ul>
                     </div>
                 </div>
@@ -177,7 +177,7 @@
                     </p>
                     <div class="bg-gray-50 p-8 rounded-2xl border border-opacity-20 border-green-600">
                         <h4 class="font-semibold text-green-800 mb-6 text-2xl">Sentra yang Diterapkan:</h4>
-                        @php
+                        <?php
                         $sentras = [
                             "Sentra bahan alam",
                             "Sentra balok",
@@ -186,14 +186,15 @@
                             "Sentra imtaq",
                             "Sentra main peran"
                         ];
-                        @endphp
+                        ?>
                         <div class="grid grid-cols-2 gap-4 text-gray-700">
-                            @foreach($sentras as $sentra)
+                            <?php $__currentLoopData = $sentras; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $sentra): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                 <div class="flex items-center text-lg">
                                     <i class="fas fa-seedling mr-3 text-green-600"></i>
-                                    {{ $sentra }}
+                                    <?php echo e($sentra); ?>
+
                                 </div>
-                            @endforeach
+                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                         </div>
                     </div>
                 </div>
@@ -214,6 +215,6 @@
     </div>
 
     <!-- Footer (Existing Implementation) -->
-    @include('partials.footer')
+    <?php echo $__env->make('partials.footer', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 </body>
-</html>
+</html><?php /**PATH C:\Users\ziyad\Downloads\uaswebprog\UAS-WebProg\resources\views/user/aboutUs.blade.php ENDPATH**/ ?>
