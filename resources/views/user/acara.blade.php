@@ -7,89 +7,10 @@
   <title>TK Islam Kinasih</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-  <style>
-    body {
-      background: linear-gradient(135deg, #68A895 0%, #4F998A 100%);
-    color: white;
-    font-family: 'Roboto', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-attachment: fixed;
-    }
-    .container {
-    background: rgba(255, 255, 255, 0.05); /* Sedikit background transparan */
-    border-radius: 15px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    margin-top: 20px;
-    margin-bottom: 20px;
-    padding: 30px;
-}
-/* Variasi warna untuk elemen lain */
-.features .feature {
-    background-color: rgba(76, 127, 112, 0.7); /* Sedikit transparan */
-    transition: background-color 0.3s ease;
-}
+  
+  @include('global_css.css')
+  @include('css_in_view.acara_css')
 
-.features .feature:hover {
-    background-color: rgba(76, 127, 112, 0.9);
-}
-
-@media (max-width: 768px) {
-    .container {
-        padding: 15px;
-        margin-top: 10px;
-        margin-bottom: 10px;
-    }
-}
-
-    .navbar {
-      background-color: #4F998A;
-    }
-
-    .navbar-brand img {
-      height: 50px;
-      /* Adjust logo height */
-    }
-
-    .nav-link {
-      color: white !important;
-    }
-
-    .welcome-section {
-      padding: 50px 20px;
-      text-align: center;
-
-      border-radius: 10px;
-      margin-top: 30px;
-    }
-
-    .menu-icon {
-      display: inline-block;
-      margin: auto auto;
-    }
-
-    .menu-icon-bar {
-      width: 25px;
-      height: 3px;
-      background-color: rgba(255, 255, 255, 1.0);
-      margin: 4px 0;
-    }
-
-    .card {
-      background-color: #2D6A4F;
-      border-radius: 20px;
-      padding: 20px;
-      color: white;
-      text-align: center;
-      margin: 20px;
-    }
-
-    .card img {
-      border-radius: 15px;
-      width: 100%;
-      height: auto;
-    }
-  </style>
 </head>
 
 <body>
