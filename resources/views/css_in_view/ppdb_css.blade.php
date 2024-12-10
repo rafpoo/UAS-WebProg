@@ -29,7 +29,7 @@
         border-radius: 10px;
         display: flex;
         justify-content: space-between;
-        align-items: center;
+        align-items: start;
     }
     .form-container form {
         width: 50%;
