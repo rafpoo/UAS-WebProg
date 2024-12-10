@@ -17,41 +17,43 @@
 
     <div class="container">
       <div class="form-container ">
-        <form action="/submit-ppdb" method="POST">
-          <?php echo csrf_field(); ?>
-          <h2>Form Pendaftaran</h2>
+        <div class="w-100 h-100 p-4">
+            <form action="/submit-ppdb" method="POST" class="w-100 h-100">
+              <?php echo csrf_field(); ?>
+              <h2>Form Pendaftaran</h2>
 
-          <label for="nama" class="form-label">Nama Lengkap</label>
-          <input type="text" id="nama" name="nama" class="form-control" placeholder="Nama Lengkap" required>
+              <label for="nama" class="form-label">Nama Lengkap</label>
+                  <input type="text" id="nama" name="nama" class="form-control" placeholder="Nama Lengkap" required>
 
-          <label for="jenis_kelamin" class="form-label">Jenis Kelamin</label>
-          <select id="jenis_kelamin" name="jenis_kelamin" class="form-select" required>
-              <option value="Laki-laki">Laki-laki</option>
-              <option value="Perempuan">Perempuan</option>
-          </select>
+              <label for="jenis_kelamin" class="form-label">Jenis Kelamin</label>
+              <select id="jenis_kelamin" name="jenis_kelamin" class="form-select" required>
+                  <option value="Laki-laki">Laki-laki</option>
+                  <option value="Perempuan">Perempuan</option>
+              </select>
 
-          <label for="tempat_lahir" class="form-label">Tempat Lahir</label>
-          <input type="text" id="tempat_lahir" name="tempat_lahir" class="form-control" placeholder="Kota/Kabupaten" required>
+              <label for="tempat_lahir" class="form-label">Tempat Lahir</label>
+                  <input type="text" id="tempat_lahir" name="tempat_lahir" class="form-control" placeholder="Kota/Kabupaten" required>
 
-          <label for="nama_orang_tua" class="form-label">Nama Orang Tua</label>
-          <input type="text" id="nama_orang_tua" name="nama_orang_tua" class="form-control" placeholder="Nama Ayah/Ibu" required>
+              <label for="nama_orang_tua" class="form-label">Nama Orang Tua</label>
+              <input type="text" id="nama_orang_tua" name="nama_orang_tua" class="form-control" placeholder="Nama Ayah/Ibu" required>
 
-          <label for="no_telepon" class="form-label">No Telepon Orang Tua</label>
-          <div class="input-group">
-              <input readonly="" style="width: 50px; margin-right: 10px;" type="text" value="+62"/>
-              <input class="form-control" id="no_telepon" placeholder="Phone number" type="tel" name="no_telepon" required/>
-          </div>
+              <label for="no_telepon" class="form-label">No Telepon Orang Tua</label>
+              <div class="input-group">
+                  <input readonly="" style="width: 50px; margin-right: 10px;" type="text" value="+62"/>
+                  <input class="form-control" id="no_telepon" placeholder="Phone number" type="tel" name="no_telepon" required/>
+              </div>
           
-          <label for="alamat" class="form-label">Alamat</label>
-          <textarea id="alamat" name="alamat" rows="2" class="form-control" placeholder="Alamat Lengkap" required></textarea>
+              <label for="alamat" class="form-label">Alamat</label>
+              <textarea id="alamat" name="alamat" rows="2" class="form-control" placeholder="Alamat Lengkap" required></textarea>
 
-          <Br />
-          <button type="submit">DAFTAR</button>
-        </form>
-        <div class="col-md-6 illustration">
-          <img src="<?php echo e(URL('images/illustration.jpg')); ?>" alt="Illustration 1" class="img-fluid mb-4">
-          <img src="<?php echo e(URL('images/illustration2.jpg')); ?>" alt="Illustration 2" class="img-fluid mb-4">
-          <img src="<?php echo e(URL('images/illustration3.jpg')); ?>" alt="Illustration 3" class="img-fluid mb-4">
+              <Br />
+              <button type="submit">DAFTAR</button>
+            </form>
+        </div>
+        <div class="illustration w-100 h-100">
+          <img src="<?php echo e(URL('images/illustration.jpg')); ?>" alt="Illustration 1" class="img-fluid mb-4 w-100 h-100">
+          <img src="<?php echo e(URL('images/illustration2.jpg')); ?>" alt="Illustration 2" class="img-fluid mb-4 w-100 h-100">
+          <img src="<?php echo e(URL('images/illustration3.jpg')); ?>" alt="Illustration 3" class="img-fluid mb-4 w-100 h-100">
         </div>
       </div>
       

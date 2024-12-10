@@ -68,15 +68,23 @@
                 <h2>Ayo Daftar!</h2>
                 <p>Bersama TK Islam Kinasih, temukan pendidikan terbaik untuk buah hati Anda dengan kurikulum berbasis nilai-nilai Islam untuk membentuk generasi cerdas, berakhlak mulia, dan siap menghadapi masa depan. Kami menghadirkan metode belajar interaktif dan menyenangkan melalui kegiatan belajar sambil bermain yang didukung oleh fasilitas yang aman dan nyaman. Dengan fasilitas modern serta lingkungan yang damai dan riang, kami mendukung tumbuh kembang anak secara optimal.</p>
                 <div class="image-container">
-                    <img alt="Anak-anak sedang belajar di dalam kelas" height="300" src="https://storage.googleapis.com/a1aa/image/JlIxHtt6WUYONdFCec4nBxWQsng4S4eFbi5lZafeWkIdkRiPB.jpg" width="500"/>
+                    <img alt="Anak-anak sedang belajar di dalam kelas" height="300" src="<?php echo e(URL('images/illustration6.jpg')); ?>" width="500"/>
                 </div>
             </div>
             
             <div class="right-content">
                 <div class="video-player">
-                    <i class="fas fa-play-circle"></i>
-                    <p>video player</p>
+                    <iframe
+                    width="800"
+                    height="230"
+                    src="https://www.youtube.com/embed/C6PvVUzCSp4"
+                    title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen
+                    ></iframe>
                 </div>
+
                 <div class="features">
                     <div class="feature">
                         <img alt="Ikon Number Sense and Operations" height="50" src="https://storage.googleapis.com/a1aa/image/fdW58VayfefCKQE5ykvXTc4NeffcyLjVwInglRwYAArWmMS8JA.jpg" width="50"/>

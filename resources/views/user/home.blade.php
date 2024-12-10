@@ -73,18 +73,17 @@
             </div>
             
             <div class="right-content">
-  <div class="video-player">
-    <iframe
-      width="800"
-      height="200"
-      src="https://www.youtube.com/embed/C6PvVUzCSp4"
-      title="YouTube video player"
-      frameborder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowfullscreen
-    ></iframe>
-  </div>
-</div>
+                <div class="video-player">
+                    <iframe
+                    width="800"
+                    height="230"
+                    src="https://www.youtube.com/embed/C6PvVUzCSp4"
+                    title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen
+                    ></iframe>
+                </div>
 
                 <div class="features">
                     <div class="feature">
