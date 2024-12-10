@@ -228,6 +228,7 @@
 
         </div>
 
+    <hr style="height:4px" />
     <div class="about-section">
         <div class="text">
         <h2>Guru Kami</h2>
