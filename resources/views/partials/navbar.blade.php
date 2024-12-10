@@ -33,49 +33,19 @@
 </nav>
 
 <style>
-    body 
-    {
-      background: linear-gradient(135deg, #68A895 0%, #4F998A 100%);
-      color: white;
-      font-family: 'Arial', sans-serif;
-      margin: 0;
-      padding: 0;
-      background-attachment: fixed;
-    }
-    .container {
-      background: rgba(255, 255, 255, 0.05); /* Sedikit background transparan */
-      border-radius: 15px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-      margin-top: 20px;
-      margin-bottom: 20px;
-      padding: 30px;
-    }
-    .navbar {
-      background-color: #4F998A;
-    }
+  nav {
+    display: flex;
+  }
 
-    .navbar-brand img {
-      height: 50px;
-    }
+  nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 1rem;
+  }
 
-    .nav-link {
-      color: white !important;
-    }
-      
-
-nav {
-  display: flex;
-}
-
-nav a {
-  color: white;
-  text-decoration: none;
-  margin-left: 20px;
-  font-size: 1rem;
-}
-
-nav a:hover {
-  text-decoration: underline;
-}
+  nav a:hover {
+    text-decoration: underline;
+  }
 
 </style>
