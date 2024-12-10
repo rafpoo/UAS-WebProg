@@ -152,10 +152,10 @@
   </style>
 </head>
 <body>
-@include('partials.adminnav')
+<?php echo $__env->make('partials.adminnav', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 
 <div class="row row-cols-1 row-cols-md-3 g-4" style="display: flex; justify-content: center; margin-top: 20px;">
-    <a href="{{ route('admin.galeri.create') }}" class="btn btn-warning">
+    <a href="<?php echo e(route('admin.galeri.create')); ?>" class="btn btn-warning">
       Tambah Foto Baru
     </a>
 </div>
@@ -163,22 +163,22 @@
 <div class="gallery-container">
     
     <div class="gallery">
-        @foreach ($galeris as $galeri)
+        <?php $__currentLoopData = $galeris; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $galeri): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
             <div>
                 <div class="gallery-item">
-                    <img src="{{ asset('storage/' . $galeri->image) }}" alt="{{ $galeri->nama }}" data-index="0">
+                    <img src="<?php echo e(asset('storage/' . $galeri->image)); ?>" alt="<?php echo e($galeri->nama); ?>" data-index="0">
                     <div class="overlay">
-                        <div class="overlay-text">{{ $galeri->nama }}</div>
+                        <div class="overlay-text"><?php echo e($galeri->nama); ?></div>
                     </div>
                 </div><br />
                 <div class="d-flex justify-content-between">
                     <!-- Tombol Edit -->
-                    <a href="{{ route('admin.galeri.edit', $galeri->id) }}" class="btn btn-warning btn-sm"><i class="bi bi-pencil-square"></i>Edit</a>
+                    <a href="<?php echo e(route('admin.galeri.edit', $galeri->id)); ?>" class="btn btn-warning btn-sm"><i class="bi bi-pencil-square"></i>Edit</a>
 
                     <!-- Tombol Delete -->
-                    <form action="{{ route('admin.galeri.destroy', $galeri->id) }}" method="POST">
-                        @csrf
-                        @method('DELETE')
+                    <form action="<?php echo e(route('admin.galeri.destroy', $galeri->id)); ?>" method="POST">
+                        <?php echo csrf_field(); ?>
+                        <?php echo method_field('DELETE'); ?>
                         <button type="submit" class="btn btn-danger btn-sm"
                                 onclick="return confirm('Apakah Anda yakin ingin menghapus foto ini?')">
                                 <i class="bi bi-trash3"></i>Delete
@@ -186,17 +186,12 @@
                     </form>
                 </div>
             </div>
-        @endforeach
-        {{-- <div class="gallery-item">
-            <img src="images/illustration2.jpg" alt="Gallery Image 1" data-index="0">
-            <div class="overlay">
-                <div class="overlay-text">Kegiatan Belajar</div>
-            </div>
-        </div> --}}
+        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+        
     </div>
 </div>  
 
-@include('partials.footer')
+<?php echo $__env->make('partials.footer', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 
 <!-- Modal -->
 <div class="modal" id="imageModal">
@@ -263,3 +258,4 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
 </body>
 </html>
+<?php /**PATH C:\xampp\htdocs\uazzz\UAS-WebProg\resources\views/admin/galeri/galeri.blade.php ENDPATH**/ ?>

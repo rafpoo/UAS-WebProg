@@ -3,50 +3,46 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Event;
+use App\Models\Galeri;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
 
-class EventController extends Controller
+class GaleriController extends Controller
 {
     public function index()
     {
-        $events = Event::all();
-        return view('user.acara', compact('events'));
+        $galeris = Galeri::all();
+        return view('user.galeri', compact('galeris'));
     }
 
     public function indexAdmin()
     {
-        $events = Event::all();
-        return view('admin.acara.acara', compact('events'));
+        $galeris = Galeri::all();
+        return view('admin.galeri.galeri', compact('galeris'));
     }
 
     public function create()
     {
-        return view('admin.acara.create');
+        return view('admin.galeri.create');
     }
 
     public function store(Request $request)
     {
         $request->validate([
-            'title' => 'required|string|max:255',
-            'descriptions' => 'required|string',
-            'date' => 'required|date',
+            'nama' => 'required|string|max:255',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
         
-        $path = $request->file('image')->store('events', 'public');
+        $path = $request->file('image')->store('galeris', 'public');
         File::copy(storage_path('app/public/' . $path), public_path('storage/' . $path));
         
-        Event::create([
-            'title' => $request->title,
-            'descriptions' => $request->descriptions,
-            'date' => $request->date,
+        Galeri::create([
+            'nama' => $request->nama,
             'image' => $path,
         ]);
         
 
-        return redirect()->route('admin.acara.index')->with('success', 'Event berhasil ditambahkan.');
+        return redirect()->route('admin.galeri.index')->with('success', 'Foto berhasil ditambahkan.');
     }
 
     /**
@@ -62,8 +58,8 @@ class EventController extends Controller
      */
     public function edit($id)
     {
-        $event = Event::findOrFail($id);
-        return view('admin.acara.edit', compact('event'));
+        $galeri = Galeri::findOrFail($id);
+        return view('admin.galeri.edit', compact('galeri'));
     }
 
 
@@ -72,13 +68,11 @@ class EventController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $event = Event::findOrFail($id);
+        $galeri = Galeri::findOrFail($id);
 
         // Validasi input
         $request->validate([
-            'title' => 'string|max:255',
-            'descriptions' => 'string',
-            'date' => 'date',
+            'nama' => 'string|max:255',
             'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
 
@@ -88,27 +82,27 @@ class EventController extends Controller
         // Jika ada file foto yang diunggah
         if ($request->hasFile('image')) {
             // Hapus foto lama jika ada
-            if ($event->image && Storage::disk('public')->exists($event->image)) {
-                Storage::disk('public')->delete($event->image);
+            if ($galeri->image && Storage::disk('public')->exists($galeri->image)) {
+                Storage::disk('public')->delete($galeri->image);
             }
             
-            $filePath = public_path('storage/' . $event->image);
+            $filePath = public_path('storage/' . $galeri->image);
             if (File::exists($filePath)) {
                 File::delete($filePath);
             }
             
 
             // Simpan foto baru
-            $path = $request->file('image')->store('events', 'public');
+            $path = $request->file('image')->store('galeris', 'public');
             File::copy(storage_path('app/public/' . $path), public_path('storage/' . $path));
             $data['image'] = $path; // Tambahkan path foto baru ke array data
         }
 
-        // Update data acara
-        $event->update($data);
+        // Update data galeri
+        $galeri->update($data);
 
-        // Redirect ke halaman daftar acara dengan pesan sukses
-        return redirect()->route('admin.acara.index')->with('success', 'Data updated successfully');
+        // Redirect ke halaman daftar galeri dengan pesan sukses
+        return redirect()->route('admin.galeri.index')->with('success', 'Data updated successfully');
     }
 
     /**
@@ -117,14 +111,14 @@ class EventController extends Controller
 
     public function destroy($id)
     {
-        // Cari event berdasarkan ID
-        $event = Event::findOrFail($id);
+        // Cari galeri berdasarkan ID
+        $galeri = Galeri::findOrFail($id);
 
         // Tentukan path file berdasarkan nama yang disimpan di database
-        $filePath = public_path('storage/' . $event->image);
+        $filePath = public_path('storage/' . $galeri->image);
 
-        if ($event->image && Storage::disk('public')->exists($event->image)) {
-            Storage::disk('public')->delete($event->image);
+        if ($galeri->image && Storage::disk('public')->exists($galeri->image)) {
+            Storage::disk('public')->delete($galeri->image);
         }
 
         // Hapus file jika ada
@@ -132,10 +126,10 @@ class EventController extends Controller
             File::delete($filePath);
         }
 
-        // Hapus data event dari database
-        $event->delete();
+        // Hapus data galeri dari database
+        $galeri->delete();
 
-        return redirect()->route('admin.acara.index')->with('success', 'Event berhasil dihapus!');
+        return redirect()->route('admin.galeri.index')->with('success', 'Foto berhasil dihapus!');
     }
 
 

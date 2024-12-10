@@ -49,18 +49,28 @@
 </head>
 <body>
     <div class="container">
-        <h1>Tambah Foto</h1>
-        <form action="{{ route('admin.galeri.store') }}" method="POST" enctype="multipart/form-data">
-            @csrf
+        <h1>Tambah Acara</h1>
+        <form action="<?php echo e(route('admin.acara.store')); ?>" method="POST" enctype="multipart/form-data">
+            <?php echo csrf_field(); ?>
             <!-- Contoh input form -->
             <div class="mb-3">
-                <label for="nama" class="form-label">Nama</label>
-                <input type="text" class="form-control" id="nama" name="nama" required>
+                <label for="title" class="form-label">Nama</label>
+                <input type="text" class="form-control" id="title" name="title" required>
+            </div>
+    
+            <div class="mb-3">
+                <label for="descriptions" class="form-label">Deskripsi Acara</label>
+                <textarea class="form-control" id="descriptions" name="descriptions" required></textarea>
             </div>
 
             <div class="mb-3">
-                <label for="image" class="form-label">Foto</label>
-                <input type="file" class="form-control" id="image" name="image" accept="image/*">
+                <label for="date" class="form-label">Tanggal</label>
+                <input type="date" class="form-control" id="date" name="date"  required>
+            </div>
+
+            <div class="mb-3">
+                <label for="image" class="form-label">Gambar</label>
+                <input type="file" class="form-control" id="image" name="image" accept="image/*" required>
             </div>
     
             <!-- Tambahkan input lainnya sesuai dengan kolom di tabel -->
@@ -69,6 +79,7 @@
         </form>
     </div>
 
-    @include('partials.footer')
+    <?php echo $__env->make('partials.footer', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 </body>
 </html>
+<?php /**PATH C:\xampp\htdocs\uazzz\UAS-WebProg\resources\views/admin/acara/create.blade.php ENDPATH**/ ?>

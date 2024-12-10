@@ -56,7 +56,7 @@
 
 <body>
 
-  @include('partials.adminnav')
+  <?php echo $__env->make('partials.adminnav', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 
   <div class="container welcome-section">
     <h1>Tentang Kami</h1>
@@ -64,7 +64,7 @@
   </div>
   <div class="container welcome-section" style="padding: 50px;">
     <h2>Kenapa pilih TK Islam Kinasih ?</h2>
-    <img class="img-TK" src="{{ URL('images/illustration5.png') }}" class="img-fluid rounded float-end" style="padding: 50px;" />
+    <img class="img-TK" src="<?php echo e(URL('images/illustration5.png')); ?>" class="img-fluid rounded float-end" style="padding: 50px;" />
     <p style="font-size: large;">
       TK Islam Kinasih merupakan lembaga Pendidikan Anak Usia Dini
       (PAUD) yang mencakup Taman Penitipan Anak (TPA), Kelompok
@@ -86,7 +86,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
   </div>
 
-  @include('partials.footer')
+  <?php echo $__env->make('partials.footer', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 </body>
 
 </html>
+<?php /**PATH C:\xampp\htdocs\uazzz\UAS-WebProg\resources\views/admin/aboutUs.blade.php ENDPATH**/ ?>

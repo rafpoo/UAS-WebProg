@@ -22,7 +22,7 @@
                     <a class="nav-link" href="/aktivitas">Aktivitas</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/Galeri">Gallery</a>
+                    <a class="nav-link" href="/galeri">Gallery</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/tentangkami">Tentang Kami</a>

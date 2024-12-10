@@ -19,7 +19,7 @@
     <div class="container">
         <div class="header">
             <h1>Buat Anak Bermain sambil Belajar</h1>
-            <p>Ayo Daftarkan Anak-Anak Dan Anak Belajar Dengan Menyenangkan</p>
+            <p>Membentuk Fondasi Karakter Menjadi Investasi Utama Untuk Mewujudkan Anak Hebat, Kreatif Dan Mampu Beradaptasi Dengan Situasi Melalui Kurikulum Dan Guru Kreatif Serta Berinovasi</p>
             <button onclick="window.location.href='/PPDB'">
                 DAFTAR DI SINI
             </button>

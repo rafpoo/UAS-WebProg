@@ -50,16 +50,16 @@
 <body>
     <div class="container">
         <h1>Tambah Foto</h1>
-        <form action="{{ route('admin.galeri.store') }}" method="POST" enctype="multipart/form-data">
-            @csrf
+        <form action="<?php echo e(route('admin.galeri.store')); ?>" method="POST" enctype="multipart/form-data">
+            <?php echo csrf_field(); ?>
             <!-- Contoh input form -->
             <div class="mb-3">
-                <label for="nama" class="form-label">Nama</label>
+                <label for="nama" class="form-label">Keterangan Foto</label>
                 <input type="text" class="form-control" id="nama" name="nama" required>
             </div>
 
             <div class="mb-3">
-                <label for="image" class="form-label">Foto</label>
+                <label for="image" class="form-label">Foto Profil</label>
                 <input type="file" class="form-control" id="image" name="image" accept="image/*">
             </div>
     
@@ -69,6 +69,7 @@
         </form>
     </div>
 
-    @include('partials.footer')
+    <?php echo $__env->make('partials.footer', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 </body>
 </html>
+<?php /**PATH C:\xampp\htdocs\uazzz\UAS-WebProg\resources\views/admin/galeri/create.blade.php ENDPATH**/ ?>

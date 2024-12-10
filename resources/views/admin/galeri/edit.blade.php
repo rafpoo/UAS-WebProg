@@ -49,23 +49,37 @@
 </head>
 <body>
     <div class="container">
-        <h1>Tambah Foto</h1>
-        <form action="{{ route('admin.galeri.store') }}" method="POST" enctype="multipart/form-data">
+        <h1>Edit galeri</h1>
+
+        <!-- Tampilkan error jika ada -->
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+
+        <form action="{{ route('admin.galeri.update', $galeri->id) }}" method="POST" enctype="multipart/form-data">
             @csrf
-            <!-- Contoh input form -->
+            @method('PUT')
+
+            <!-- Nama galeri -->
             <div class="mb-3">
                 <label for="nama" class="form-label">Nama</label>
-                <input type="text" class="form-control" id="nama" name="nama" required>
+                <input type="text" class="form-control" id="nama" name="nama" value="{{ $galeri->nama }}" required>
             </div>
 
+            <!-- Gambar -->
             <div class="mb-3">
-                <label for="image" class="form-label">Foto</label>
+                <label for="image" class="form-label">Gambar (kosongkan jika tidak ingin mengganti)</label>
+                <img src="{{ asset('storage/' . $galeri->image) }}" alt="Gambar Saat Ini" style="width: 150px; display: block; margin-bottom: 10px;">
                 <input type="file" class="form-control" id="image" name="image" accept="image/*">
             </div>
-    
-            <!-- Tambahkan input lainnya sesuai dengan kolom di tabel -->
-            
-            <button type="submit" class="btn btn-primary">Tambahkan</button>
+
+            <button type="submit" class="btn btn-primary">Update</button>
         </form>
     </div>
 

@@ -54,12 +54,12 @@
             @csrf
             <!-- Contoh input form -->
             <div class="mb-3">
-                <label for="nama" class="form-label">Nama</label>
+                <label for="nama" class="form-label">Keterangan Foto</label>
                 <input type="text" class="form-control" id="nama" name="nama" required>
             </div>
 
             <div class="mb-3">
-                <label for="image" class="form-label">Foto</label>
+                <label for="image" class="form-label">Foto Profil</label>
                 <input type="file" class="form-control" id="image" name="image" accept="image/*">
             </div>
     

@@ -8,6 +8,7 @@ use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\ActivityController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\PPDBController;
+use App\Http\Controllers\GaleriController;
 
 
 
@@ -54,6 +55,12 @@ Route::prefix('admin') // Menambahkan prefix 'admin' pada setiap URL route
         Route::delete('/guru/{id}', [TeacherController::class, 'destroy'])->name('admin.guru.destroy');
         Route::put('/guru/update/{id}', [TeacherController::class, 'update'])->name('admin.guru.update');
         Route::delete('/guru/{id}/photo', [TeacherController::class, 'destroyPhoto'])->name('admin.guru.photo.destroy');
+        Route::get('/galeri', [GaleriController::class, 'indexAdmin'])->name('admin.galeri.index');
+        Route::get('/galeri/create', [GaleriController::class, 'create'])->name('admin.galeri.create');
+        Route::post('/galeri/store', [GaleriController::class, 'store'])->name('admin.galeri.store');
+        Route::get('/galeri/{id}/edit', [GaleriController::class, 'edit'])->name('admin.galeri.edit');
+        Route::delete('/galeri/{id}', [GaleriController::class, 'destroy'])->name('admin.galeri.destroy');
+        Route::put('/galeri/update/{id}', [GaleriController::class, 'update'])->name('admin.galeri.update');
         
     });
 
@@ -72,9 +79,11 @@ Route::get('/acara', [EventController::class, 'index'])->name('user.acara.index'
 //     return view('user.acara');
 // });
 
-Route::get('/Galeri', function () {
-    return view('user.galeri');
-});
+Route::get('/galeri', [GaleriController::class, 'index'])->name('user.galeri.index');
+
+// Route::get('/galeri', function () {
+//     return view('user.galeri');
+// });
 
 Route::get('/guru', [TeacherController::class, 'index'])->name('user.acara.index');
 
