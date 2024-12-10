@@ -19,7 +19,7 @@
                     <a class="nav-link" href="/acara">Acara</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Aktivitas</a>
+                    <a class="nav-link" href="/activities">Aktivitas</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/Galeri">Gallery</a>
