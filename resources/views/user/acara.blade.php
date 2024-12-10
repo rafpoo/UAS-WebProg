@@ -31,7 +31,8 @@
       </a>
     </div> --}}
   </p>
-  
+
+  <hr style="height:4px" />
   
     <div class="row row-cols-1 row-cols-md-3 g-4">
         @foreach($events as $event)
@@ -46,7 +47,7 @@
                     <!-- Body Card -->
                     <div class="card-body">
                         <h5 class="card-title">{{ $event->title }}</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">{{ $event->date }}</h6>
+                        <h6 class="card-subtitle mb-2" style="color:#AAAAAA">{{ $event->date }}</h6>
                         <p class="card-text">{{ $event->descriptions }}</p>
                     </div>
 
