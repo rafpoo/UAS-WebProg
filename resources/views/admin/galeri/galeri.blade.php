@@ -160,41 +160,47 @@
     </a>
 </div>
 
-<div class="gallery-container">
-    
+@if($galeris->isEmpty())
     <div class="gallery">
-        @foreach ($galeris as $galeri)
-            <div>
-                <div class="gallery-item">
-                    <img src="{{ asset('storage/' . $galeri->image) }}" alt="{{ $galeri->nama }}" data-index="0">
-                    <div class="overlay">
-                        <div class="overlay-text">{{ $galeri->nama }}</div>
-                    </div>
-                </div><br />
-                <div class="d-flex justify-content-between">
-                    <!-- Tombol Edit -->
-                    <a href="{{ route('admin.galeri.edit', $galeri->id) }}" class="btn btn-warning btn-sm"><i class="bi bi-pencil-square"></i>Edit</a>
-
-                    <!-- Tombol Delete -->
-                    <form action="{{ route('admin.galeri.destroy', $galeri->id) }}" method="POST">
-                        @csrf
-                        @method('DELETE')
-                        <button type="submit" class="btn btn-danger btn-sm"
-                                onclick="return confirm('Apakah Anda yakin ingin menghapus foto ini?')">
-                                <i class="bi bi-trash3"></i>Delete
-                        </button>
-                    </form>
-                </div>
-            </div>
-        @endforeach
-        {{-- <div class="gallery-item">
-            <img src="images/illustration2.jpg" alt="Gallery Image 1" data-index="0">
-            <div class="overlay">
-                <div class="overlay-text">Kegiatan Belajar</div>
-            </div>
-        </div> --}}
+      <p>Tidak ada data tersedia.</p>
     </div>
-</div>  
+  @else
+    <div class="gallery-container">
+        
+        <div class="gallery">
+            @foreach ($galeris as $galeri)
+                <div>
+                    <div class="gallery-item">
+                        <img src="{{ asset('storage/' . $galeri->image) }}" alt="{{ $galeri->nama }}" data-index="0">
+                        <div class="overlay">
+                            <div class="overlay-text">{{ $galeri->nama }}</div>
+                        </div>
+                    </div><br />
+                    <div class="d-flex justify-content-between">
+                        <!-- Tombol Edit -->
+                        <a href="{{ route('admin.galeri.edit', $galeri->id) }}" class="btn btn-warning btn-sm"><i class="bi bi-pencil-square"></i>Edit</a>
+
+                        <!-- Tombol Delete -->
+                        <form action="{{ route('admin.galeri.destroy', $galeri->id) }}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-danger btn-sm"
+                                    onclick="return confirm('Apakah Anda yakin ingin menghapus foto ini?')">
+                                    <i class="bi bi-trash3"></i>Delete
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            @endforeach
+            {{-- <div class="gallery-item">
+                <img src="images/illustration2.jpg" alt="Gallery Image 1" data-index="0">
+                <div class="overlay">
+                    <div class="overlay-text">Kegiatan Belajar</div>
+                </div>
+            </div> --}}
+        </div>
+    </div>  
+  @endif
 
 @include('partials.footer')
 

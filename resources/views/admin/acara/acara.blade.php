@@ -83,44 +83,52 @@
     </div>
   </p>
   
-  
-    <div class="row row-cols-1 row-cols-md-3 g-4">
-        @foreach($events as $event)
-            <div class="col">
-                <div class="card h-100">
-                    <!-- Gambar -->
-                    <img src="{{ asset('storage/' . $event->image) }}" 
-                         class="card-img-top img-fluid" 
-                         alt="{{ $event->title }}" 
-                         style="object-fit: cover; height: 200px;">
-                    
-                    <!-- Body Card -->
-                    <div class="card-body">
-                        <h5 class="card-title">{{ $event->title }}</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">{{ $event->date }}</h6>
-                        <p class="card-text">{{ $event->descriptions }}</p>
-                    </div>
+  @if($events->isEmpty())
+    <div class="card h-100">
+      <p>Tidak ada data tersedia.</p>
+    </div>
+  @else
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    @foreach($events as $event)
+        <div class="col">
+            <div class="card h-100">
+                <!-- Gambar -->
+                <img src="{{ asset('storage/' . $event->image) }}" 
+                     class="card-img-top img-fluid" 
+                     alt="{{ $event->title }}" 
+                     style="object-fit: cover; height: 200px;">
+                
+                <!-- Body Card -->
+                <div class="card-body">
+                    <h5 class="card-title">{{ $event->title }}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">{{ $event->date }}</h6>
+                    <p class="card-text">{{ $event->descriptions }}</p>
+                </div>
 
-                    <!-- Footer Card -->
-                    <div class="d-flex justify-content-between">
-                        <!-- Tombol Edit -->
-                        <a href="{{ route('admin.acara.edit', $event->id) }}" class="btn btn-warning btn-sm"><i class="bi bi-pencil-square"></i>Edit</a>
+                <!-- Footer Card -->
+                <div class="d-flex justify-content-between">
+                    <!-- Tombol Edit -->
+                    <a href="{{ route('admin.acara.edit', $event->id) }}" class="btn btn-warning btn-sm"><i class="bi bi-pencil-square"></i>Edit</a>
 
-                        <!-- Tombol Delete -->
-                        <form action="{{ route('admin.acara.destroy', $event->id) }}" method="POST">
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit" class="btn btn-danger btn-sm"
-                                    onclick="return confirm('Apakah Anda yakin ingin menghapus event ini?')">
-                                    <i class="bi bi-trash3"></i>Delete
-                            </button>
-                        </form>
-                    </div>
+                    <!-- Tombol Delete -->
+                    <form action="{{ route('admin.acara.destroy', $event->id) }}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-danger btn-sm"
+                                onclick="return confirm('Apakah Anda yakin ingin menghapus event ini?')">
+                                <i class="bi bi-trash3"></i>Delete
+                        </button>
+                    </form>
                 </div>
             </div>
-        @endforeach
-    </div>
+        </div>
+    @endforeach
 </div>
+</div>
+  @endif
+
+
+    
 
   
 

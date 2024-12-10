@@ -29,7 +29,7 @@
         border-radius: 10px;
         display: flex;
         justify-content: space-between;
-        align-items: center;
+        align-items: start;
     }
     .form-container form {
         width: 50%;
@@ -116,4 +116,5 @@
             width: 100%;
         }
     }
-</style><?php /**PATH C:\xampp\htdocs\uazzz\UAS-WebProg\resources\views/css_in_view/ppdb_css.blade.php ENDPATH**/ ?>
+</style>
+<?php /**PATH C:\xampp\htdocs\uazzz\UAS-WebProg\resources\views/css_in_view/ppdb_css.blade.php ENDPATH**/ ?>

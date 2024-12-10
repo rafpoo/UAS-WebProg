@@ -27,32 +27,40 @@
     keterangan mengenai event yang sering diadakan di TK:<br />
     
   </p>
-  
-  
-    <div class="row row-cols-1 row-cols-md-3 g-4">
-        <?php $__currentLoopData = $events; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $event): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-            <div class="col">
-                <div class="card h-100">
-                    <!-- Gambar -->
-                    <img src="<?php echo e(asset('storage/' . $event->image)); ?>" 
-                         class="card-img-top img-fluid" 
-                         alt="<?php echo e($event->title); ?>" 
-                         style="object-fit: cover; height: 200px;">
-                    
-                    <!-- Body Card -->
-                    <div class="card-body">
-                        <h5 class="card-title"><?php echo e($event->title); ?></h5>
-                        <h6 class="card-subtitle mb-2 text-muted"><?php echo e($event->date); ?></h6>
-                        <p class="card-text"><?php echo e($event->descriptions); ?></p>
-                    </div>
 
-                    <!-- Footer Card -->
-                    
-                </div>
-            </div>
-        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+  <hr style="height:4px" />
+
+  <?php if($events->isEmpty()): ?>
+    <div class="card h-100">
+      <p>Tidak ada data tersedia.</p>
     </div>
-</div>
+  <?php else: ?>
+  
+      <div class="row row-cols-1 row-cols-md-3 g-4">
+          <?php $__currentLoopData = $events; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $event): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+              <div class="col">
+                  <div class="card h-100">
+                      <!-- Gambar -->
+                      <img src="<?php echo e(asset('storage/' . $event->image)); ?>" 
+                          class="card-img-top img-fluid" 
+                          alt="<?php echo e($event->title); ?>" 
+                          style="object-fit: cover; height: 200px;">
+                      
+                      <!-- Body Card -->
+                      <div class="card-body">
+                          <h5 class="card-title"><?php echo e($event->title); ?></h5>
+                          <h6 class="card-subtitle mb-2" style="color:#AAAAAA"><?php echo e($event->date); ?></h6>
+                          <p class="card-text"><?php echo e($event->descriptions); ?></p>
+                      </div>
+
+                      <!-- Footer Card -->
+                      
+                  </div>
+              </div>
+          <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+      </div>
+  </div>
+  <?php endif; ?>
 
   
 

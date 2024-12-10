@@ -38,6 +38,10 @@ Route::prefix('admin') // Menambahkan prefix 'admin' pada setiap URL route
             return view('admin.aboutUs');
         });
 
+        Route::get('/aktivitas', function () {
+            return view('admin.aktivitas.aktivitas');
+        });
+
         Route::get('/PPDB', [PPDBController::class, 'index'])->name('ppdb.index');
         Route::get('/ppdb/{id}/edit', [PPDBController::class, 'edit'])->name('ppdb.edit');
         Route::delete('/ppdb/{id}', [PPDBController::class, 'destroy'])->name('ppdb.destroy');
@@ -61,6 +65,7 @@ Route::prefix('admin') // Menambahkan prefix 'admin' pada setiap URL route
         Route::get('/galeri/{id}/edit', [GaleriController::class, 'edit'])->name('admin.galeri.edit');
         Route::delete('/galeri/{id}', [GaleriController::class, 'destroy'])->name('admin.galeri.destroy');
         Route::put('/galeri/update/{id}', [GaleriController::class, 'update'])->name('admin.galeri.update');
+
         
     });
 

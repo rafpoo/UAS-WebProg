@@ -323,8 +323,11 @@
 
     <div class="container">
         <div class="header">
-            <h1>Buat Anak Bermain sambil Belajar</h1>
-            <p>Ayo Daftarkan Anak-Anak Dan Anak Belajar Dengan Menyenangkan</p>
+            <h1>Selamat Datang di Halaman Admin TK Islam Kinasih</h1>
+            <p>Disini, Anda bisa melakukan penambahan, penyuntingan, dan penghapusan pada bagian 'Acara',
+                'Profil guru', dan 'Gallery'. Selain itu, Anda juga bisa melihat data PPDB yang sudah disubmit
+                oleh user.
+            </p>
             <button onclick="window.location.href='/PPDB'">
                 DAFTAR DI SINI
             </button>

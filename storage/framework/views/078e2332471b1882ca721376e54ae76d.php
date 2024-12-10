@@ -83,44 +83,52 @@
     </div>
   </p>
   
-  
-    <div class="row row-cols-1 row-cols-md-3 g-4">
-        <?php $__currentLoopData = $events; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $event): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-            <div class="col">
-                <div class="card h-100">
-                    <!-- Gambar -->
-                    <img src="<?php echo e(asset('storage/' . $event->image)); ?>" 
-                         class="card-img-top img-fluid" 
-                         alt="<?php echo e($event->title); ?>" 
-                         style="object-fit: cover; height: 200px;">
-                    
-                    <!-- Body Card -->
-                    <div class="card-body">
-                        <h5 class="card-title"><?php echo e($event->title); ?></h5>
-                        <h6 class="card-subtitle mb-2 text-muted"><?php echo e($event->date); ?></h6>
-                        <p class="card-text"><?php echo e($event->descriptions); ?></p>
-                    </div>
+  <?php if($events->isEmpty()): ?>
+    <div class="card h-100">
+      <p>Tidak ada data tersedia.</p>
+    </div>
+  <?php else: ?>
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    <?php $__currentLoopData = $events; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $event): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+        <div class="col">
+            <div class="card h-100">
+                <!-- Gambar -->
+                <img src="<?php echo e(asset('storage/' . $event->image)); ?>" 
+                     class="card-img-top img-fluid" 
+                     alt="<?php echo e($event->title); ?>" 
+                     style="object-fit: cover; height: 200px;">
+                
+                <!-- Body Card -->
+                <div class="card-body">
+                    <h5 class="card-title"><?php echo e($event->title); ?></h5>
+                    <h6 class="card-subtitle mb-2 text-muted"><?php echo e($event->date); ?></h6>
+                    <p class="card-text"><?php echo e($event->descriptions); ?></p>
+                </div>
 
-                    <!-- Footer Card -->
-                    <div class="d-flex justify-content-between">
-                        <!-- Tombol Edit -->
-                        <a href="<?php echo e(route('admin.acara.edit', $event->id)); ?>" class="btn btn-warning btn-sm"><i class="bi bi-pencil-square"></i>Edit</a>
+                <!-- Footer Card -->
+                <div class="d-flex justify-content-between">
+                    <!-- Tombol Edit -->
+                    <a href="<?php echo e(route('admin.acara.edit', $event->id)); ?>" class="btn btn-warning btn-sm"><i class="bi bi-pencil-square"></i>Edit</a>
 
-                        <!-- Tombol Delete -->
-                        <form action="<?php echo e(route('admin.acara.destroy', $event->id)); ?>" method="POST">
-                            <?php echo csrf_field(); ?>
-                            <?php echo method_field('DELETE'); ?>
-                            <button type="submit" class="btn btn-danger btn-sm"
-                                    onclick="return confirm('Apakah Anda yakin ingin menghapus event ini?')">
-                                    <i class="bi bi-trash3"></i>Delete
-                            </button>
-                        </form>
-                    </div>
+                    <!-- Tombol Delete -->
+                    <form action="<?php echo e(route('admin.acara.destroy', $event->id)); ?>" method="POST">
+                        <?php echo csrf_field(); ?>
+                        <?php echo method_field('DELETE'); ?>
+                        <button type="submit" class="btn btn-danger btn-sm"
+                                onclick="return confirm('Apakah Anda yakin ingin menghapus event ini?')">
+                                <i class="bi bi-trash3"></i>Delete
+                        </button>
+                    </form>
                 </div>
             </div>
-        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-    </div>
+        </div>
+    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 </div>
+</div>
+  <?php endif; ?>
+
+
+    
 
   
 
