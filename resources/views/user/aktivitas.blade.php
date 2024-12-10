@@ -94,6 +94,40 @@
             color: var(--primary-color);
             margin-bottom: 1rem;
         }
+
+        .image-container {
+    position: relative;
+    overflow: hidden; /* Memastikan elemen di dalam tetap pada ukuran kontainer */
+    border-radius: 10px; /* Membuat sudut gambar membulat */
+}
+
+.image-container img {
+    width: 100%; /* Menyamakan ukuran gambar */
+    height: 150px; /* Tetapkan tinggi tetap untuk semua gambar */
+    object-fit: cover; /* Memotong gambar agar tetap proporsional dalam kontainer */
+    transition: filter 0.3s ease; /* Animasi saat hover */
+}
+
+.icon-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3rem; /* Ukuran ikon */
+    color: var(--primary-color); /* Warna ikon sesuai tema */
+    opacity: 0; /* Ikon tidak terlihat secara default */
+    transition: opacity 0.3s ease; /* Animasi muncul */
+    pointer-events: none; /* Ikon tidak menghalangi klik */
+}
+
+.image-container:hover img {
+    filter: blur(4px); 
+}
+
+.image-container:hover .icon-overlay {
+    opacity: 1; 
+}
+
     </style>
 </head>
 <body>
@@ -195,21 +229,35 @@
             
             <div class="extracurricular-list">
     <div class="extracurricular-item">
-        <i class="fas fa-futbol"></i>
+        <div class="image-container">
+            <img src="/images/futsal.jpg" alt="Futsal" class="img-fluid rounded">
+            <i class="fas fa-futbol icon-overlay"></i>
+        </div>
         <h5>Futsal</h5>
     </div>
     <div class="extracurricular-item">
-        <i class="fas fa-music"></i>
+        <div class="image-container">
+            <img src="/images/Music.png" alt="Musik" class="img-fluid rounded">
+            <i class="fas fa-music icon-overlay"></i>
+        </div>
         <h5>Musik</h5>
     </div>
     <div class="extracurricular-item">
-        <i class="fas fa-shoe-prints"></i>
+        <div class="image-container">
+            <img src="/images/Menari.jpg" alt="Menari" class="img-fluid rounded">
+            <i class="fas fa-shoe-prints icon-overlay"></i>
+        </div>
         <h5>Menari</h5>
     </div>
     <div class="extracurricular-item">
-        <i class="fas fa-headphones"></i>
+        <div class="image-container">
+            <img src="/images/gerakdanlagu.jpg" alt="Gerak dan Lagu" class="img-fluid rounded">
+            <i class="fas fa-headphones icon-overlay"></i>
+        </div>
         <h5>Gerak dan Lagu</h5>
     </div>
+</div>
+
 </div>
         </div>
     </div>
