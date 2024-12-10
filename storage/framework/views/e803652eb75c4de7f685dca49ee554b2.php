@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
     <div class="container">
-        <a class="navbar-brand" href="/">
-            <img src="<?php echo e(URL('images/LogoTK.jpg')); ?>" alt="School Logo" style="height: 50px;">
+        <a style="text-decoration: none;" class="navbar-brand" href="/">
+            <img class="rounded-circle" src="<?php echo e(URL('images/LogoTK.jpg')); ?>" alt="School Logo" style="height: 50px;">
             <h3 style="color: white; display: inline-block; margin-left: 10px;">TK Islam Kinasih</h3>
         </a>
         <button class="navbar-toggler btn btn-success" style="border: solid rgba(255,255,255,1.0) 2px;" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -22,7 +22,7 @@
                     <a class="nav-link" href="/aktivitas">Aktivitas</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/Galeri">Gallery</a>
+                    <a class="nav-link" href="/galeri">Gallery</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/tentangkami">Tentang Kami</a>
@@ -51,7 +51,7 @@
       padding: 30px;
     }
     .navbar {
-      background-color: #4F998A;
+      background-color: #1a6354;
     }
 
     .navbar-brand img {
