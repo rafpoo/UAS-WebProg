@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
     <div class="container">
-        <a class="navbar-brand" href="/">
+        <a style="text-decoration: none;" class="navbar-brand" href="/">
             <img class="rounded-circle" src="{{ URL('images/LogoTK.jpg') }}" alt="School Logo" style="height: 50px;">
             <h3 style="color: white; display: inline-block; margin-left: 10px;">TK Islam Kinasih</h3>
         </a>
