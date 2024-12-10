@@ -10,7 +10,7 @@ class ActivityController extends Controller
     public function index()
     {
         $activities = Activity::all();
-        return view('activities.index', compact('activities'));
+        return view('user.activities', compact('activities'));
     }
 
     public function store(Request $request)
