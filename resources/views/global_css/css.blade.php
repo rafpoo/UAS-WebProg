@@ -20,6 +20,18 @@
         padding: 30px;
     }
 
+    .menu-icon {
+        display: inline-block;
+        margin: auto auto;
+    }
+
+    .menu-icon-bar {
+        width: 25px;
+        height: 3px;
+        background-color: rgba(255, 255, 255, 1.0);
+        margin: 4px 0;
+    }
+
     .navbar {
         background-color: #4F998A;
     }
