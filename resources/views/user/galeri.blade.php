@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<<<<<<< Updated upstream
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TK Islam Kinasih</title>
@@ -10,7 +10,6 @@
   @include('global_css.css')
   @include('css_in_view.galeri_css')
   
-=======
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TK Islam Kinasih - Gallery</title>
@@ -124,7 +123,6 @@
             }
         }
     </style>
->>>>>>> Stashed changes
 </head>
 <body>
 @include('partials.navbar')
@@ -195,31 +193,71 @@
                 </a>
             </div>
         </div>
-    </div>
+    </div>  
 
-<<<<<<< Updated upstream
-</html>
-=======
-    <footer>
-        <p>&copy; 2024 TK Islam Kinasih</p>
-        <div class="social-icons">
-            <a href="https://wa.me/62895615460275" target="_blank"><i class="fab fa-whatsapp"></i></a>
-            <a href="https://www.instagram.com/tkislamkinasih" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="https://youtu.be/1TFblh9GS6A" target="_blank"><i class="fab fa-youtube"></i></a>
-        </div>
-    </footer>
+    @include('partials.footer')
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
-    <script>
-        lightbox.option({
-            'resizeDuration': 200,
-            'wrapAround': false,
-            'disableScrolling': true,
-            'fadeDuration': 300
-        });
-    </script>
-</body>
-@include('partials.footer')
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
+<script>
+  // Konfigurasi Lightbox
+  lightbox.option({
+    resizeDuration: 200,
+    wrapAround: true,
+    fadeDuration: 300,
+    albumLabel: 'Gambar %1 dari %2',
+  });
+
+  // Tambahkan navigasi keyboard untuk Lightbox
+  document.addEventListener('keydown', function (event) {
+    const lightboxOverlay = document.querySelector('.lb-container');
+
+    if (lightboxOverlay) {
+      switch (event.key) {
+        case 'ArrowUp': // Scroll ke atas
+          lightboxOverlay.scrollTop -= 50;
+          event.preventDefault();
+          break;
+        case 'ArrowDown': // Scroll ke bawah
+          lightboxOverlay.scrollTop += 50;
+          event.preventDefault();
+          break;
+      }
+    }
+  });
+
+  // Tambahkan petunjuk scroll saat Lightbox muncul
+  document.body.addEventListener('click', function (event) {
+    if (event.target.matches('[data-lightbox]')) {
+      const observer = new MutationObserver(() => {
+        const lightboxContainer = document.querySelector('.lb-container');
+        if (lightboxContainer) {
+          // Petunjuk scroll
+          const scrollHint = document.createElement('div');
+          scrollHint.textContent = 'Gunakan ↑ ↓ untuk scroll foto';
+          scrollHint.style.cssText = `
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 12px;
+            z-index: 9999;
+          `;
+          lightboxContainer.appendChild(scrollHint);
+
+          // Hapus petunjuk setelah 3 detik
+          setTimeout(() => scrollHint.remove(), 3000);
+
+          observer.disconnect(); // Hentikan observer
+        }
+      });
+      observer.observe(document.body, { childList: true, subtree: true });
+    }
+  });
+</script>
+
 </html>
->>>>>>> Stashed changes

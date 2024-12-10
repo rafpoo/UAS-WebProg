@@ -7704,3 +7704,419 @@ Did you mean this?
 #50 C:\\Users\\almer\\Downloads\\WEBPROG UAS\\UAS-WebProg\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\resources\\server.php(23): require_once('C:\\\\Users\\\\almer\\\\...')
 #51 {main}
 "} 
+[2024-12-10 13:45:41] local.ERROR: Trait "App\Models\HasFactory" not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait \"App\\Models\\HasFactory\" not found at C:\\xampp\\htdocs\\uazzz\\UAS-WebProg\\app\\Models\\Activity.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2024-12-10 13:46:41] local.ERROR: Trait "App\Models\HasFactory" not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait \"App\\Models\\HasFactory\" not found at C:\\xampp\\htdocs\\uazzz\\UAS-WebProg\\app\\Models\\Activity.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2024-12-10 13:47:41] local.ERROR: Trait "App\Models\HasFactory" not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait \"App\\Models\\HasFactory\" not found at C:\\xampp\\htdocs\\uazzz\\UAS-WebProg\\app\\Models\\Activity.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2024-12-10 13:48:41] local.ERROR: Trait "App\Models\HasFactory" not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait \"App\\Models\\HasFactory\" not found at C:\\xampp\\htdocs\\uazzz\\UAS-WebProg\\app\\Models\\Activity.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2024-12-10 13:49:41] local.ERROR: Trait "App\Models\HasFactory" not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait \"App\\Models\\HasFactory\" not found at C:\\xampp\\htdocs\\uazzz\\UAS-WebProg\\app\\Models\\Activity.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2024-12-10 13:50:41] local.ERROR: Trait "App\Models\HasFactory" not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait \"App\\Models\\HasFactory\" not found at C:\\xampp\\htdocs\\uazzz\\UAS-WebProg\\app\\Models\\Activity.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2024-12-10 13:51:41] local.ERROR: Trait "App\Models\HasFactory" not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait \"App\\Models\\HasFactory\" not found at C:\\xampp\\htdocs\\uazzz\\UAS-WebProg\\app\\Models\\Activity.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2024-12-10 13:52:41] local.ERROR: Trait "App\Models\HasFactory" not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait \"App\\Models\\HasFactory\" not found at C:\\xampp\\htdocs\\uazzz\\UAS-WebProg\\app\\Models\\Activity.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2024-12-10 13:53:41] local.ERROR: Trait "App\Models\HasFactory" not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait \"App\\Models\\HasFactory\" not found at C:\\xampp\\htdocs\\uazzz\\UAS-WebProg\\app\\Models\\Activity.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2024-12-10 13:54:41] local.ERROR: Trait "App\Models\HasFactory" not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait \"App\\Models\\HasFactory\" not found at C:\\xampp\\htdocs\\uazzz\\UAS-WebProg\\app\\Models\\Activity.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2024-12-10 13:55:41] local.ERROR: Trait "App\Models\HasFactory" not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait \"App\\Models\\HasFactory\" not found at C:\\xampp\\htdocs\\uazzz\\UAS-WebProg\\app\\Models\\Activity.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2024-12-10 13:56:41] local.ERROR: Trait "App\Models\HasFactory" not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait \"App\\Models\\HasFactory\" not found at C:\\xampp\\htdocs\\uazzz\\UAS-WebProg\\app\\Models\\Activity.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2024-12-10 13:57:41] local.ERROR: Trait "App\Models\HasFactory" not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait \"App\\Models\\HasFactory\" not found at C:\\xampp\\htdocs\\uazzz\\UAS-WebProg\\app\\Models\\Activity.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2024-12-10 13:58:41] local.ERROR: Trait "App\Models\HasFactory" not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait \"App\\Models\\HasFactory\" not found at C:\\xampp\\htdocs\\uazzz\\UAS-WebProg\\app\\Models\\Activity.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2024-12-10 13:58:46] local.ERROR: Trait "App\Models\HasFactory" not found {"userId":1,"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait \"App\\Models\\HasFactory\" not found at C:\\xampp\\htdocs\\uazzz\\UAS-WebProg\\app\\Models\\Activity.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2024-12-10 13:59:41] local.ERROR: Trait "App\Models\HasFactory" not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait \"App\\Models\\HasFactory\" not found at C:\\xampp\\htdocs\\uazzz\\UAS-WebProg\\app\\Models\\Activity.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2024-12-10 14:00:41] local.ERROR: Trait "App\Models\HasFactory" not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait \"App\\Models\\HasFactory\" not found at C:\\xampp\\htdocs\\uazzz\\UAS-WebProg\\app\\Models\\Activity.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2024-12-10 14:01:41] local.ERROR: Trait "App\Models\HasFactory" not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait \"App\\Models\\HasFactory\" not found at C:\\xampp\\htdocs\\uazzz\\UAS-WebProg\\app\\Models\\Activity.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2024-12-10 14:02:41] local.ERROR: Trait "App\Models\HasFactory" not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait \"App\\Models\\HasFactory\" not found at C:\\xampp\\htdocs\\uazzz\\UAS-WebProg\\app\\Models\\Activity.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2024-12-10 14:03:41] local.ERROR: Trait "App\Models\HasFactory" not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait \"App\\Models\\HasFactory\" not found at C:\\xampp\\htdocs\\uazzz\\UAS-WebProg\\app\\Models\\Activity.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2024-12-10 14:04:41] local.ERROR: Trait "App\Models\HasFactory" not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait \"App\\Models\\HasFactory\" not found at C:\\xampp\\htdocs\\uazzz\\UAS-WebProg\\app\\Models\\Activity.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2024-12-10 14:05:41] local.ERROR: Trait "App\Models\HasFactory" not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait \"App\\Models\\HasFactory\" not found at C:\\xampp\\htdocs\\uazzz\\UAS-WebProg\\app\\Models\\Activity.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2024-12-10 14:06:41] local.ERROR: Trait "App\Models\HasFactory" not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait \"App\\Models\\HasFactory\" not found at C:\\xampp\\htdocs\\uazzz\\UAS-WebProg\\app\\Models\\Activity.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2024-12-10 14:07:41] local.ERROR: Trait "App\Models\HasFactory" not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait \"App\\Models\\HasFactory\" not found at C:\\xampp\\htdocs\\uazzz\\UAS-WebProg\\app\\Models\\Activity.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2024-12-10 14:08:41] local.ERROR: Trait "App\Models\HasFactory" not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait \"App\\Models\\HasFactory\" not found at C:\\xampp\\htdocs\\uazzz\\UAS-WebProg\\app\\Models\\Activity.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2024-12-10 14:09:41] local.ERROR: Trait "App\Models\HasFactory" not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait \"App\\Models\\HasFactory\" not found at C:\\xampp\\htdocs\\uazzz\\UAS-WebProg\\app\\Models\\Activity.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2024-12-10 14:10:41] local.ERROR: Trait "App\Models\HasFactory" not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait \"App\\Models\\HasFactory\" not found at C:\\xampp\\htdocs\\uazzz\\UAS-WebProg\\app\\Models\\Activity.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2024-12-10 14:11:41] local.ERROR: Trait "App\Models\HasFactory" not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait \"App\\Models\\HasFactory\" not found at C:\\xampp\\htdocs\\uazzz\\UAS-WebProg\\app\\Models\\Activity.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2024-12-10 14:12:41] local.ERROR: Trait "App\Models\HasFactory" not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait \"App\\Models\\HasFactory\" not found at C:\\xampp\\htdocs\\uazzz\\UAS-WebProg\\app\\Models\\Activity.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2024-12-10 14:13:41] local.ERROR: Trait "App\Models\HasFactory" not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait \"App\\Models\\HasFactory\" not found at C:\\xampp\\htdocs\\uazzz\\UAS-WebProg\\app\\Models\\Activity.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2024-12-10 14:14:41] local.ERROR: Trait "App\Models\HasFactory" not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait \"App\\Models\\HasFactory\" not found at C:\\xampp\\htdocs\\uazzz\\UAS-WebProg\\app\\Models\\Activity.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2024-12-10 14:15:41] local.ERROR: Trait "App\Models\HasFactory" not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait \"App\\Models\\HasFactory\" not found at C:\\xampp\\htdocs\\uazzz\\UAS-WebProg\\app\\Models\\Activity.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2024-12-10 14:16:41] local.ERROR: Trait "App\Models\HasFactory" not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait \"App\\Models\\HasFactory\" not found at C:\\xampp\\htdocs\\uazzz\\UAS-WebProg\\app\\Models\\Activity.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2024-12-10 14:17:41] local.ERROR: Trait "App\Models\HasFactory" not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait \"App\\Models\\HasFactory\" not found at C:\\xampp\\htdocs\\uazzz\\UAS-WebProg\\app\\Models\\Activity.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2024-12-10 14:18:41] local.ERROR: Trait "App\Models\HasFactory" not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait \"App\\Models\\HasFactory\" not found at C:\\xampp\\htdocs\\uazzz\\UAS-WebProg\\app\\Models\\Activity.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2024-12-10 14:19:41] local.ERROR: Trait "App\Models\HasFactory" not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait \"App\\Models\\HasFactory\" not found at C:\\xampp\\htdocs\\uazzz\\UAS-WebProg\\app\\Models\\Activity.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2024-12-10 14:20:41] local.ERROR: Trait "App\Models\HasFactory" not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait \"App\\Models\\HasFactory\" not found at C:\\xampp\\htdocs\\uazzz\\UAS-WebProg\\app\\Models\\Activity.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2024-12-10 14:21:41] local.ERROR: Trait "App\Models\HasFactory" not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait \"App\\Models\\HasFactory\" not found at C:\\xampp\\htdocs\\uazzz\\UAS-WebProg\\app\\Models\\Activity.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2024-12-10 14:22:41] local.ERROR: Trait "App\Models\HasFactory" not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait \"App\\Models\\HasFactory\" not found at C:\\xampp\\htdocs\\uazzz\\UAS-WebProg\\app\\Models\\Activity.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2024-12-10 14:23:41] local.ERROR: Trait "App\Models\HasFactory" not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait \"App\\Models\\HasFactory\" not found at C:\\xampp\\htdocs\\uazzz\\UAS-WebProg\\app\\Models\\Activity.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2024-12-10 14:24:41] local.ERROR: Trait "App\Models\HasFactory" not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait \"App\\Models\\HasFactory\" not found at C:\\xampp\\htdocs\\uazzz\\UAS-WebProg\\app\\Models\\Activity.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2024-12-10 14:25:41] local.ERROR: Trait "App\Models\HasFactory" not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait \"App\\Models\\HasFactory\" not found at C:\\xampp\\htdocs\\uazzz\\UAS-WebProg\\app\\Models\\Activity.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2024-12-10 14:26:41] local.ERROR: Trait "App\Models\HasFactory" not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait \"App\\Models\\HasFactory\" not found at C:\\xampp\\htdocs\\uazzz\\UAS-WebProg\\app\\Models\\Activity.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2024-12-10 14:27:41] local.ERROR: Trait "App\Models\HasFactory" not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait \"App\\Models\\HasFactory\" not found at C:\\xampp\\htdocs\\uazzz\\UAS-WebProg\\app\\Models\\Activity.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2024-12-10 14:28:41] local.ERROR: Trait "App\Models\HasFactory" not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait \"App\\Models\\HasFactory\" not found at C:\\xampp\\htdocs\\uazzz\\UAS-WebProg\\app\\Models\\Activity.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2024-12-10 14:29:41] local.ERROR: Trait "App\Models\HasFactory" not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait \"App\\Models\\HasFactory\" not found at C:\\xampp\\htdocs\\uazzz\\UAS-WebProg\\app\\Models\\Activity.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2024-12-10 14:30:41] local.ERROR: Trait "App\Models\HasFactory" not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait \"App\\Models\\HasFactory\" not found at C:\\xampp\\htdocs\\uazzz\\UAS-WebProg\\app\\Models\\Activity.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2024-12-10 14:31:41] local.ERROR: Trait "App\Models\HasFactory" not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait \"App\\Models\\HasFactory\" not found at C:\\xampp\\htdocs\\uazzz\\UAS-WebProg\\app\\Models\\Activity.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2024-12-10 14:32:41] local.ERROR: Trait "App\Models\HasFactory" not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait \"App\\Models\\HasFactory\" not found at C:\\xampp\\htdocs\\uazzz\\UAS-WebProg\\app\\Models\\Activity.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2024-12-10 14:33:41] local.ERROR: Trait "App\Models\HasFactory" not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait \"App\\Models\\HasFactory\" not found at C:\\xampp\\htdocs\\uazzz\\UAS-WebProg\\app\\Models\\Activity.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2024-12-10 14:34:41] local.ERROR: Trait "App\Models\HasFactory" not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait \"App\\Models\\HasFactory\" not found at C:\\xampp\\htdocs\\uazzz\\UAS-WebProg\\app\\Models\\Activity.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2024-12-10 14:35:41] local.ERROR: Trait "App\Models\HasFactory" not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait \"App\\Models\\HasFactory\" not found at C:\\xampp\\htdocs\\uazzz\\UAS-WebProg\\app\\Models\\Activity.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2024-12-10 14:36:41] local.ERROR: Trait "App\Models\HasFactory" not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait \"App\\Models\\HasFactory\" not found at C:\\xampp\\htdocs\\uazzz\\UAS-WebProg\\app\\Models\\Activity.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2024-12-10 14:37:41] local.ERROR: Trait "App\Models\HasFactory" not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait \"App\\Models\\HasFactory\" not found at C:\\xampp\\htdocs\\uazzz\\UAS-WebProg\\app\\Models\\Activity.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2024-12-10 14:38:41] local.ERROR: Trait "App\Models\HasFactory" not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait \"App\\Models\\HasFactory\" not found at C:\\xampp\\htdocs\\uazzz\\UAS-WebProg\\app\\Models\\Activity.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2024-12-10 14:39:41] local.ERROR: Trait "App\Models\HasFactory" not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait \"App\\Models\\HasFactory\" not found at C:\\xampp\\htdocs\\uazzz\\UAS-WebProg\\app\\Models\\Activity.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2024-12-10 14:40:41] local.ERROR: Trait "App\Models\HasFactory" not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait \"App\\Models\\HasFactory\" not found at C:\\xampp\\htdocs\\uazzz\\UAS-WebProg\\app\\Models\\Activity.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2024-12-10 14:41:41] local.ERROR: Trait "App\Models\HasFactory" not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait \"App\\Models\\HasFactory\" not found at C:\\xampp\\htdocs\\uazzz\\UAS-WebProg\\app\\Models\\Activity.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2024-12-10 14:42:41] local.ERROR: Trait "App\Models\HasFactory" not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait \"App\\Models\\HasFactory\" not found at C:\\xampp\\htdocs\\uazzz\\UAS-WebProg\\app\\Models\\Activity.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2024-12-10 14:43:41] local.ERROR: Trait "App\Models\HasFactory" not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait \"App\\Models\\HasFactory\" not found at C:\\xampp\\htdocs\\uazzz\\UAS-WebProg\\app\\Models\\Activity.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2024-12-10 14:44:41] local.ERROR: Trait "App\Models\HasFactory" not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait \"App\\Models\\HasFactory\" not found at C:\\xampp\\htdocs\\uazzz\\UAS-WebProg\\app\\Models\\Activity.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2024-12-10 14:45:41] local.ERROR: Trait "App\Models\HasFactory" not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait \"App\\Models\\HasFactory\" not found at C:\\xampp\\htdocs\\uazzz\\UAS-WebProg\\app\\Models\\Activity.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2024-12-10 14:46:41] local.ERROR: Trait "App\Models\HasFactory" not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait \"App\\Models\\HasFactory\" not found at C:\\xampp\\htdocs\\uazzz\\UAS-WebProg\\app\\Models\\Activity.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2024-12-10 14:47:41] local.ERROR: Trait "App\Models\HasFactory" not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait \"App\\Models\\HasFactory\" not found at C:\\xampp\\htdocs\\uazzz\\UAS-WebProg\\app\\Models\\Activity.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2024-12-10 14:48:41] local.ERROR: Trait "App\Models\HasFactory" not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait \"App\\Models\\HasFactory\" not found at C:\\xampp\\htdocs\\uazzz\\UAS-WebProg\\app\\Models\\Activity.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2024-12-10 14:49:41] local.ERROR: Trait "App\Models\HasFactory" not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait \"App\\Models\\HasFactory\" not found at C:\\xampp\\htdocs\\uazzz\\UAS-WebProg\\app\\Models\\Activity.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2024-12-10 14:50:41] local.ERROR: Trait "App\Models\HasFactory" not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait \"App\\Models\\HasFactory\" not found at C:\\xampp\\htdocs\\uazzz\\UAS-WebProg\\app\\Models\\Activity.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2024-12-10 14:51:41] local.ERROR: Trait "App\Models\HasFactory" not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait \"App\\Models\\HasFactory\" not found at C:\\xampp\\htdocs\\uazzz\\UAS-WebProg\\app\\Models\\Activity.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2024-12-10 14:52:41] local.ERROR: Trait "App\Models\HasFactory" not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait \"App\\Models\\HasFactory\" not found at C:\\xampp\\htdocs\\uazzz\\UAS-WebProg\\app\\Models\\Activity.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2024-12-10 14:53:41] local.ERROR: Trait "App\Models\HasFactory" not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait \"App\\Models\\HasFactory\" not found at C:\\xampp\\htdocs\\uazzz\\UAS-WebProg\\app\\Models\\Activity.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2024-12-10 14:54:41] local.ERROR: Trait "App\Models\HasFactory" not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait \"App\\Models\\HasFactory\" not found at C:\\xampp\\htdocs\\uazzz\\UAS-WebProg\\app\\Models\\Activity.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2024-12-10 14:55:11] local.ERROR: Trait "App\Models\HasFactory" not found {"userId":1,"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait \"App\\Models\\HasFactory\" not found at C:\\xampp\\htdocs\\uazzz\\UAS-WebProg\\app\\Models\\Activity.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2024-12-10 14:55:41] local.ERROR: Trait "App\Models\HasFactory" not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait \"App\\Models\\HasFactory\" not found at C:\\xampp\\htdocs\\uazzz\\UAS-WebProg\\app\\Models\\Activity.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2024-12-10 14:56:41] local.ERROR: Trait "App\Models\HasFactory" not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait \"App\\Models\\HasFactory\" not found at C:\\xampp\\htdocs\\uazzz\\UAS-WebProg\\app\\Models\\Activity.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2024-12-10 14:57:19] local.ERROR: Trait "App\Models\HasFactory" not found {"userId":1,"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait \"App\\Models\\HasFactory\" not found at C:\\xampp\\htdocs\\uazzz\\UAS-WebProg\\app\\Models\\Activity.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2024-12-10 14:57:39] local.ERROR: Trait "App\Models\HasFactory" not found {"userId":1,"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait \"App\\Models\\HasFactory\" not found at C:\\xampp\\htdocs\\uazzz\\UAS-WebProg\\app\\Models\\Activity.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2024-12-10 14:57:42] local.ERROR: Trait "App\Models\HasFactory" not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait \"App\\Models\\HasFactory\" not found at C:\\xampp\\htdocs\\uazzz\\UAS-WebProg\\app\\Models\\Activity.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2024-12-10 14:58:41] local.ERROR: Trait "App\Models\HasFactory" not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait \"App\\Models\\HasFactory\" not found at C:\\xampp\\htdocs\\uazzz\\UAS-WebProg\\app\\Models\\Activity.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2024-12-10 14:59:41] local.ERROR: Trait "App\Models\HasFactory" not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait \"App\\Models\\HasFactory\" not found at C:\\xampp\\htdocs\\uazzz\\UAS-WebProg\\app\\Models\\Activity.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2024-12-10 15:00:41] local.ERROR: Trait "App\Models\HasFactory" not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait \"App\\Models\\HasFactory\" not found at C:\\xampp\\htdocs\\uazzz\\UAS-WebProg\\app\\Models\\Activity.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2024-12-10 15:01:41] local.ERROR: Trait "App\Models\HasFactory" not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait \"App\\Models\\HasFactory\" not found at C:\\xampp\\htdocs\\uazzz\\UAS-WebProg\\app\\Models\\Activity.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2024-12-10 15:02:41] local.ERROR: Trait "App\Models\HasFactory" not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait \"App\\Models\\HasFactory\" not found at C:\\xampp\\htdocs\\uazzz\\UAS-WebProg\\app\\Models\\Activity.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2024-12-10 15:03:03] local.ERROR: Trait "App\Models\HasFactory" not found {"userId":1,"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait \"App\\Models\\HasFactory\" not found at C:\\xampp\\htdocs\\uazzz\\UAS-WebProg\\app\\Models\\Activity.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2024-12-10 15:03:41] local.ERROR: Trait "App\Models\HasFactory" not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait \"App\\Models\\HasFactory\" not found at C:\\xampp\\htdocs\\uazzz\\UAS-WebProg\\app\\Models\\Activity.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2024-12-10 15:04:41] local.ERROR: Trait "App\Models\HasFactory" not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait \"App\\Models\\HasFactory\" not found at C:\\xampp\\htdocs\\uazzz\\UAS-WebProg\\app\\Models\\Activity.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2024-12-10 15:05:06] local.ERROR: Trait "App\Models\HasFactory" not found {"userId":1,"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait \"App\\Models\\HasFactory\" not found at C:\\xampp\\htdocs\\uazzz\\UAS-WebProg\\app\\Models\\Activity.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2024-12-10 15:05:41] local.ERROR: Trait "App\Models\HasFactory" not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait \"App\\Models\\HasFactory\" not found at C:\\xampp\\htdocs\\uazzz\\UAS-WebProg\\app\\Models\\Activity.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2024-12-10 15:06:15] local.ERROR: Trait "App\Models\HasFactory" not found {"userId":1,"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait \"App\\Models\\HasFactory\" not found at C:\\xampp\\htdocs\\uazzz\\UAS-WebProg\\app\\Models\\Activity.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2024-12-10 15:06:23] local.ERROR: Trait "App\Models\HasFactory" not found {"userId":1,"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait \"App\\Models\\HasFactory\" not found at C:\\xampp\\htdocs\\uazzz\\UAS-WebProg\\app\\Models\\Activity.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2024-12-10 15:06:41] local.ERROR: Trait "App\Models\HasFactory" not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait \"App\\Models\\HasFactory\" not found at C:\\xampp\\htdocs\\uazzz\\UAS-WebProg\\app\\Models\\Activity.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2024-12-10 15:07:42] local.ERROR: Trait "App\Models\HasFactory" not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait \"App\\Models\\HasFactory\" not found at C:\\xampp\\htdocs\\uazzz\\UAS-WebProg\\app\\Models\\Activity.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2024-12-10 15:08:41] local.ERROR: Trait "App\Models\HasFactory" not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait \"App\\Models\\HasFactory\" not found at C:\\xampp\\htdocs\\uazzz\\UAS-WebProg\\app\\Models\\Activity.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2024-12-10 15:09:41] local.ERROR: Trait "App\Models\HasFactory" not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait \"App\\Models\\HasFactory\" not found at C:\\xampp\\htdocs\\uazzz\\UAS-WebProg\\app\\Models\\Activity.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2024-12-10 15:10:41] local.ERROR: Trait "App\Models\HasFactory" not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait \"App\\Models\\HasFactory\" not found at C:\\xampp\\htdocs\\uazzz\\UAS-WebProg\\app\\Models\\Activity.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2024-12-10 15:11:41] local.ERROR: Trait "App\Models\HasFactory" not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait \"App\\Models\\HasFactory\" not found at C:\\xampp\\htdocs\\uazzz\\UAS-WebProg\\app\\Models\\Activity.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2024-12-10 15:12:41] local.ERROR: Trait "App\Models\HasFactory" not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait \"App\\Models\\HasFactory\" not found at C:\\xampp\\htdocs\\uazzz\\UAS-WebProg\\app\\Models\\Activity.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2024-12-10 15:13:41] local.ERROR: Trait "App\Models\HasFactory" not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait \"App\\Models\\HasFactory\" not found at C:\\xampp\\htdocs\\uazzz\\UAS-WebProg\\app\\Models\\Activity.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2024-12-10 15:14:13] local.ERROR: Trait "App\Models\HasFactory" not found {"userId":1,"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait \"App\\Models\\HasFactory\" not found at C:\\xampp\\htdocs\\uazzz\\UAS-WebProg\\app\\Models\\Activity.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2024-12-10 15:14:41] local.ERROR: Trait "App\Models\HasFactory" not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait \"App\\Models\\HasFactory\" not found at C:\\xampp\\htdocs\\uazzz\\UAS-WebProg\\app\\Models\\Activity.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2024-12-10 15:15:41] local.ERROR: Trait "App\Models\HasFactory" not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait \"App\\Models\\HasFactory\" not found at C:\\xampp\\htdocs\\uazzz\\UAS-WebProg\\app\\Models\\Activity.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2024-12-10 15:16:04] local.ERROR: Trait "App\Models\HasFactory" not found {"userId":1,"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait \"App\\Models\\HasFactory\" not found at C:\\xampp\\htdocs\\uazzz\\UAS-WebProg\\app\\Models\\Activity.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2024-12-10 15:16:41] local.ERROR: Trait "App\Models\HasFactory" not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait \"App\\Models\\HasFactory\" not found at C:\\xampp\\htdocs\\uazzz\\UAS-WebProg\\app\\Models\\Activity.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2024-12-10 15:17:33] local.ERROR: Trait "App\Models\HasFactory" not found {"userId":1,"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait \"App\\Models\\HasFactory\" not found at C:\\xampp\\htdocs\\uazzz\\UAS-WebProg\\app\\Models\\Activity.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2024-12-10 15:17:41] local.ERROR: Trait "App\Models\HasFactory" not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait \"App\\Models\\HasFactory\" not found at C:\\xampp\\htdocs\\uazzz\\UAS-WebProg\\app\\Models\\Activity.php:7)
+[stacktrace]
+#0 {main}
+"} 

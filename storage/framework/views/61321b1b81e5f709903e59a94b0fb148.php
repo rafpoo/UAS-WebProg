@@ -1,8 +1,8 @@
 <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
     <div class="container">
-        <a class="navbar-brand" href="/">
-            <img class="rounded-circle" src="{{ URL('images/LogoTK.jpg') }}" alt="School Logo" style="height: 50px;">
-            <h3 style="color: white; display: inline-block; margin-left: 10px;">TK Islam Kinasih</h3>
+        <a class="navbar-brand" href="/admin">
+            <img class="rounded-circle" src="<?php echo e(URL('images/LogoTK.jpg')); ?>" alt="School Logo" style="height: 50px;">
+            <h3 style="color: white; display: inline-block; margin-left: 10px; ">TK Islam Kinasih</h3>
         </a>
         <button class="navbar-toggler btn btn-success" style="border: solid rgba(255,255,255,1.0) 2px;" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -10,23 +10,31 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="/PPDB">PPDB</a>
+                    <a class="nav-link" href="/admin/PPDB">PPDB</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/guru">Profil Guru</a>
+                    <a class="nav-link" href="/admin/guru">Profil Guru</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/acara">Acara</a>
+                    <a class="nav-link" href="/admin/acara">Acara</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/aktivitas">Aktivitas</a>
+                    <a class="nav-link" href="#">Aktivitas</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/Galeri">Gallery</a>
+                    <a class="nav-link" href="/admin/Galeri">Gallery</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/tentangkami">Tentang Kami</a>
+                    <a class="nav-link" href="/admin/tentangkami">Tentang Kami</a>
                 </li>
+                <li class="nav-item">
+                  <form method="POST" action="<?php echo e(route('logout')); ?>">
+                      <?php echo csrf_field(); ?>
+                      <button type="submit" class="px-4 py-2 btn btn-danger rounded hover:bg-red-700">
+                          Logout
+                      </button>
+                  </form>                 
+              </li>
             </ul>
         </div>
     </div>
@@ -79,3 +87,4 @@ nav a:hover {
 }
 
 </style>
+<?php /**PATH C:\xampp\htdocs\uazzz\UAS-WebProg\resources\views/partials/adminnav.blade.php ENDPATH**/ ?>
