@@ -1,2 +1,2 @@
-@extends('layout.page')
+@extends('layouts.page')
 
