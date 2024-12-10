@@ -22,6 +22,9 @@ Route::get('/tentangkami', function () {
     return view('user.aboutUs');
 });
 
+Route::get('/aktivitas', [ActivityController::class, 'index'])->name('user.aktivitas.index');
+
+
 // ADMIN
 Route::prefix('admin') // Menambahkan prefix 'admin' pada setiap URL route
     ->middleware(['auth', 'verified']) // Menambahkan middleware untuk semua route di grup ini
@@ -87,14 +90,14 @@ Route::get('/dashboard', function () {
 
 // Route::post('/students', [StudentController::class, 'store']);
 // Route::post('/teachers', [TeacherController::class, 'store']);
-// Route::post('/activities', [ActivityController::class, 'store']);
+// Route::post('/aktivitas', [ActivityController::class, 'store']);
 // Route::post('/events', [EventController::class, 'store']);
 
 
 // Route::get('/register', [StudentController::class, 'create'])->name('register');
 // Route::get('/teachers', [TeacherController::class, 'index'])->name('teachers.index');
 // Route::get('/events', [EventController::class, 'index'])->name('events.index');
-// Route::get('/activities', [ActivityController::class, 'index'])->name('activities.index');
+// Route::get('/aktivitas', [ActivityController::class, 'index'])->name('user.activities.index');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

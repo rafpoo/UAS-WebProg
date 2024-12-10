@@ -8,10 +8,11 @@ use App\Models\Activity;
 class ActivityController extends Controller
 {
     public function index()
-    {
-        $activities = Activity::all();
-        return view('activities.index', compact('activities'));
-    }
+{
+    $activities = Activity::all(); 
+    return view('user.aktivitas', compact('activities')); 
+}
+
 
     public function store(Request $request)
     {
