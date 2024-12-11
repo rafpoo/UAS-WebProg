@@ -125,7 +125,7 @@
 }
 
 .image-container:hover .icon-overlay {
-    opacity: 1; 
+    opacity: 2; 
 }
 
     </style>
