@@ -154,31 +154,37 @@
 <body>
 <?php echo $__env->make('partials.navbar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 
-<div class="gallery-container">
+<?php if($galeris->isEmpty()): ?>
     <div class="gallery">
-        <?php $__currentLoopData = $galeris; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $galeri): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-            <div class="gallery-item">
-                <img src="<?php echo e(asset('storage/' . $galeri->image)); ?>" alt="<?php echo e($galeri->nama); ?>" data-index="0">
-                <div class="overlay">
-                    <div class="overlay-text"><?php echo e($galeri->nama); ?></div>
+      <p>Tidak ada data tersedia.</p>
+    </div>
+<?php else: ?>
+    <div class="gallery-container">
+        <div class="gallery">
+            <?php $__currentLoopData = $galeris; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $galeri): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                <div class="gallery-item">
+                    <img src="<?php echo e(asset('storage/' . $galeri->image)); ?>" alt="<?php echo e($galeri->nama); ?>" data-index="0">
+                    <div class="overlay">
+                        <div class="overlay-text"><?php echo e($galeri->nama); ?></div>
+                    </div>
                 </div>
-            </div>
-        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-        
+            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+            
+        </div>
     </div>
-</div>  
+ <?php endif; ?>  
 
-<?php echo $__env->make('partials.footer', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+    <?php echo $__env->make('partials.footer', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 
-<!-- Modal -->
-<div class="modal" id="imageModal">
-    <button class="close" id="closeModal">&times;</button>
-    <img src="" alt="Modal Image" id="modalImage">
-    <div class="controls">
-        <button id="prevImage">&lt;</button>
-        <button id="nextImage">&gt;</button>
+    <!-- Modal -->
+    <div class="modal" id="imageModal">
+        <button class="close" id="closeModal">&times;</button>
+        <img src="" alt="Modal Image" id="modalImage">
+        <div class="controls">
+            <button id="prevImage">&lt;</button>
+            <button id="nextImage">&gt;</button>
+        </div>
     </div>
-</div>
 
 <script>
     // JavaScript for modal functionality

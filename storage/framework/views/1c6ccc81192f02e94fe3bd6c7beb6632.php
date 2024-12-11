@@ -160,36 +160,42 @@
     </a>
 </div>
 
-<div class="gallery-container">
-    
+<?php if($galeris->isEmpty()): ?>
     <div class="gallery">
-        <?php $__currentLoopData = $galeris; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $galeri): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-            <div>
-                <div class="gallery-item">
-                    <img src="<?php echo e(asset('storage/' . $galeri->image)); ?>" alt="<?php echo e($galeri->nama); ?>" data-index="0">
-                    <div class="overlay">
-                        <div class="overlay-text"><?php echo e($galeri->nama); ?></div>
-                    </div>
-                </div><br />
-                <div class="d-flex justify-content-between">
-                    <!-- Tombol Edit -->
-                    <a href="<?php echo e(route('admin.galeri.edit', $galeri->id)); ?>" class="btn btn-warning btn-sm"><i class="bi bi-pencil-square"></i>Edit</a>
-
-                    <!-- Tombol Delete -->
-                    <form action="<?php echo e(route('admin.galeri.destroy', $galeri->id)); ?>" method="POST">
-                        <?php echo csrf_field(); ?>
-                        <?php echo method_field('DELETE'); ?>
-                        <button type="submit" class="btn btn-danger btn-sm"
-                                onclick="return confirm('Apakah Anda yakin ingin menghapus foto ini?')">
-                                <i class="bi bi-trash3"></i>Delete
-                        </button>
-                    </form>
-                </div>
-            </div>
-        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-        
+      <p>Tidak ada data tersedia.</p>
     </div>
-</div>  
+  <?php else: ?>
+    <div class="gallery-container">
+        
+        <div class="gallery">
+            <?php $__currentLoopData = $galeris; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $galeri): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                <div>
+                    <div class="gallery-item">
+                        <img src="<?php echo e(asset('storage/' . $galeri->image)); ?>" alt="<?php echo e($galeri->nama); ?>" data-index="0">
+                        <div class="overlay">
+                            <div class="overlay-text"><?php echo e($galeri->nama); ?></div>
+                        </div>
+                    </div><br />
+                    <div class="d-flex justify-content-between">
+                        <!-- Tombol Edit -->
+                        <a href="<?php echo e(route('admin.galeri.edit', $galeri->id)); ?>" class="btn btn-warning btn-sm"><i class="bi bi-pencil-square"></i>Edit</a>
+
+                        <!-- Tombol Delete -->
+                        <form action="<?php echo e(route('admin.galeri.destroy', $galeri->id)); ?>" method="POST">
+                            <?php echo csrf_field(); ?>
+                            <?php echo method_field('DELETE'); ?>
+                            <button type="submit" class="btn btn-danger btn-sm"
+                                    onclick="return confirm('Apakah Anda yakin ingin menghapus foto ini?')">
+                                    <i class="bi bi-trash3"></i>Delete
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+            
+        </div>
+    </div>  
+  <?php endif; ?>
 
 <?php echo $__env->make('partials.footer', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 

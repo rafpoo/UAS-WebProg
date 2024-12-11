@@ -10,6 +10,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <!-- Premium Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&amp;family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet"/>
+
+    
+    @include('global_css.css')
+    @include('css_in_view.home_css')
     <style>
         :root {
             --soft-emerald: #10B981;
@@ -75,12 +81,12 @@
 </head>
 <body>
     <!-- Navbar (Existing Implementation) -->
-    @include('partials.navbar')
+    @include('partials.navbar')<br />
 
     <div class="container mx-auto px-8 py-16">
         <!-- Header Section -->
         <header class="text-center mb-24">
-             <h1 class="text-7xl font-bold emerald-gradient mb-8 font-['Cormorant_Garamond']" style = "color: white;" >
+            <h1 class="text-7xl font-bold text-white mb-8 font-['Cormorant_Garamond']">
                 TK Islam Kinasih
             </h1>
             <p class="text-2xl text-gray-700 max-w-4xl mx-auto leading-relaxed font-light">
@@ -132,7 +138,7 @@
 
         <!-- Kenapa Pilih TK Islam Kinasih -->
         <section class="mb-24">
-            <h2 class="text-6xl font-bold emerald-gradient mb-16 text-center section-title">
+            <h2 class="text-6xl font-bold text-white mb-16 text-center section-title">
                 Kenapa Memilih TK Islam Kinasih?
             </h2>
             <div class="bg-white rounded-3xl elegant-shadow p-16 soft-background elegant-border premium-card text-center">

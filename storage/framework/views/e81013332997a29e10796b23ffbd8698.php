@@ -117,4 +117,4 @@
         }
     }
 </style>
-<?php /**PATH C:\xampp\htdocs\uazzz\UAS-WebProg\resources\views/css_in_view/ppdb_css.blade.php ENDPATH**/ ?>
+<?php /**PATH C:\Users\ziyad\Downloads\uaswebprog\UAS-WebProg\resources\views/css_in_view/ppdb_css.blade.php ENDPATH**/ ?>

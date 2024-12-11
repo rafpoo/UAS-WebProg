@@ -21,5 +21,7 @@ class DatabaseSeeder extends Seeder
             'email' => 'admin@tk-islam-kinasih.com',
             'password' => Hash::make('12345678'), // Hash password untuk keamanan
         ]);
+
+        $this->call(TeacherSeeder::class);
     }
 }

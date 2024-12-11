@@ -154,36 +154,42 @@
 <body>
 @include('partials.navbar')
 
-<div class="gallery-container">
+@if($galeris->isEmpty())
     <div class="gallery">
-        @foreach ($galeris as $galeri)
-            <div class="gallery-item">
-                <img src="{{ asset('storage/' . $galeri->image) }}" alt="{{ $galeri->nama }}" data-index="0">
-                <div class="overlay">
-                    <div class="overlay-text">{{ $galeri->nama }}</div>
+      <p>Tidak ada data tersedia.</p>
+    </div>
+@else
+    <div class="gallery-container">
+        <div class="gallery">
+            @foreach ($galeris as $galeri)
+                <div class="gallery-item">
+                    <img src="{{ asset('storage/' . $galeri->image) }}" alt="{{ $galeri->nama }}" data-index="0">
+                    <div class="overlay">
+                        <div class="overlay-text">{{ $galeri->nama }}</div>
+                    </div>
                 </div>
-            </div>
-        @endforeach
-        {{-- <div class="gallery-item">
-            <img src="images/illustration2.jpg" alt="Gallery Image 1" data-index="0">
-            <div class="overlay">
-                <div class="overlay-text">Kegiatan Belajar</div>
-            </div>
-        </div> --}}
+            @endforeach
+            {{-- <div class="gallery-item">
+                <img src="images/illustration2.jpg" alt="Gallery Image 1" data-index="0">
+                <div class="overlay">
+                    <div class="overlay-text">Kegiatan Belajar</div>
+                </div>
+            </div> --}}
+        </div>
     </div>
-</div>  
+ @endif  
 
-@include('partials.footer')
+    @include('partials.footer')
 
-<!-- Modal -->
-<div class="modal" id="imageModal">
-    <button class="close" id="closeModal">&times;</button>
-    <img src="" alt="Modal Image" id="modalImage">
-    <div class="controls">
-        <button id="prevImage">&lt;</button>
-        <button id="nextImage">&gt;</button>
+    <!-- Modal -->
+    <div class="modal" id="imageModal">
+        <button class="close" id="closeModal">&times;</button>
+        <img src="" alt="Modal Image" id="modalImage">
+        <div class="controls">
+            <button id="prevImage">&lt;</button>
+            <button id="nextImage">&gt;</button>
+        </div>
     </div>
-</div>
 
 <script>
     // JavaScript for modal functionality
