@@ -3,9 +3,10 @@
         <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <title>Data Guru - TK Islam Kinasih</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"> 
         <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&amp;family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet"/>
+
 
         @include('global_css.css')
         @include('css_in_view.guru_css')
@@ -49,16 +50,8 @@
         </div>
     </div>
     </div>
-    {{-- <footer style="background-color: #1a7f72; color: white; padding: 20px; display: flex; justify-content: center; align-items: center;">
-    <div style="text-align: center;">
-        <p style="margin: 0;">© 2023 TK Islam Kinasih</p>
-        <div style="display: flex; justify-content: center; gap: 20px; margin-top: 10px;">
-        <a href="https://wa.me/62895615460275" target="_blank" style="color: white; font-size: 20px;"><i class="fab fa-whatsapp"></i></a>
-        <a href="https://www.instagram.com/tkislamkinasih" target="_blank" style="color: white; font-size: 20px;"><i class="fab fa-instagram"></i></a>
-        <a href="https://youtu.be/1TFblh9GS6A" target="_blank" style="color: white; font-size: 20px;"><i class="fab fa-youtube"></i></a>
-        </div>
-    </div>
-    </footer> --}}
-    @include('partials.footer')
+   
+
     </body>
+    @include('partials.footer')
 </html>

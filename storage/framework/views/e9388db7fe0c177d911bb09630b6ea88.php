@@ -3,17 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TPA - KB - TK Islam Kinasih</title>
+    <title> TPA - KB - TK Islam Kinasih</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&amp;family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet"/>
 
-    @include('global_css.css')
-    @include('css_in_view.home_css')
+    <?php echo $__env->make('global_css.css', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+    <?php echo $__env->make('css_in_view.home_css', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+    
 </head>
 
 <body>
-    @include('partials.navbar')
+    <?php echo $__env->make('partials.adminnav', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 
     <div class="container">
         <div class="header">
@@ -25,11 +26,11 @@
         </div>
 
         <!-- Slideshow -->
-        <div id="carouselExampleAutoplaying" class="carousel slide carousel-fade shadow-lg rounded-4 overflow-hidden" data-bs-ride="carousel" data-bs-interval="3000">
+        <div id="carouselExampleAutoplaying" class="carousel slide carousel-fade shadow-lg rounded-4 overflow-hidden" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
                     <div class="carousel-overlay"></div>
-                    <img src="{{ URL('images/illustration.jpg') }}" class="d-block w-100 carousel-image" alt="Slide 1">
+                    <img src="<?php echo e(URL('images/illustration.jpg')); ?>" class="d-block w-100 carousel-image" alt="Slide 1">
                     <div class="carousel-caption-center">
                         <h1>Bermain Sambil Belajar</h1>
                         <p>Pengalaman pendidikan yang menyenangkan</p>
@@ -37,7 +38,7 @@
                 </div>
                 <div class="carousel-item">
                     <div class="carousel-overlay"></div>
-                    <img src="{{ URL('images/illustration3.jpg') }}" class="d-block w-100 carousel-image" alt="Slide 2">
+                    <img src="<?php echo e(URL('images/illustration3.jpg')); ?>" class="d-block w-100 carousel-image" alt="Slide 2">
                     <div class="carousel-caption-center">
                         <h1>Lingkungan Belajar Aman</h1>
                         <p>Tempat terbaik untuk tumbuh kembang anak</p>
@@ -45,7 +46,7 @@
                 </div>
                 <div class="carousel-item">
                     <div class="carousel-overlay"></div>
-                    <img src="{{ URL('images/illustration2.jpg') }}" class="d-block w-100 carousel-image" alt="Slide 3">
+                    <img src="<?php echo e(URL('images/illustration2.jpg')); ?>" class="d-block w-100 carousel-image" alt="Slide 3">
                     <div class="carousel-caption-center">
                         <h1>Kurikulum Islami</h1>
                         <p>Membentuk generasi cerdas dan berakhlak mulia</p>
@@ -67,7 +68,7 @@
                 <h2>Ayo Daftar!</h2>
                 <p>Bersama TK Islam Kinasih, temukan pendidikan terbaik untuk buah hati Anda dengan kurikulum berbasis nilai-nilai Islam untuk membentuk generasi cerdas, berakhlak mulia, dan siap menghadapi masa depan. Kami menghadirkan metode belajar interaktif dan menyenangkan melalui kegiatan belajar sambil bermain yang didukung oleh fasilitas yang aman dan nyaman. Dengan fasilitas modern serta lingkungan yang damai dan riang, kami mendukung tumbuh kembang anak secara optimal.</p>
                 <div class="image-container">
-                    <img alt="Anak-anak sedang belajar di dalam kelas" height="300" src="{{ URL('images/illustration6.jpg') }}" width="500"/>
+                    <img alt="Anak-anak sedang belajar di dalam kelas" height="300" src="<?php echo e(URL('images/illustration6.jpg')); ?>" width="500"/>
                 </div>
             </div>
             
@@ -119,9 +120,10 @@
     </div>
 </div>
 
-    @include('partials.footer')
+    <?php echo $__env->make('partials.footer', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>
+<?php /**PATH C:\Users\almer\Downloads\WEBPROG UAS\UAS-WebProg\resources\views/admin/home.blade.php ENDPATH**/ ?>
