@@ -17,8 +17,9 @@
     @include('partials.navbar')
     <div class="container">
     <div class="header">
-        <h1>Data Guru</h1>
+        <h1>Guru Kami</h1>
         <p>TK Islam Kinasih</p>
+        <p>"Guru kami berpendidikan dan penyayang, selalu berdedikasi untuk menginspirasi siswa dengan metode pembelajaran kreatif, serta membentuk karakter positif yang mendukung tumbuh kembang anak secara maksimal."</p>
     </div>
     <div class="container">
             <div class="staff-profiles">
@@ -38,20 +39,6 @@
                 @endforeach
 
         </div>
-
-    <hr style="height:4px" />
-    <div class="about-section">
-        <div class="text">
-        <h2>Guru Kami</h2>
-        <p>"Guru kami berpendidikan dan penyayang, selalu berdedikasi untuk menginspirasi siswa dengan metode pembelajaran kreatif, serta membentuk karakter positif yang mendukung tumbuh kembang anak secara maksimal."</p>
-        </div>
-        <div class="image">
-        <img class="w-100 h-100" alt="Illustration of a teacher" height="200" src="https://storage.googleapis.com/a1aa/image/tgbSGyISMDrBMRxewwNZ6oE7KfxfcyAwG0Lx3NbsoeVf6bEfE.jpg" width="200"/>
-        </div>
-    </div>
-    </div>
-   
-
     </body>
     @include('partials.footer')
 </html>

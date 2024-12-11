@@ -87,18 +87,18 @@
         }
     </style>
 
-    @include('global_css.css')
-    @include('css_in_view.ppdb_css')
+    <?php echo $__env->make('global_css.css', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+    <?php echo $__env->make('css_in_view.ppdb_css', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
   </head>
   <body>
-    @include('partials.navbar')
+    <?php echo $__env->make('partials.navbar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 
     <div class="container">
         <div class="row">
             <!-- Form Column -->
             <div class="col-md-6">
                 <form action="/submit-ppdb" method="POST" class="w-100 h-100">
-                    @csrf
+                    <?php echo csrf_field(); ?>
                     <h2>Form Pendaftaran</h2>
 
                     <label for="nama" class="form-label">Nama Lengkap</label>
@@ -134,13 +134,13 @@
             <div class="col-md-6">
                 <div class="slideshow-container">
                     <div class="slide active">
-                        <img src="{{ URL('images/illustration9.jpg') }}" alt="Illustration 1">
+                        <img src="<?php echo e(URL('images/illustration9.jpg')); ?>" alt="Illustration 1">
                     </div>
                     <div class="slide">
-                        <img src="{{ URL('images/illustration12.jpg') }}" alt="Illustration 2">
+                        <img src="<?php echo e(URL('images/illustration12.jpg')); ?>" alt="Illustration 2">
                     </div>
                     <div class="slide">
-                        <img src="{{ URL('images/illustration10.jpg') }}" alt="Illustration 3">
+                        <img src="<?php echo e(URL('images/illustration10.jpg')); ?>" alt="Illustration 3">
                     </div>
 
                     <!-- Slideshow Controls -->
@@ -153,7 +153,7 @@
         </div>
     </div>
 
-    @include('partials.footer')
+    <?php echo $__env->make('partials.footer', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -203,3 +203,4 @@
     </script>
   </body>
 </html>
+<?php /**PATH C:\Users\ziyad\Downloads\cakung\UAS-WebProg\resources\views/user/ppdb.blade.php ENDPATH**/ ?>

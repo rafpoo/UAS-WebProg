@@ -16,12 +16,12 @@
     }
  </style>
 
-    @include('global_css.css')
-    @include('css_in_view.home_css')
+    <?php echo $__env->make('global_css.css', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+    <?php echo $__env->make('css_in_view.home_css', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 </head>
 
 <body>
-    @include('partials.navbar')
+    <?php echo $__env->make('partials.navbar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 
     <div class="container">
         <div class="header">
@@ -37,7 +37,7 @@
             <div class="carousel-inner">
                 <div class="carousel-item active">
                     <div class="carousel-overlay"></div>
-                    <img src="{{ URL('images/illustration.jpg') }}" class="d-block w-100 carousel-image" alt="Slide 1">
+                    <img src="<?php echo e(URL('images/illustration.jpg')); ?>" class="d-block w-100 carousel-image" alt="Slide 1">
                     <div class="carousel-caption-center">
                         <h1>Bermain Sambil Belajar</h1>
                         <p>Pengalaman pendidikan yang menyenangkan</p>
@@ -45,7 +45,7 @@
                 </div>
                 <div class="carousel-item">
                     <div class="carousel-overlay"></div>
-                    <img src="{{ URL('images/illustration3.jpg') }}" class="d-block w-100 carousel-image" alt="Slide 2">
+                    <img src="<?php echo e(URL('images/illustration3.jpg')); ?>" class="d-block w-100 carousel-image" alt="Slide 2">
                     <div class="carousel-caption-center">
                         <h1>Lingkungan Belajar Aman</h1>
                         <p>Tempat terbaik untuk tumbuh kembang anak</p>
@@ -53,7 +53,7 @@
                 </div>
                 <div class="carousel-item">
                     <div class="carousel-overlay"></div>
-                    <img src="{{ URL('images/illustration2.jpg') }}" class="d-block w-100 carousel-image" alt="Slide 3">
+                    <img src="<?php echo e(URL('images/illustration2.jpg')); ?>" class="d-block w-100 carousel-image" alt="Slide 3">
                     <div class="carousel-caption-center">
                         <h1>Kurikulum Islami</h1>
                         <p>Membentuk generasi cerdas dan berakhlak mulia</p>
@@ -75,7 +75,7 @@
                 <h2>Ayo Daftar!</h2>
                 <p>Bersama TK Islam Kinasih, temukan pendidikan terbaik untuk buah hati Anda dengan kurikulum berbasis nilai-nilai Islam untuk membentuk generasi cerdas, berakhlak mulia, dan siap menghadapi masa depan. Kami menghadirkan metode belajar interaktif dan menyenangkan melalui kegiatan belajar sambil bermain yang didukung oleh fasilitas yang aman dan nyaman. Dengan fasilitas modern serta lingkungan yang damai dan riang, kami mendukung tumbuh kembang anak secara optimal.</p>
                 <div class="image-container">
-                    <img alt="Anak-anak sedang belajar di dalam kelas" height="300" src="{{ URL('images/illustration6.jpg') }}" width="500"/>
+                    <img alt="Anak-anak sedang belajar di dalam kelas" height="300" src="<?php echo e(URL('images/illustration6.jpg')); ?>" width="500"/>
                 </div>
             </div>
             
@@ -127,9 +127,10 @@
     </div>
 </div>
 
-    @include('partials.footer')
+    <?php echo $__env->make('partials.footer', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>
+<?php /**PATH C:\Users\ziyad\Downloads\cakung\UAS-WebProg\resources\views/user/home.blade.php ENDPATH**/ ?>

@@ -7,7 +7,7 @@
             <div class="col-md-4 mb-4 d-flex align-items-center">
                 <div class="me-3">
                     <!-- Logo TK diperbesar dan dibuat berbentuk bulat -->
-                    <img src="{{ URL('images/LogoTK.jpg') }}" alt="Logo" class="rounded-circle" style="height: 120px; width: 120px;">
+                    <img src="<?php echo e(URL('images/LogoTK.jpg')); ?>" alt="Logo" class="rounded-circle" style="height: 120px; width: 120px;">
                 </div>
                 <div>
                     <!-- Nama TK dan informasi akreditasi -->
@@ -60,3 +60,4 @@
         </div>
     </div>
 </footer>
+<?php /**PATH C:\Users\ziyad\Downloads\cakung\UAS-WebProg\resources\views/partials/footer.blade.php ENDPATH**/ ?>
