@@ -11,10 +11,9 @@
                 </div>
                 <div>
                     <!-- Nama TK dan informasi akreditasi -->
-                    <h4 class="mb-0">Islam Kinasih</h4>
-                    <p class="mb-0">Taman Kanak-Kanak</p>
-                    <p class="mt-3 mb-0">Akreditasi A</p>
-                    <p>ANPSN: 30407224</p>
+                    <h4 class="mb-0"> TK Islam Kinasih</h4>
+                    <p class="mb-0">Akreditasi A</p>
+                    <p>NPSN: 69907801</p>
                 </div>
             </div>
 
@@ -42,9 +41,9 @@
                 <h5><i class="bi bi-send"></i> Kontak</h5>
                 <ul class="list-unstyled">
                     <!-- Detail kontak TK Islam Kinasih -->
-                    <li><strong>E-mail:</strong> admin@tkislamkinasih.com</li>
-                    <li><strong>No Telepon:</strong> 021 0989 23145</li>
-                    <li><strong>WhatsApp:</strong> +62 895 3852 2554</li>
+                    <li><strong>Youtube:</strong> TK Islam Kinasih</li>
+                    <li><strong>Instagram:</strong> TK Islam Kinasih</li>
+                    <li><strong>WhatsApp:</strong> +62 895-6154-60275</li>
                     <li><strong>Jam Kerja:</strong> Senin s/d Jumat (07:00-15:00)</li>
                 </ul>
             </div>

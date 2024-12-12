@@ -61,4 +61,5 @@
     .container-fluid {
         padding: 15px 30px; /* Ruang lebih kecil untuk navbar */
     }
+
 </style>

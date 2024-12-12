@@ -11,9 +11,19 @@
     <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&amp;family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet"/>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 
-
-    <!-- Custom Styles -->
     <style>
+    .modal-title {
+        color: #000000;
+    }
+
+    .modal-body {
+        color: #000000; 
+    }
+
+    
+    .modal-footer .btn {
+        color: #ffffff;
+    }
         .form-container {
             width-100 h-100 p-4;
         }
@@ -119,16 +129,16 @@
                     <input type="text" id="nama_orang_tua" name="nama_orang_tua" class="form-control" placeholder="Nama Ayah/Ibu" required>
 
                     <label for="no_telepon" class="form-label">No Telepon Orang Tua</label>
-                    <div class="input-group">
+                   <div class="input-group">
                         <input readonly="" style="width: 50px; margin-right: 10px;" type="text" value="+62"/>
-                        <input class="form-control" id="no_telepon" placeholder="Phone number" type="tel" name="no_telepon" required/>
-                    </div>
-                
+                        <input class="form-control" id="no_telepon" placeholder="Phone number" type="tel" name="no_telepon" required inputmode="numeric" pattern="[0-9]*" />
+                   </div>
+
                     <label for="alamat" class="form-label">Alamat</label>
                     <textarea id="alamat" name="alamat" rows="2" class="form-control" placeholder="Alamat Lengkap" required></textarea>
 
-                    <Br />
-                    <button type="submit">DAFTAR</button>
+                    <br />
+                    <button type="submit" class="btn btn-primary">DAFTAR</button>
                 </form>
             </div>
             
@@ -157,51 +167,92 @@
 
     @include('partials.footer')
 
+    <!-- Modal -->
+    <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="successModalLabel">Pendaftaran Berhasil!</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p>Terima kasih telah mendaftar, <span id="modalNama"></span>. Kami akan segera menghubungi Anda melalui nomor <span id="modalTelepon"></span>.</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Tutup</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const form = document.querySelector('form[action="/submit-ppdb"]');
-            let slideIndex = 1;
-            const slides = document.querySelectorAll('.slide');
+document.addEventListener('DOMContentLoaded', function() {
+    const noTeleponInput = document.getElementById('no_telepon');
 
-            // Form Submission Validation
-            form.addEventListener('submit', function(event) {
-                const nama = document.getElementById('nama').value.trim();
-                const no_telepon = document.getElementById('no_telepon').value.trim();
+    // Pastikan hanya angka yang bisa dimasukkan
+    noTeleponInput.addEventListener('input', function(event) {
+        // Menghapus semua karakter selain angka
+        this.value = this.value.replace(/\D/g, '');
+        // Batasi panjang input hanya sampai 15 karakter
+        if (this.value.length > 15) {
+            this.value = this.value.slice(0, 15); // Hanya ambil 15 karakter pertama
+        }
+    });
 
-                if (nama && no_telepon) {
-                    alert(`Terima kasih telah mendaftar, ${nama}. Kami akan segera menghubungi Anda melalui nomor ${no_telepon}.`);
-                } else {
-                    event.preventDefault();
-                    alert('Mohon lengkapi semua field pendaftaran sebelum mengirim form!');
-                }
-            });
+    // Form Submission Validation
+    const form = document.querySelector('form[action="/submit-ppdb"]');
+    form.addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent form from submitting
 
-            // Slideshow Functions
-            function showSlide(n) {
-                slides.forEach(slide => slide.classList.remove('active'));
+        const nama = document.getElementById('nama').value.trim();
+        const no_telepon = document.getElementById('no_telepon').value.trim();
 
-                if (n > slides.length) { slideIndex = 1; }
-                if (n < 1) { slideIndex = slides.length; }
+        // Periksa apakah nomor telepon lebih dari 15 karakter
+        if (no_telepon.length > 15) {
+            alert("Nomor telepon tidak boleh lebih dari 15 karakter.");
+            return;
+        }
 
-                slides[slideIndex - 1].classList.add('active');
-            }
+        // Jika semua field valid
+        if (nama && no_telepon) {
+            document.getElementById('modalNama').textContent = nama;
+            document.getElementById('modalTelepon').textContent = no_telepon;
+            const successModal = new bootstrap.Modal(document.getElementById('successModal'));
+            successModal.show();
+        } else {
+            alert("Mohon lengkapi semua field pendaftaran sebelum mengirim form!");
+        }
+    });
 
-            function changeSlide(n) {
-                slideIndex += n;
-                showSlide(slideIndex);
-            }
+    // Slideshow Functions
+    let slideIndex = 1;
+    const slides = document.querySelectorAll('.slide');
 
-            function autoSlide() {
-                slideIndex++;
-                showSlide(slideIndex);
-            }
+    function showSlide(n) {
+        slides.forEach(slide => slide.classList.remove('active'));
 
-            // Start auto sliding
-            setInterval(autoSlide, 5000);
+        if (n > slides.length) { slideIndex = 1; }
+        if (n < 1) { slideIndex = slides.length; }
 
-            // Make changeSlide function globally available
-            window.changeSlide = changeSlide;
-        });
-    </script>
+        slides[slideIndex - 1].classList.add('active');
+    }
+
+    function changeSlide(n) {
+        slideIndex += n;
+        showSlide(slideIndex);
+    }
+
+    function autoSlide() {
+        slideIndex++;
+        showSlide(slideIndex);
+    }
+
+    setInterval(autoSlide, 5000);
+
+    window.changeSlide = changeSlide;
+});
+</script>
+
+
   </body>
 </html>

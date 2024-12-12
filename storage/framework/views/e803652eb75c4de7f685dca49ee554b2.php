@@ -61,5 +61,6 @@
     .container-fluid {
         padding: 15px 30px; /* Ruang lebih kecil untuk navbar */
     }
+
 </style>
 <?php /**PATH C:\Users\almer\Downloads\WEBPROG UAS\UAS-WebProg\resources\views/partials/navbar.blade.php ENDPATH**/ ?>

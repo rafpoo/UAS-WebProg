@@ -7,24 +7,33 @@
   <title>TK Islam Kinasih</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-
+  <style>
+    .container p {
+    line-height: 1.8;
+    font-size: 1.1rem;
+    margin: 0 auto;
+    max-width: 800px;
+}
+</style>
   <?php echo $__env->make('global_css.css', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
   <?php echo $__env->make('css_in_view.acara_css', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
   
 </head>
 
 <body>
+  
 
   <?php echo $__env->make('partials.navbar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
   
   <div class="container">
   <h1 style="text-align: center;">Event</h1>
-  <p style="text-align: center;">
-    Event di Taman Kanak-Kanak (TK) merupakan bagian penting<br />
-    dari kegiatan sekolah yang dirancang untuk memberikan<br />
-    pengalaman belajar yang menyenangkan sekaligus mendukung<br />
-    perkembangan anak secara holistik. Berikut adalah contoh<br />
-    keterangan mengenai event yang sering diadakan di TK:<br />
+  <p style="text-align: justify;">
+    Event di Taman Kanak-Kanak (TK) merupakan bagian penting dari kegiatan sekolah yang dirancang untuk memberikan pengalaman belajar yang menyenangkan sekaligus mendukung perkembangan anak secara holistik. Berikut adalah contoh keterangan mengenai event yang sering diadakan di TK:
+  </p>
+</div>
+
+
+
     
   </p>
 

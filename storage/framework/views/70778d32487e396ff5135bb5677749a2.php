@@ -174,8 +174,6 @@
     </div>
  <?php endif; ?>  
 
-    <?php echo $__env->make('partials.footer', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-
     <!-- Modal -->
     <div class="modal" id="imageModal">
         <button class="close" id="closeModal">&times;</button>
@@ -185,7 +183,7 @@
             <button id="nextImage">&gt;</button>
         </div>
     </div>
-
+    <?php echo $__env->make('partials.footer', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 <script>
     // JavaScript for modal functionality
     const galleryImages = document.querySelectorAll('.gallery-item img');
