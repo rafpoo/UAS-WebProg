@@ -206,17 +206,17 @@
     </head>
     <body>
 
-    @include('partials.adminnav')
+    <?php echo $__env->make('partials.adminnav', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 
-    @if(session('success'))
+    <?php if(session('success')): ?>
         <script>
             Swal.fire(
                 'Berhasil!',
-                '{{ session('success') }}',
+                '<?php echo e(session('success')); ?>',
                 'success'
             );
         </script>
-    @endif
+    <?php endif; ?>
 
     <div class="container">
     <div class="header">
@@ -224,7 +224,7 @@
         <p>TK Islam Kinasih</p>
     </div>
     <div class="row row-cols-1 row-cols-md-3 g-4" style="display: flex; justify-content: center; margin-top: 20px;">
-        <a href="{{ route('admin.guru.create') }}" class="btn btn-warning">
+        <a href="<?php echo e(route('admin.guru.create')); ?>" class="btn btn-warning">
             Tambah Guru Baru
         </a>
     </div>
@@ -232,36 +232,36 @@
         
             <div class="staff-profiles">
                 
-                @foreach($teachers as $teacher)
+                <?php $__currentLoopData = $teachers; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $teacher): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                     <div class="staff-card">
-                        <img src="{{ $teacher->photo ? asset('storage/' . $teacher->photo) : asset('storage/teachers/default-profile.jpg') }}" 
+                        <img src="<?php echo e($teacher->photo ? asset('storage/' . $teacher->photo) : asset('storage/teachers/default-profile.jpg')); ?>" 
                         class="card-img-top img-fluid" 
-                        alt="{{ $teacher->nama }}" 
+                        alt="<?php echo e($teacher->nama); ?>" 
                         style="object-fit: cover; height: 300px;"><br /><br />
-                        <h2>{{ $teacher->nama }}</h2>
-                        <div class="details role" style="color: #ffffff;">{{ $teacher->jabatan }}</div>
-                        <div class="details additional-info" style="color: #ffffff;">{{ $teacher->tanggal_bergabung }}</div>
-                        <div class="experience" style="color: #ffffff;">{{ $teacher->keterangan }}</div>
+                        <h2><?php echo e($teacher->nama); ?></h2>
+                        <div class="details role" style="color: #ffffff;"><?php echo e($teacher->jabatan); ?></div>
+                        <div class="details additional-info" style="color: #ffffff;"><?php echo e($teacher->tanggal_bergabung); ?></div>
+                        <div class="experience" style="color: #ffffff;"><?php echo e($teacher->keterangan); ?></div>
                         <div class="d-flex justify-content-between">
                             <!-- Tombol Edit -->
-                            <form action="{{ route('admin.guru.edit', $teacher->id) }}" method="GET">
+                            <form action="<?php echo e(route('admin.guru.edit', $teacher->id)); ?>" method="GET">
                                 <button type="submit" class="btn btn-warning btn-md">
                                     <i class="bi bi-pencil-square"></i>Edit
                                 </button>
                             </form>
-                            {{-- <a href="{{ route('admin.guru.edit', $teacher->id) }}" class="btn btn-warning btn-md"><i class="bi bi-pencil-square"></i>Edit</a> --}}
+                            
     
                             <!-- Tombol Delete -->
-                            <form id="delete-{{ $teacher->id }}" action="{{ route('admin.guru.destroy', $teacher->id) }}" method="POST">
-                                @csrf
-                                @method('DELETE')
-                                <button type="button" class="btn btn-danger btn-sm" onclick="confirmDelete({{ $teacher->id }})">
+                            <form id="delete-<?php echo e($teacher->id); ?>" action="<?php echo e(route('admin.guru.destroy', $teacher->id)); ?>" method="POST">
+                                <?php echo csrf_field(); ?>
+                                <?php echo method_field('DELETE'); ?>
+                                <button type="button" class="btn btn-danger btn-sm" onclick="confirmDelete(<?php echo e($teacher->id); ?>)">
                                     <i class="bi bi-trash3"></i> Delete
                                 </button>
                             </form>
                         </div>
                     </div>
-                @endforeach
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
         </div>
 
@@ -276,11 +276,11 @@
     </div>
     </div>
     
-    @include('partials.footer')
+    <?php echo $__env->make('partials.footer', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 
-    <script src="{{ asset('js/confirmDeletion.js')}}"></script>
-    {{-- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"></script> --}}
+    <script src="<?php echo e(asset('js/confirmDeletion.js')); ?>"></script>
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 
     </body>
-</html>
+</html><?php /**PATH C:\xampp\htdocs\uazzzz\UAS-WebProg\resources\views/admin/guru/guru.blade.php ENDPATH**/ ?>

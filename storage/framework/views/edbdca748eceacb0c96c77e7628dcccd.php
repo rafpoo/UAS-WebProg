@@ -53,30 +53,30 @@
         <h1>Edit galeri</h1>
 
         <!-- Tampilkan error jika ada -->
-        @if ($errors->any())
+        <?php if($errors->any()): ?>
             <div class="alert alert-danger">
                 <ul>
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
+                    <?php $__currentLoopData = $errors->all(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $error): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                        <li><?php echo e($error); ?></li>
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                 </ul>
             </div>
-        @endif
+        <?php endif; ?>
 
-        <form action="{{ route('admin.galeri.update', $galeri->id) }}" method="POST" enctype="multipart/form-data">
-            @csrf
-            @method('PUT')
+        <form action="<?php echo e(route('admin.galeri.update', $galeri->id)); ?>" method="POST" enctype="multipart/form-data">
+            <?php echo csrf_field(); ?>
+            <?php echo method_field('PUT'); ?>
 
             <!-- Nama galeri -->
             <div class="mb-3">
                 <label for="nama" class="form-label">Nama</label>
-                <input type="text" class="form-control" id="nama" name="nama" value="{{ $galeri->nama }}" required>
+                <input type="text" class="form-control" id="nama" name="nama" value="<?php echo e($galeri->nama); ?>" required>
             </div>
 
             <!-- Gambar -->
             <div class="mb-3">
                 <label for="image" class="form-label">Gambar (kosongkan jika tidak ingin mengganti)</label>
-                <img src="{{ asset('storage/' . $galeri->image) }}" alt="Gambar Saat Ini" style="width: 150px; display: block; margin-bottom: 10px;">
+                <img src="<?php echo e(asset('storage/' . $galeri->image)); ?>" alt="Gambar Saat Ini" style="width: 150px; display: block; margin-bottom: 10px;">
                 <input type="file" class="form-control" id="image" name="image" accept="image/*" onchange="validateFileSize(this)">
             </div>
 
@@ -84,7 +84,22 @@
         </form>
     </div>
 
-    @include('partials.footer')
+    <?php echo $__env->make('partials.footer', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 </body>
-<script src="{{ asset('js/validateImg.js') }}"></script>
+<script>
+    function validateFileSize(input) {
+        const file = input.files[0];
+        if (file.size > 2097152) { // 2 MB
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Ukuran file maksimal 2 MB!',
+                confirmButtonText: 'OK'
+            });
+            input.value = ''; // Reset input
+        }
+    }
+
+</script>
 </html>
+<?php /**PATH C:\xampp\htdocs\uazzzz\UAS-WebProg\resources\views/admin/galeri/edit.blade.php ENDPATH**/ ?>

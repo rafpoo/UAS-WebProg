@@ -74,16 +74,16 @@
 
 <body>
 
-  @include('partials.adminnav')
-  @if(session('success'))
+  <?php echo $__env->make('partials.adminnav', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+  <?php if(session('success')): ?>
         <script>
             Swal.fire(
                 'Berhasil!',
-                '{{ session('success') }}',
+                '<?php echo e(session('success')); ?>',
                 'success'
             );
         </script>
-    @endif
+    <?php endif; ?>
   
   <div class="container">
   <h1 style="text-align: center;">Event</h1>
@@ -94,41 +94,41 @@
     perkembangan anak secara holistik. Berikut adalah contoh<br />
     keterangan mengenai event yang sering diadakan di TK:<br />
     <div class="row row-cols-1 row-cols-md-3 g-4" style="display: flex; justify-content: center; margin-top: 20px;">
-      <a href="{{ route('admin.acara.create') }}" class="btn btn-warning">
+      <a href="<?php echo e(route('admin.acara.create')); ?>" class="btn btn-warning">
         Tambah Event Baru
       </a>
     </div>
   </p>
   
-  @if($events->isEmpty())
+  <?php if($events->isEmpty()): ?>
     <div class="card h-100">
       <p>Tidak ada data tersedia.</p>
     </div>
-  @else
+  <?php else: ?>
   <div class="row row-cols-1 row-cols-md-3 g-4">
-    @foreach($events as $event)
+    <?php $__currentLoopData = $events; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $event): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
         <div class="col">
             <div class="card h-100">
                 <!-- Gambar -->
-                <img src="{{ asset('storage/' . $event->image) }}" 
+                <img src="<?php echo e(asset('storage/' . $event->image)); ?>" 
                      class="card-img-top img-fluid" 
-                     alt="{{ $event->title }}" 
+                     alt="<?php echo e($event->title); ?>" 
                      style="object-fit: cover; height: 200px;">
                 
                 <!-- Body Card -->
                 <div class="card-body">
-                    <h5 class="card-title">{{ $event->title }} {{ $event->id }}</h5>
-                    <h6 class="card-subtitle mb-2 text-muted" style="color: #000;">{{ $event->date }}</h6>
-                    <p class="card-text">{{ $event->descriptions }}</p>
+                    <h5 class="card-title"><?php echo e($event->title); ?> <?php echo e($event->id); ?></h5>
+                    <h6 class="card-subtitle mb-2 text-muted" style="color: #000;"><?php echo e($event->date); ?></h6>
+                    <p class="card-text"><?php echo e($event->descriptions); ?></p>
                 </div>
                 <div class="d-flex justify-content-between">
-                    <a href="{{ route('admin.acara.edit', $event->id) }}" class="btn btn-warning btn-sm"><i class="bi bi-pencil-square"></i>Edit</a>
+                    <a href="<?php echo e(route('admin.acara.edit', $event->id)); ?>" class="btn btn-warning btn-sm"><i class="bi bi-pencil-square"></i>Edit</a>
 
                     <!-- Tombol Delete -->
-                    <form id="delete-{{ $event->id }}" action="{{ route('admin.acara.destroy', $event->id) }}" method="POST">
-                        @csrf
-                        @method('DELETE')
-                        <button type="button" class="btn btn-danger btn-sm" onclick="confirmDelete({{ $event->id }})">
+                    <form id="delete-<?php echo e($event->id); ?>" action="<?php echo e(route('admin.acara.destroy', $event->id)); ?>" method="POST">
+                        <?php echo csrf_field(); ?>
+                        <?php echo method_field('DELETE'); ?>
+                        <button type="button" class="btn btn-danger btn-sm" onclick="confirmDelete(<?php echo e($event->id); ?>)">
                             <i class="bi bi-trash3"></i> Delete
                         </button>
                     </form>
@@ -136,10 +136,10 @@
                 </div>
             </div>
         </div>
-    @endforeach
+    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 </div>
 </div>
-  @endif
+  <?php endif; ?>
 
 
     
@@ -148,9 +148,10 @@
 
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="{{ asset('js/confirmDeletion.js')}}"></script>
+  <script src="<?php echo e(asset('js/confirmDeletion.js')); ?>"></script>
 
-  @include('partials.footer')
+  <?php echo $__env->make('partials.footer', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 </body>
 
 </html>
+<?php /**PATH C:\xampp\htdocs\uazzzz\UAS-WebProg\resources\views/admin/acara/acara.blade.php ENDPATH**/ ?>

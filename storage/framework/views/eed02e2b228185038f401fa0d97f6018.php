@@ -49,20 +49,20 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
-    @if ($errors->has('photo'))
+    <?php if($errors->has('photo')): ?>
         <script>
             Swal.fire({
                 icon: 'error',
                 title: 'Oops...',
-                text: '{{ $errors->first('photo') }}',
+                text: '<?php echo e($errors->first('photo')); ?>',
                 confirmButtonText: 'OK'
             });
         </script>
-    @endif
+    <?php endif; ?>
     <div class="container">
         <h1>Tambah Guru</h1>
-        <form action="{{ route('admin.guru.store') }}" method="POST" enctype="multipart/form-data">
-            @csrf
+        <form action="<?php echo e(route('admin.guru.store')); ?>" method="POST" enctype="multipart/form-data">
+            <?php echo csrf_field(); ?>
             <!-- Contoh input form -->
             <div class="mb-3">
                 <label for="nama" class="form-label">Nama</label>
@@ -95,22 +95,9 @@
         </form>
     </div>
 
-    @include('partials.footer')
+    <?php echo $__env->make('partials.footer', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 </body>
-<script src="{{ asset('js/validateImg.js') }}"></script>
-{{-- <script>
-    function validateFileSize(input) {
-        const file = input.files[0];
-        if (file.size > 2097152) { // 2 MB
-            Swal.fire({
-                icon: 'error',
-                title: 'Oops...',
-                text: 'Ukuran file maksimal 2 MB!',
-                confirmButtonText: 'OK'
-            });
-            input.value = ''; // Reset input
-        }
-    }
+<script src="<?php echo e(asset('js/validateImg.js')); ?>"></script>
 
-</script> --}}
 </html>
+<?php /**PATH C:\xampp\htdocs\uazzzz\UAS-WebProg\resources\views/admin/guru/create.blade.php ENDPATH**/ ?>

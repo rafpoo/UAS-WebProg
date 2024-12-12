@@ -5,10 +5,10 @@
     <!-- Session Status -->
     <x-auth-session-status class="alert alert-success" :status="session('status')" />
 
-    <div class="container mt-5">
+    {{-- <div class="container mt-5">
         <div class="row justify-content-center">
-            {{-- <div class="col-md-8 col-lg-5"> <!-- Perbaikan lebar kolom --> --}}
-                <div class="card shadow">
+            <div class="col-md-8 col-lg-5"> <!-- Perbaikan lebar kolom -->
+                <div class="card shadow"> --}}
                     <div class="card-body p-4"> <!-- Tambahkan padding -->
                         <div class="text-center mb-4">
                             <img src="{{ URL('images/LogoTK.jpg') }}" alt="Logo" class="img-fluid mb-2 mx-auto" style="max-width: 150px;" />
@@ -51,10 +51,10 @@
                             </div>
                         </form>
                     </div>
-                </div>
-            {{-- </div> --}}
+                {{-- </div>
+            </div>
         </div>
-    </div>
+    </div> --}}
 
     <style>
         .admin-title {

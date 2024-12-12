@@ -1,3 +1,9 @@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Bootstrap JS + Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+
 <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
     <div class="container-fluid">
         <a style="text-decoration: none;" class="navbar-brand" href="/">
@@ -8,7 +14,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
+            <ul class="navbar-nav ms-auto custom-nav-spacing">
                 <li class="nav-item">
                     <a class="nav-link" href="/PPDB">PPDB</a>
                 </li>
@@ -30,9 +36,16 @@
             </ul>
         </div>
     </div>
-</nav>
-
-<style>
+  </nav>
+  
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Bootstrap JS + Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+  
+  <style>
     body {
         background: linear-gradient(135deg, #68A895 0%, #4F998A 100%);
         color: white;
@@ -41,25 +54,31 @@
         padding: 0;
         background-attachment: fixed;
     }
-
+  
     .navbar {
         background-color: #1a6354;
     }
-
+  
     .navbar-brand img {
         height: 50px;
     }
-
+  
     .nav-link {
         color: white !important;
     }
-
+  
     .nav-link:hover {
         text-decoration: underline;
     }
-
+  
     .container-fluid {
         padding: 15px 30px; /* Ruang lebih kecil untuk navbar */
     }
-
-</style>
+  
+    /* Custom Spacing for Nav Items */
+    .custom-nav-spacing .nav-item {
+        margin-left: 15px; /* Memberikan jarak antar item */
+        margin-right: 15px; /* Memberikan jarak antar item */
+    }
+  </style>
+  

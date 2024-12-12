@@ -46,6 +46,7 @@
       margin: 4px 0;
     }
     </style>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
     <div class="container">
@@ -60,7 +61,7 @@
 
             <div class="mb-3">
                 <label for="image" class="form-label">Foto Profil</label>
-                <input type="file" class="form-control" id="image" name="image" accept="image/*">
+                <input type="file" class="form-control" id="image" name="image" accept="image/*" onchange="validateFileSize(this)">
             </div>
     
             <!-- Tambahkan input lainnya sesuai dengan kolom di tabel -->
@@ -71,4 +72,5 @@
 
     @include('partials.footer')
 </body>
+<script src="{{ asset('js/validateImg.js') }}"></script>
 </html>

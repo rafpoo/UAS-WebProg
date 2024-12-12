@@ -45,30 +45,30 @@
 
 <body>
 
-    @if (session('success'))
+    <?php if(session('success')): ?>
         <script>
             Swal.fire({
                 icon: 'success',
                 title: 'Berhasil!',
-                text: '{{ session('success') }}',
+                text: '<?php echo e(session('success')); ?>',
                 confirmButtonText: 'OK'
             });
         </script>
-    @endif
-    @if ($errors->has('photo'))
+    <?php endif; ?>
+    <?php if($errors->has('photo')): ?>
         <script>
             Swal.fire({
                 icon: 'error',
                 title: 'Oops...',
-                text: '{{ $errors->first('photo') }}',
+                text: '<?php echo e($errors->first('photo')); ?>',
                 confirmButtonText: 'OK'
             });
         </script>
-    @endif
+    <?php endif; ?>
     <div class="container">
         <h1>Tambah Acara</h1>
-        <form action="{{ route('admin.acara.store') }}" method="POST" enctype="multipart/form-data">
-            @csrf
+        <form action="<?php echo e(route('admin.acara.store')); ?>" method="POST" enctype="multipart/form-data">
+            <?php echo csrf_field(); ?>
             <div class="mb-3">
                 <label for="title" class="form-label">Nama</label>
                 <input type="text" class="form-control" id="title" name="title" placeholder="Masukkan nama acara" required>
@@ -88,14 +88,15 @@
             <div class="mb-3">
                 <label for="image" class="form-label">Gambar</label>
                 <input type="file" class="form-control" id="image" name="image" accept="image/*" onchange="validateFileSize(this)" required>
-                {{-- <input type="file" name="photo" accept="image/*" onchange="validateFileSize(this)"> --}}
+                
             </div>
 
             <button type="submit" class="btn btn-primary w-100">Tambahkan</button>
         </form>
     </div>
-    @include('partials.footer')
+    <?php echo $__env->make('partials.footer', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 
-    <script src="{{ asset('js/validateImg.js') }}"></script>
+    <script src="<?php echo e(asset('js/validateImg.js')); ?>"></script>
 </body>
 </html>
+<?php /**PATH C:\xampp\htdocs\uazzzz\UAS-WebProg\resources\views/admin/acara/create.blade.php ENDPATH**/ ?>

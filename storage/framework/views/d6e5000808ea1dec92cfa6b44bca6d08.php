@@ -33,10 +33,7 @@
 <?php unset($__componentOriginal7c1bf3a9346f208f66ee83b06b607fb5); ?>
 <?php endif; ?>
 
-    <div class="container mt-5">
-        <div class="row justify-content-center">
-            
-                <div class="card shadow">
+    
                     <div class="card-body p-4"> <!-- Tambahkan padding -->
                         <div class="text-center mb-4">
                             <img src="<?php echo e(URL('images/LogoTK.jpg')); ?>" alt="Logo" class="img-fluid mb-2 mx-auto" style="max-width: 150px;" />
@@ -95,10 +92,7 @@ unset($__errorArgs, $__bag); ?>
                             </div>
                         </form>
                     </div>
-                </div>
-            
-        </div>
-    </div>
+                
 
     <style>
         .admin-title {

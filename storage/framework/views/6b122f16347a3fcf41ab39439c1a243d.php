@@ -153,66 +153,61 @@
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
-@include('partials.adminnav')
+<?php echo $__env->make('partials.adminnav', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 
-@if(session('success'))
+<?php if(session('success')): ?>
   <script>
       Swal.fire(
           'Berhasil!',
-          '{{ session('success') }}',
+          '<?php echo e(session('success')); ?>',
           'success'
       );
   </script>
-@endif
+<?php endif; ?>
 
 <div class="row row-cols-1 row-cols-md-3 g-4" style="display: flex; justify-content: center; margin-top: 20px;">
-    <a href="{{ route('admin.galeri.create') }}" class="btn btn-warning">
+    <a href="<?php echo e(route('admin.galeri.create')); ?>" class="btn btn-warning">
       Tambah Foto Baru
     </a>
 </div>
 
-@if($galeris->isEmpty())
+<?php if($galeris->isEmpty()): ?>
     <div class="gallery">
       <p>Tidak ada data tersedia.</p>
     </div>
-  @else
+  <?php else: ?>
     <div class="gallery-container">
         
         <div class="gallery">
-            @foreach ($galeris as $galeri)
+            <?php $__currentLoopData = $galeris; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $galeri): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                 <div>
                     <div class="gallery-item">
-                        <img src="{{ asset('storage/' . $galeri->image) }}" alt="{{ $galeri->nama }}" data-index="0">
+                        <img src="<?php echo e(asset('storage/' . $galeri->image)); ?>" alt="<?php echo e($galeri->nama); ?>" data-index="0">
                         <div class="overlay">
-                            <div class="overlay-text">{{ $galeri->nama }}</div>
+                            <div class="overlay-text"><?php echo e($galeri->nama); ?></div>
                         </div>
                     </div><br />
                     <div class="d-flex justify-content-between">
                         <!-- Tombol Edit -->
-                        <a href="{{ route('admin.galeri.edit', $galeri->id) }}" class="btn btn-warning btn-sm"><i class="bi bi-pencil-square"></i>Edit</a>
+                        <a href="<?php echo e(route('admin.galeri.edit', $galeri->id)); ?>" class="btn btn-warning btn-sm"><i class="bi bi-pencil-square"></i>Edit</a>
 
                         <!-- Tombol Delete -->
-                        <form id="delete-{{ $galeri->id }}" action="{{ route('admin.galeri.destroy', $galeri->id) }}" method="POST">
-                            @csrf
-                            @method('DELETE')
-                            <button type="button" class="btn btn-danger btn-sm" onclick="confirmDelete({{ $galeri->id }})">
+                        <form id="delete-<?php echo e($galeri->id); ?>" action="<?php echo e(route('admin.galeri.destroy', $galeri->id)); ?>" method="POST">
+                            <?php echo csrf_field(); ?>
+                            <?php echo method_field('DELETE'); ?>
+                            <button type="button" class="btn btn-danger btn-sm" onclick="confirmDelete(<?php echo e($galeri->id); ?>)">
                                 <i class="bi bi-trash3"></i> Delete
                             </button>
                         </form>
                     </div>
                 </div>
-            @endforeach
-            {{-- <div class="gallery-item">
-                <img src="images/illustration2.jpg" alt="Gallery Image 1" data-index="0">
-                <div class="overlay">
-                    <div class="overlay-text">Kegiatan Belajar</div>
-                </div>
-            </div> --}}
+            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+            
         </div>
     </div>  
-  @endif
+  <?php endif; ?>
 
-@include('partials.footer')
+<?php echo $__env->make('partials.footer', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 
 <!-- Modal -->
 <div class="modal" id="imageModal">
@@ -224,7 +219,7 @@
     </div>
 </div>
 
-<script src="{{ asset('js/confirmDeletion.js')}}"></script>
+<script src="<?php echo e(asset('js/confirmDeletion.js')); ?>"></script>
 <script>
     // JavaScript for modal functionality
     const galleryImages = document.querySelectorAll('.gallery-item img');
@@ -280,3 +275,4 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
 </body>
 </html>
+<?php /**PATH C:\xampp\htdocs\uazzzz\UAS-WebProg\resources\views/admin/galeri/galeri.blade.php ENDPATH**/ ?>

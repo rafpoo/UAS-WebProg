@@ -22,7 +22,6 @@
     <?php if(session('success')): ?>
         <script>
             Swal.fire(
-                'Berhasil!',
                 '<?php echo e(session('success')); ?>',
                 'success'
             );

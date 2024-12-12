@@ -22,7 +22,6 @@
     @if(session('success'))
         <script>
             Swal.fire(
-                'Berhasil!',
                 '{{ session('success') }}',
                 'success'
             );

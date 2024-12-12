@@ -53,45 +53,45 @@
         <h1>Edit Guru</h1>
 
         <!-- Tampilkan error jika ada -->
-        @if ($errors->any())
+        <?php if($errors->any()): ?>
             <div class="alert alert-danger">
                 <ul>
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
+                    <?php $__currentLoopData = $errors->all(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $error): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                        <li><?php echo e($error); ?></li>
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                 </ul>
             </div>
-        @endif
+        <?php endif; ?>
 
-        <form action="{{ route('admin.guru.update', $teacher->id) }}" method="POST" enctype="multipart/form-data">
-            @csrf
-            @method('PUT')
+        <form action="<?php echo e(route('admin.guru.update', $teacher->id)); ?>" method="POST" enctype="multipart/form-data">
+            <?php echo csrf_field(); ?>
+            <?php echo method_field('PUT'); ?>
 
             <!-- Nama guru -->
             <div class="mb-3">
                 <label for="nama" class="form-label">Nama</label>
-                <input type="text" class="form-control" id="nama" name="nama" value="{{ $teacher->nama }}" required>
+                <input type="text" class="form-control" id="nama" name="nama" value="<?php echo e($teacher->nama); ?>" required>
             </div>
 
             <!-- Deskripsi guru -->
             <div class="mb-3">
                 <label for="jabatan" class="form-label">Jabatan</label>
-                <input class="form-control" id="jabatan" name="jabatan" value="{{ $teacher->jabatan }}" required>
+                <input class="form-control" id="jabatan" name="jabatan" value="<?php echo e($teacher->jabatan); ?>" required>
             </div>
 
             <div class="mb-3">
                 <label for="tanggal_bergabung" class="form-label">Tanggal bergabung</label>
-                <input type="date" class="form-control" id="tanggal_bergabung" name="tanggal_bergabung" value="{{ $teacher->tanggal_bergabung }}"  required>
+                <input type="date" class="form-control" id="tanggal_bergabung" name="tanggal_bergabung" value="<?php echo e($teacher->tanggal_bergabung); ?>"  required>
             </div>
 
             <div class="mb-3">
                 <label for="keterangan" class="form-label">Keterangan</label>
-                <textarea type="date" class="form-control" id="keterangan" name="keterangan">{{ $teacher->keterangan }}</textarea>
+                <textarea type="date" class="form-control" id="keterangan" name="keterangan"><?php echo e($teacher->keterangan); ?></textarea>
             </div>
 
             <div class="mb-3">
                 <label for="photo" class="form-label">Gambar (kosongkan jika tidak ingin mengganti)</label>
-                <img src="{{ asset('storage/' . $teacher->photo) }}" alt="Gambar Saat Ini" style="width: 150px; display: block; margin-bottom: 10px;">
+                <img src="<?php echo e(asset('storage/' . $teacher->photo)); ?>" alt="Gambar Saat Ini" style="width: 150px; display: block; margin-bottom: 10px;">
             </div>
             
             <div class="mb-3">
@@ -101,16 +101,17 @@
 
             <button type="submit" class="btn btn-primary">Update</button>
         </form><br />
-        <form action="{{ route('admin.guru.photo.destroy', $teacher->id) }}" method="POST" style="margin-bottom: 10px;">
-            @csrf
-            @method('DELETE')
+        <form action="<?php echo e(route('admin.guru.photo.destroy', $teacher->id)); ?>" method="POST" style="margin-bottom: 10px;">
+            <?php echo csrf_field(); ?>
+            <?php echo method_field('DELETE'); ?>
             <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin ingin menghapus foto ini?')">
                 Hapus Foto Profil
             </button>
         </form>
     </div>
 
-    @include('partials.footer')
+    <?php echo $__env->make('partials.footer', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 </body>
-<script src="{{ asset('js/validateImg.js') }}"></script>
+<script src="<?php echo e(asset('js/validateImg.js')); ?>"></script>
 </html>
+<?php /**PATH C:\xampp\htdocs\uazzzz\UAS-WebProg\resources\views/admin/guru/edit.blade.php ENDPATH**/ ?>
