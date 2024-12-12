@@ -11,9 +11,8 @@
                 </div>
                 <div>
                     <!-- Nama TK dan informasi akreditasi -->
-                    <h4 class="mb-0">Islam Kinasih</h4>
-                    <p class="mb-0">Taman Kanak-Kanak</p>
-                    <p class="mt-3 mb-0">Akreditasi A</p>
+                    <h4 class="mb-0"> TK Islam Kinasih</h4>
+                    <p class="mb-0">Akreditasi A</p>
                     <p>NPSN: 69907801</p>
                 </div>
             </div>
