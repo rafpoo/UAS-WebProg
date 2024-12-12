@@ -86,7 +86,7 @@
             </div>
 
             <div class="mb-3">
-                <label for="image" class="form-label">Gambar</label>
+                <label for="image" class="form-label">Gambar (Ukuran Max 2MB)</label>
                 <input type="file" class="form-control" id="image" name="image" accept="image/*" onchange="validateFileSize(this)" required>
                 {{-- <input type="file" name="photo" accept="image/*" onchange="validateFileSize(this)"> --}}
             </div>

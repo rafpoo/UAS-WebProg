@@ -75,7 +75,7 @@
 
             <!-- Gambar -->
             <div class="mb-3">
-                <label for="image" class="form-label">Gambar (kosongkan jika tidak ingin mengganti)</label>
+                <label for="image" class="form-label">Gambar (kosongkan jika tidak ingin mengganti)(Ukuran Max 2MB)</label>
                 <img src="{{ asset('storage/' . $galeri->image) }}" alt="Gambar Saat Ini" style="width: 150px; display: block; margin-bottom: 10px;">
                 <input type="file" class="form-control" id="image" name="image" accept="image/*" onchange="validateFileSize(this)">
             </div>

@@ -85,7 +85,7 @@
             </div>
 
             <div class="mb-3">
-                <label for="photo" class="form-label">Foto Profil</label>
+                <label for="photo" class="form-label">Foto Profil (Ukuran Max 2MB)</label>
                 <input type="file" class="form-control" id="photo" name="photo" accept="photo/*" onchange="validateFileSize(this)">
             </div>
     
@@ -98,19 +98,5 @@
     @include('partials.footer')
 </body>
 <script src="{{ asset('js/validateImg.js') }}"></script>
-{{-- <script>
-    function validateFileSize(input) {
-        const file = input.files[0];
-        if (file.size > 2097152) { // 2 MB
-            Swal.fire({
-                icon: 'error',
-                title: 'Oops...',
-                text: 'Ukuran file maksimal 2 MB!',
-                confirmButtonText: 'OK'
-            });
-            input.value = ''; // Reset input
-        }
-    }
 
-</script> --}}
 </html>
