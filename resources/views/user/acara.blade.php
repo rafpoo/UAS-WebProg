@@ -62,7 +62,7 @@
                       <!-- Body Card -->
                       <div class="card-body">
                           <h5 class="card-title">{{ $event->title }}</h5>
-                          <h6 class="card-subtitle mb-2" style="color:#AAAAAA">{{ $event->date }}</h6>
+                          <h6 class="card-subtitle mb-2" style="color:#ffffff">{{ $event->date }}</h6>
                           <p class="card-text">{{ $event->descriptions }}</p>
                       </div>
 

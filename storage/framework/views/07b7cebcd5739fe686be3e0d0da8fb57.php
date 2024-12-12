@@ -43,8 +43,8 @@
 <body>
     <div class="form-container">
         <h1>Tambah Acara</h1>
-        <form action="{{ route('admin.acara.store') }}" method="POST" enctype="multipart/form-data">
-            @csrf
+        <form action="<?php echo e(route('admin.acara.store')); ?>" method="POST" enctype="multipart/form-data">
+            <?php echo csrf_field(); ?>
             <div class="mb-3">
                 <label for="title" class="form-label">Nama</label>
                 <input type="text" class="form-control" id="title" name="title" placeholder="Masukkan nama acara" required>
@@ -69,7 +69,8 @@
             <button type="submit" class="btn btn-primary w-100">Tambahkan</button>
         </form>
     </div>
-    @include('partials.footer')
+    <?php echo $__env->make('partials.footer', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 </body>
 
 </html>
+<?php /**PATH C:\Users\almer\Downloads\WEBPROG UAS\UAS-WebProg\resources\views/admin/acara/create.blade.php ENDPATH**/ ?>

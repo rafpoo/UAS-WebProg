@@ -152,39 +152,62 @@
   </style>
 </head>
 <body>
-<?php echo $__env->make('partials.navbar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+<?php echo $__env->make('partials.adminnav', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+
+<div class="row row-cols-1 row-cols-md-3 g-4" style="display: flex; justify-content: center; margin-top: 20px;">
+    <a href="<?php echo e(route('admin.galeri.create')); ?>" class="btn btn-warning">
+      Tambah Foto Baru
+    </a>
+</div>
 
 <?php if($galeris->isEmpty()): ?>
     <div class="gallery">
-      <p>Tidak ada gambar tersedia.</p>
+      <p>Tidak ada data tersedia.</p>
     </div>
-<?php else: ?>
+  <?php else: ?>
     <div class="gallery-container">
+        
         <div class="gallery">
             <?php $__currentLoopData = $galeris; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $galeri): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                <div class="gallery-item">
-                    <img src="<?php echo e(asset('storage/' . $galeri->image)); ?>" alt="<?php echo e($galeri->nama); ?>" data-index="0">
-                    <div class="overlay">
-                        <div class="overlay-text"><?php echo e($galeri->nama); ?></div>
+                <div>
+                    <div class="gallery-item">
+                        <img src="<?php echo e(asset('storage/' . $galeri->image)); ?>" alt="<?php echo e($galeri->nama); ?>" data-index="0">
+                        <div class="overlay">
+                            <div class="overlay-text"><?php echo e($galeri->nama); ?></div>
+                        </div>
+                    </div><br />
+                    <div class="d-flex justify-content-between">
+                        <!-- Tombol Edit -->
+                        <a href="<?php echo e(route('admin.galeri.edit', $galeri->id)); ?>" class="btn btn-warning btn-sm"><i class="bi bi-pencil-square"></i>Edit</a>
+
+                        <!-- Tombol Delete -->
+                        <form action="<?php echo e(route('admin.galeri.destroy', $galeri->id)); ?>" method="POST">
+                            <?php echo csrf_field(); ?>
+                            <?php echo method_field('DELETE'); ?>
+                            <button type="submit" class="btn btn-danger btn-sm"
+                                    onclick="return confirm('Apakah Anda yakin ingin menghapus foto ini?')">
+                                    <i class="bi bi-trash3"></i>Delete
+                            </button>
+                        </form>
                     </div>
                 </div>
             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
             
         </div>
-    </div>
- <?php endif; ?>  
+    </div>  
+  <?php endif; ?>
 
-    <?php echo $__env->make('partials.footer', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+<?php echo $__env->make('partials.footer', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 
-    <!-- Modal -->
-    <div class="modal" id="imageModal">
-        <button class="close" id="closeModal">&times;</button>
-        <img src="" alt="Modal Image" id="modalImage">
-        <div class="controls">
-            <button id="prevImage">&lt;</button>
-            <button id="nextImage">&gt;</button>
-        </div>
+<!-- Modal -->
+<div class="modal" id="imageModal">
+    <button class="close" id="closeModal">&times;</button>
+    <img src="" alt="Modal Image" id="modalImage">
+    <div class="controls">
+        <button id="prevImage">&lt;</button>
+        <button id="nextImage">&gt;</button>
     </div>
+</div>
 
 <script>
     // JavaScript for modal functionality
@@ -241,4 +264,4 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
 </body>
 </html>
-<?php /**PATH C:\Users\almer\Downloads\WEBPROG UAS\UAS-WebProg\resources\views/user/galeri.blade.php ENDPATH**/ ?>
+<?php /**PATH C:\Users\almer\Downloads\WEBPROG UAS\UAS-WebProg\resources\views/admin/galeri/galeri.blade.php ENDPATH**/ ?>

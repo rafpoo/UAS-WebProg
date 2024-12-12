@@ -58,7 +58,7 @@
                       <!-- Body Card -->
                       <div class="card-body">
                           <h5 class="card-title"><?php echo e($event->title); ?></h5>
-                          <h6 class="card-subtitle mb-2" style="color:#AAAAAA"><?php echo e($event->date); ?></h6>
+                          <h6 class="card-subtitle mb-2" style="color:#ffffff"><?php echo e($event->date); ?></h6>
                           <p class="card-text"><?php echo e($event->descriptions); ?></p>
                       </div>
 

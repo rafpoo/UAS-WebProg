@@ -61,6 +61,13 @@
       width: 100%;
       height: auto;
     }
+    .card-body h5,
+    .card-body h6,
+    .card-body p {
+        color: #000;
+    }
+</style>
+
   </style>
 </head>
 
@@ -101,16 +108,11 @@
                 <!-- Body Card -->
                 <div class="card-body">
                     <h5 class="card-title">{{ $event->title }}</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">{{ $event->date }}</h6>
+                    <h6 class="card-subtitle mb-2 text-muted" style="color: #000;">{{ $event->date }}</h6>
                     <p class="card-text">{{ $event->descriptions }}</p>
                 </div>
-
-                <!-- Footer Card -->
                 <div class="d-flex justify-content-between">
-                    <!-- Tombol Edit -->
                     <a href="{{ route('admin.acara.edit', $event->id) }}" class="btn btn-warning btn-sm"><i class="bi bi-pencil-square"></i>Edit</a>
-
-                    <!-- Tombol Delete -->
                     <form action="{{ route('admin.acara.destroy', $event->id) }}" method="POST">
                         @csrf
                         @method('DELETE')

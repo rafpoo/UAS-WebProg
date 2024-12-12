@@ -40,7 +40,7 @@
                     <div class="card-body p-4"> <!-- Tambahkan padding -->
                         <div class="text-center mb-4">
                             <img src="<?php echo e(URL('images/LogoTK.jpg')); ?>" alt="Logo" class="img-fluid mb-2 mx-auto" style="max-width: 150px;" />
-                            <h4 class="admin-title">ADMIN TK ISLAM KINASIH</h4>
+                            <h4 class="admin-title">TK ISLAM KINASIH</h4>
                         </div>
 
                         <form method="POST" action="<?php echo e(route('login')); ?>">

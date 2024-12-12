@@ -22,7 +22,7 @@
 
     
     .modal-footer .btn {
-        color: #000000;
+        color: #ffffff;
     }
         .form-container {
             width-100 h-100 p-4;
