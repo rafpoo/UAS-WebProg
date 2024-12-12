@@ -7,14 +7,29 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&amp;family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet"/>
+    
 
     @include('global_css.css')
     @include('css_in_view.home_css')
     
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 </head>
 
 <body>
     @include('partials.adminnav')
+
+    @if(session('success'))
+        <script>
+            Swal.fire(
+                'Berhasil!',
+                '{{ session('success') }}',
+                'success'
+            );
+        </script>
+    @endif
+
+
 
     <div class="container">
         <div class="header">
@@ -123,6 +138,8 @@
     @include('partials.footer')
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+
 
 </body>
 </html>

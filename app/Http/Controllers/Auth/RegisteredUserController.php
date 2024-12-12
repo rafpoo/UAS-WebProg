@@ -11,6 +11,8 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
 use Illuminate\View\View;
+use Illuminate\Support\Facades\Validator;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class RegisteredUserController extends Controller
 {
@@ -31,8 +33,10 @@ class RegisteredUserController extends Controller
     {
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.User::class],
+            'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.User::class, 'ends_with:tk-islam-kinasih.com'],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
+        ], [
+            'email.ends_with' => 'Email harus berakhiran @tk-islam-kinasih.com',
         ]);
 
         $user = User::create([
@@ -43,8 +47,12 @@ class RegisteredUserController extends Controller
 
         event(new Registered($user));
 
-        Auth::login($user);
+        // Menampilkan SweetAlert setelah berhasil membuat pengguna
+        Alert::success('Berhasil', 'Akun Anda telah berhasil dibuat!');
 
-        return redirect(route('dashboard', absolute: false));
+        return redirect(route('dashboard', absolute: false))->with('success', 'Akun berhasil dibuat!');
+
     }
+
+
 }

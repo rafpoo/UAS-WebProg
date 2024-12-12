@@ -50,17 +50,33 @@
 <body>
     <div class="container">
         <h1>Tambah Foto</h1>
-        <form action="{{ route('admin.galeri.store') }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('admin.guru.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
             <!-- Contoh input form -->
+            <!-- Nama guru -->
             <div class="mb-3">
                 <label for="nama" class="form-label">Nama</label>
                 <input type="text" class="form-control" id="nama" name="nama" required>
             </div>
 
+            <!-- Deskripsi guru -->
             <div class="mb-3">
-                <label for="image" class="form-label">Foto</label>
-                <input type="file" class="form-control" id="image" name="image" accept="image/*">
+                <label for="jabatan" class="form-label">Jabatan</label>
+                <input class="form-control" id="jabatan" name="jabatan" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="tanggal_bergabung" class="form-label">Tanggal bergabung</label>
+                <input type="date" class="form-control" id="tanggal_bergabung" name="tanggal_bergabung" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="keterangan" class="form-label">Keterangan</label>
+                <textarea type="date" class="form-control" id="keterangan" name="keterangan"></textarea>
+            </div>
+
+            <div class="mb-3">
+                <input type="file" class="form-control" id="photo" name="photo" accept="photo/*">
             </div>
     
             <!-- Tambahkan input lainnya sesuai dengan kolom di tabel -->

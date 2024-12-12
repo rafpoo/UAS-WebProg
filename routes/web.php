@@ -9,6 +9,7 @@ use App\Http\Controllers\ActivityController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\PPDBController;
 use App\Http\Controllers\GaleriController;
+use App\Http\Controllers\Auth\RegisteredUserController;
 
 
 
@@ -65,6 +66,11 @@ Route::prefix('admin') // Menambahkan prefix 'admin' pada setiap URL route
         Route::get('/galeri/{id}/edit', [GaleriController::class, 'edit'])->name('admin.galeri.edit');
         Route::delete('/galeri/{id}', [GaleriController::class, 'destroy'])->name('admin.galeri.destroy');
         Route::put('/galeri/update/{id}', [GaleriController::class, 'update'])->name('admin.galeri.update');
+
+        Route::get('/register', [RegisteredUserController::class, 'create'])
+        ->name('register');
+
+        Route::post('/register', [RegisteredUserController::class, 'store']);
 
         
     });
