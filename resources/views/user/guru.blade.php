@@ -31,9 +31,10 @@
                             alt="{{ $teacher->nama }}" 
                             style="object-fit: cover; height: 300px;"><br /><br />
                             <h2>{{ $teacher->nama }}</h2>
-                            <div class="details role">{{ $teacher->jabatan }}</div>
-                            <div class="details additional-info">{{ $teacher->tanggal_bergabung }}</div>
-                            <div class="experience">{{ $teacher->keterangan }}</div>
+                            <div class="details role" style="color: #ffffff;">{{ $teacher->jabatan }}</div>
+                            <div class="details additional-info" style="color: #ffffff;">{{ $teacher->tanggal_bergabung }}</div>
+                            <div class="experience" style="color: #ffffff;">{{ $teacher->keterangan }}</div>
+
                         </div>
                     @endforeach
                 </div>

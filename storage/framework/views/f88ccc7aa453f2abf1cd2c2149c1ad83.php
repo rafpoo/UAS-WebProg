@@ -30,9 +30,10 @@
                             alt="<?php echo e($teacher->nama); ?>" 
                             style="object-fit: cover; height: 300px;"><br /><br />
                             <h2><?php echo e($teacher->nama); ?></h2>
-                            <div class="details role"><?php echo e($teacher->jabatan); ?></div>
-                            <div class="details additional-info"><?php echo e($teacher->tanggal_bergabung); ?></div>
-                            <div class="experience"><?php echo e($teacher->keterangan); ?></div>
+                            <div class="details role" style="color: #ffffff;"><?php echo e($teacher->jabatan); ?></div>
+                            <div class="details additional-info" style="color: #ffffff;"><?php echo e($teacher->tanggal_bergabung); ?></div>
+                            <div class="experience" style="color: #ffffff;"><?php echo e($teacher->keterangan); ?></div>
+
                         </div>
                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                 </div>
