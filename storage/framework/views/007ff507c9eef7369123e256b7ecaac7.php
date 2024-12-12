@@ -90,7 +90,7 @@
             </div>
 
             <div class="mb-3">
-                <label for="photo" class="form-label">Gambar (kosongkan jika tidak ingin mengganti)</label>
+                <label for="photo" class="form-label">Gambar (kosongkan jika tidak ingin mengganti)(Ukuran Max 2MB)</label>
                 <img src="<?php echo e(asset('storage/' . $teacher->photo)); ?>" alt="Gambar Saat Ini" style="width: 150px; display: block; margin-bottom: 10px;">
             </div>
             

@@ -60,7 +60,7 @@
             </div>
 
             <div class="mb-3">
-                <label for="image" class="form-label">Foto Profil</label>
+                <label for="image" class="form-label">Foto Profil (Ukuran Max 2MB)</label>
                 <input type="file" class="form-control" id="image" name="image" accept="image/*" onchange="validateFileSize(this)">
             </div>
     
@@ -71,21 +71,8 @@
     </div>
 
     <?php echo $__env->make('partials.footer', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+    <script src="<?php echo e(asset('js/validateImg.js')); ?>"></script>
 </body>
-<script>
-    function validateFileSize(input) {
-        const file = input.files[0];
-        if (file.size > 2097152) { // 2 MB
-            Swal.fire({
-                icon: 'error',
-                title: 'Oops...',
-                text: 'Ukuran file maksimal 2 MB!',
-                confirmButtonText: 'OK'
-            });
-            input.value = ''; // Reset input
-        }
-    }
 
-</script>
 </html>
 <?php /**PATH C:\xampp\htdocs\uazzzz\UAS-WebProg\resources\views/admin/galeri/create.blade.php ENDPATH**/ ?>

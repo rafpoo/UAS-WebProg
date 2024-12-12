@@ -85,7 +85,7 @@
             </div>
 
             <div class="mb-3">
-                <label for="photo" class="form-label">Foto Profil</label>
+                <label for="photo" class="form-label">Foto Profil (Ukuran Max 2MB)</label>
                 <input type="file" class="form-control" id="photo" name="photo" accept="photo/*" onchange="validateFileSize(this)">
             </div>
     

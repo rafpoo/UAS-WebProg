@@ -71,6 +71,7 @@
     </div>
 
     @include('partials.footer')
+    <script src="{{ asset('js/validateImg.js') }}"></script>
 </body>
-<script src="{{ asset('js/validateImg.js') }}"></script>
+
 </html>

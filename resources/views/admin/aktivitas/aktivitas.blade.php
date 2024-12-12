@@ -9,9 +9,19 @@
 
         @include('css_in_view.aktivitas_css')
 
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     </head>
     <body>
     @include('partials.adminnav') 
+    @if(session('success'))
+        <script>
+            Swal.fire(
+                'Berhasil!',
+                '{{ session('success') }}',
+                'success'
+            );
+        </script>
+    @endif
 
     <div class="container my-5">
         <h2>Program Pembelajaran</h2>
@@ -28,7 +38,7 @@
                 <div id="collapseRegular" class="accordion-collapse collapse show" aria-labelledby="headingRegular" data-bs-parent="#dailyActivitiesAccordion">
                     <div class="accordion-body">
                         <ul>
-                            <li>Jurnal pagi</li>
+                            {{-- <li>Jurnal pagi</li>
                             <li>Circle Time</li>
                             <li>Ikrar (Do’a Sebelum memulai aktivitas)</li>
                             <li>Muroja’ah (Juz 30 pilihan & hadist pilihan)</li>
@@ -37,7 +47,10 @@
                             <li>Bermain (indoor/outdoor)</li>
                             <li>Snack Time</li>
                             <li>Kegiatan Inti Sentra</li>
-                            <li>Penutup (Diskusi pengalaman/recalling, doa penutup)</li>
+                            <li>Penutup (Diskusi pengalaman/recalling, doa penutup)</li> --}}
+                            @foreach ($reguler as $aktivitas)
+                                <li>{{ $aktivitas->nama_aktivitas }}</li>
+                            @endforeach
                         </ul>
                     </div>
                 </div>
@@ -51,7 +64,7 @@
                 <div id="collapseHalfDay" class="accordion-collapse collapse" aria-labelledby="headingHalfDay" data-bs-parent="#dailyActivitiesAccordion">
                     <div class="accordion-body">
                         <ul>
-                            <li>Jurnal pagi</li>
+                            {{-- <li>Jurnal pagi</li>
                             <li>Circle Time</li>
                             <li>Ikrar (Do’a Sebelum memulai aktivitas)</li>
                             <li>Muroja’ah (Juz 30 pilihan & hadist pilihan)</li>
@@ -62,7 +75,11 @@
                             <li>Kegiatan Inti Sentra</li>
                             <li>Penutup (Diskusi pengalaman/recalling, doa penutup)</li>
                             <li>Makan siang</li>
-                            <li>Sholat Dzuhur Berjamaah</li>
+                            <li>Sholat Dzuhur Berjamaah</li> --}}
+                            @foreach($halfDay as $aktivitas)
+                                <li>{{ $aktivitas->nama_aktivitas }}</li>
+                            @endforeach
+
                         </ul>
                     </div>
                 </div>
@@ -76,7 +93,7 @@
                 <div id="collapseFullDay" class="accordion-collapse collapse" aria-labelledby="headingFullDay" data-bs-parent="#dailyActivitiesAccordion">
                     <div class="accordion-body">
                         <ul>
-                            <li>Jurnal pagi</li>
+                            {{-- <li>Jurnal pagi</li>
                             <li>Circle Time</li>
                             <li>Ikrar (Do’a Sebelum memulai aktivitas)</li>
                             <li>Muroja’ah (Juz 30 pilihan & hadist pilihan)</li>
@@ -93,7 +110,10 @@
                             <li>Jurnal Sore</li>
                             <li>Snack Sore</li>
                             <li>Sholat Ashar Berjamaah</li>
-                            <li>Main indoor/outdoor</li>
+                            <li>Main indoor/outdoor</li> --}}
+                            @foreach($fullDay as $aktivitas)
+                                <li>{{ $aktivitas->nama_aktivitas }}</li>
+                            @endforeach
                         </ul>
                     </div>
                 </div>
