@@ -97,8 +97,8 @@
 
         .image-container {
     position: relative;
-    overflow: hidden; /* Memastikan elemen di dalam tetap pada ukuran kontainer */
-    border-radius: 10px; /* Membuat sudut gambar membulat */
+    overflow: hidden; 
+    border-radius: 10px;
 }
 
 .image-container img {
