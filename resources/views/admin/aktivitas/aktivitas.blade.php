@@ -3,8 +3,7 @@
 <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Program Pembelajaran - Admin - TK Islam Kinasih</title>
-    <link rel="icon" href="{{ asset('images/LogoTK.jpg') }}" type="image/jpg">
+    <title>Program Pembelajaran - TK Islam Kinasih</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
@@ -86,14 +85,14 @@
 }
 
         .extracurricular-item:hover {
-            transform: scale(1.05);
+            transform: scale(1.3);
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
 
         .extracurricular-item i {
-            font-size: 3rem;
+            /* font-size: 3rem;
             color: var(--primary-color);
-            margin-bottom: 1rem;
+            margin-bottom: 1rem; */
         }
 
         .image-container {
@@ -121,30 +120,42 @@
     pointer-events: none; /* Ikon tidak menghalangi klik */
 }
 
-.image-container:hover img {
+/* .image-container:hover img {
     filter: blur(4px); 
-}
+} */
 
 .image-container:hover .icon-overlay {
     opacity: 2; 
 }
 
-    </style>
+a.btn-warning {
+    display: inline-block !important; /* Pastikan tombol terlihat */
+    color: white; /* Atur warna teks agar terlihat */
+}
 
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+.btn-sm {
+    font-size: 0.8rem; /* Atur ukuran teks */
+    padding: 0.2rem 0.4rem; /* Sesuaikan padding */
+    margin: 0 0.1rem; /* Kurangi jarak antar tombol */
+}
+
+
+    </style>
 </head>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <body>
 @include('partials.adminnav')
 
 @if(session('success'))
-    <script>
-        Swal.fire(
-            'Berhasil!',
-            '{{ session('success') }}',
-            'success'
-        );
-    </script>
+<script>
+    Swal.fire(
+        'Berhasil!',
+        '{{ session('success') }}',
+        'success'
+    );
+</script>
 @endif
+
 
     <div class="page-header">
         <div class="container">
@@ -192,8 +203,8 @@
                                     </div>
                                 </li>
                             @endforeach
-
                         </ul>
+                        
                     </div>
                 </div>
             </div>
@@ -228,7 +239,6 @@
                                     </div>
                                 </li>
                             @endforeach
-
                         </ul>
                     </div>
                 </div>
@@ -244,7 +254,6 @@
                         <ul class="list-group">
                             @foreach($fullDay as $aktivitas)
                                 <li class="list-group-item d-flex justify-content-between align-items-center">
-                                    
                                     <span><strong>{{ $aktivitas->urutan }}</strong>   {{ $aktivitas->nama_aktivitas }}</span>
                                     <div class="d-flex gap-2">
                                         <!-- Tombol Edit -->
@@ -265,53 +274,59 @@
                                     </div>
                                 </li>
                             @endforeach
-
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
 
+
+        
         <div class="extracurricular mt-5">
             <h3><i class="fas fa-trophy me-2"></i>Ekstrakurikuler</h3>
+            
             <p>Ekstrakurikuler TK Islam Kinasih bertujuan untuk memberikan wadah bagi peserta didik untuk mengembangkan dan mengekspresikan diri sesuai dengan kebutuhan, bakat, dan minat setiap peserta didik.</p>
+            <div class="row row-cols-1 row-cols-md-3 g-4" style="display: flex; justify-content: center; margin-top: 20px;">
+                <a href="{{ route('admin.ekstrakurikuler.create') }}" class="btn btn-warning">
+                Tambah Ekstrakurikuler Baru
+                </a>
+            </div><br />
+            
+            
             
             <div class="extracurricular-list">
-    <div class="extracurricular-item">
-        <div class="image-container">
-            <img src="/images/futsal.jpg" alt="Futsal" class="img-fluid rounded">
-            <i class="fas fa-futbol icon-overlay"></i>
-        </div>
-        <h5>Futsal</h5>
-    </div>
-    <div class="extracurricular-item">
-        <div class="image-container">
-            <img src="/images/Music.png" alt="Musik" class="img-fluid rounded">
-            <i class="fas fa-music icon-overlay"></i>
-        </div>
-        <h5>Musik</h5>
-    </div>
-    <div class="extracurricular-item">
-        <div class="image-container">
-            <img src="/images/Menari.jpg" alt="Menari" class="img-fluid rounded">
-            <i class="fas fa-shoe-prints icon-overlay"></i>
-        </div>
-        <h5>Menari</h5>
-    </div>
-    <div class="extracurricular-item">
-        <div class="image-container">
-            <img src="/images/gerakdanlagu.jpg" alt="Gerak dan Lagu" class="img-fluid rounded">
-            <i class="fas fa-headphones icon-overlay"></i>
-        </div>
-        <h5>Gerak dan Lagu</h5>
-    </div>
-</div>
-
-</div>
+                @foreach ($ekstrakurikulers as $ekstrakurikuler)
+                    <div class="extracurricular-item">
+                        <div class="image-container">
+                            <img src="{{ asset('storage/' . $ekstrakurikuler->image) }}" alt="{{ $ekstrakurikuler->nama }}" class="img-fluid rounded">
+                            {{-- <i class="fas fa-futbol icon-overlay"></i> --}}
+                        </div>
+                        <h5>{{ $ekstrakurikuler->nama }}</h5>
+                        <div class="d-flex justify-content-between">
+                            <!-- Tombol Edit -->
+                            <a href="{{ route('admin.ekstrakurikuler.edit', $ekstrakurikuler->id) }}" class="btn btn-warning btn-sm">
+                                <i class="bi bi-pencil-square"></i> Edit
+                            </a>
+                        
+                            <!-- Tombol Delete -->
+                            <form id="delete-{{ $ekstrakurikuler->id }}" action="{{ route('admin.ekstrakurikuler.destroy', $ekstrakurikuler->id) }}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <button type="button" class="btn btn-danger btn-sm" onclick="confirmDelete({{ $ekstrakurikuler->id }})">
+                                    <i class="bi bi-trash3"></i> Delete
+                                </button>
+                            </form>
+                        </div>
+                        
+                    </div>
+                @endforeach
+            </div>
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="{{ asset('js/confirmDeletion.js')}}"></script>
     @include('partials.footer')
+
+    
 </body>
 </html>

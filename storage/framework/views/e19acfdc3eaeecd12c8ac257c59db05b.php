@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tambah Aktivitas</title>
+    <title>Admin - Edit Aktivitas</title>
+    <link rel="icon" href="<?php echo e(asset('images/LogoTK.jpg')); ?>" type="image/jpg">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
@@ -77,7 +78,8 @@
             </div>
             
 
-            <button type="submit" class="btn btn-primary w-100">Update</button>
+            <button type="submit" class="btn btn-primary">Update</button>
+            <a href="<?php echo e(route('admin.aktivitas.index')); ?>" class="btn btn-secondary">Cancel</a>
         </form>
     </div>
     <?php echo $__env->make('partials.footer', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>

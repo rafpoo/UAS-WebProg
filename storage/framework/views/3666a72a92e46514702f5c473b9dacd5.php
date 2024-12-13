@@ -85,7 +85,7 @@
 }
 
         .extracurricular-item:hover {
-            transform: scale(1.05);
+            transform: scale(1.3);
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
 
@@ -120,9 +120,9 @@
     pointer-events: none; /* Ikon tidak menghalangi klik */
 }
 
-.image-container:hover img {
+/* .image-container:hover img {
     filter: blur(4px); 
-}
+} */
 
 .image-container:hover .icon-overlay {
     opacity: 2; 
@@ -197,34 +197,17 @@
             <p>Ekstrakurikuler TK Islam Kinasih bertujuan untuk memberikan wadah bagi peserta didik untuk mengembangkan dan mengekspresikan diri sesuai dengan kebutuhan, bakat, dan minat setiap peserta didik.</p>
             
             <div class="extracurricular-list">
-    <div class="extracurricular-item">
-        <div class="image-container">
-            <img src="/images/futsal.jpg" alt="Futsal" class="img-fluid rounded">
-            <i class="fas fa-futbol icon-overlay"></i>
+    <?php $__currentLoopData = $ekstrakurikulers; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $ekstrakurikuler): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+        <div class="extracurricular-item">
+            <div class="image-container">
+                <img src="<?php echo e(asset('storage/' . $ekstrakurikuler->image)); ?>" alt="<?php echo e($ekstrakurikuler->nama); ?>" class="img-fluid rounded">
+                
+            </div>
+            <h5><?php echo e($ekstrakurikuler->nama); ?></h5>
         </div>
-        <h5>Futsal</h5>
-    </div>
-    <div class="extracurricular-item">
-        <div class="image-container">
-            <img src="/images/Music.png" alt="Musik" class="img-fluid rounded">
-            <i class="fas fa-music icon-overlay"></i>
-        </div>
-        <h5>Musik</h5>
-    </div>
-    <div class="extracurricular-item">
-        <div class="image-container">
-            <img src="/images/Menari.jpg" alt="Menari" class="img-fluid rounded">
-            <i class="fas fa-shoe-prints icon-overlay"></i>
-        </div>
-        <h5>Menari</h5>
-    </div>
-    <div class="extracurricular-item">
-        <div class="image-container">
-            <img src="/images/gerakdanlagu.jpg" alt="Gerak dan Lagu" class="img-fluid rounded">
-            <i class="fas fa-headphones icon-overlay"></i>
-        </div>
-        <h5>Gerak dan Lagu</h5>
-    </div>
+    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+    
+    
 </div>
 
 </div>

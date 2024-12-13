@@ -10,6 +10,7 @@ use App\Http\Controllers\EventController;
 use App\Http\Controllers\PPDBController;
 use App\Http\Controllers\GaleriController;
 use App\Http\Controllers\AktivitasController;
+use App\Http\Controllers\EkstrakurikulerController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 
 
@@ -74,6 +75,11 @@ Route::prefix('admin') // Menambahkan prefix 'admin' pada setiap URL route
         Route::get('/aktivitas/{id}/edit', [AktivitasController::class, 'edit'])->name('admin.aktivitas.edit');
         Route::delete('/aktivitas/{id}', [AktivitasController::class, 'destroy'])->name('admin.aktivitas.destroy');
         Route::put('/aktivitas/update/{id}', [AktivitasController::class, 'update'])->name('admin.aktivitas.update');
+        Route::get('/ekstrakurikuler/create', [EkstrakurikulerController::class, 'create'])->name('admin.ekstrakurikuler.create');
+        Route::post('/ekstrakurikuler/store', [EkstrakurikulerController::class, 'store'])->name('admin.ekstrakurikuler.store');
+        Route::get('/ekstrakurikuler/{id}/edit', [EkstrakurikulerController::class, 'edit'])->name('admin.ekstrakurikuler.edit');
+        Route::delete('/ekstrakurikuler/{id}', [EkstrakurikulerController::class, 'destroy'])->name('admin.ekstrakurikuler.destroy');
+        Route::put('/ekstrakurikuler/update/{id}', [EkstrakurikulerController::class, 'update'])->name('admin.ekstrakurikuler.update');
 
         Route::get('/register', [RegisteredUserController::class, 'create'])
         ->name('register');

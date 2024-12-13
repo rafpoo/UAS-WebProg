@@ -9,6 +9,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Aktivitas;
+use App\Models\Ekstrakurikuler;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
 
@@ -19,8 +20,9 @@ class AktivitasController extends Controller
         $reguler = Aktivitas::where('tipe', 'Reguler')->orderBy('urutan')->get();
         $halfDay = Aktivitas::where('tipe', 'Half Day')->orderBy('urutan')->get();
         $fullDay = Aktivitas::where('tipe', 'Full Day')->orderBy('urutan')->get();
+        $ekstrakurikulers = Ekstrakurikuler::all();
 
-        return view('user.aktivitas', compact('reguler', 'halfDay', 'fullDay'));
+        return view('user.aktivitas', compact('reguler', 'halfDay', 'fullDay', 'ekstrakurikulers'));
     }
 
     public function indexAdmin()
@@ -31,9 +33,9 @@ class AktivitasController extends Controller
         $reguler = Aktivitas::where('tipe', 'Reguler')->orderBy('urutan')->get();
         $halfDay = Aktivitas::where('tipe', 'Half Day')->orderBy('urutan')->get();
         $fullDay = Aktivitas::where('tipe', 'Full Day')->orderBy('urutan')->get();
+        $ekstrakurikulers = Ekstrakurikuler::all();
 
-
-        return view('admin.aktivitas.aktivitas', compact('reguler', 'halfDay', 'fullDay'));
+        return view('admin.aktivitas.aktivitas', compact('reguler', 'halfDay', 'fullDay', 'ekstrakurikulers'));
     }
 
     public function create()
