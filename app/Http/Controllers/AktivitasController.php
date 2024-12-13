@@ -12,13 +12,13 @@ use App\Models\Aktivitas;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
 
-class aktivitasController extends Controller
+class AktivitasController extends Controller
 {
     public function index()
     {
-        $reguler = \App\Models\Aktivitas::where('tipe', 'Reguler')->orderBy('urutan')->get();
-        $halfDay = \App\Models\Aktivitas::where('tipe', 'Half Day')->orderBy('urutan')->get();
-        $fullDay = \App\Models\Aktivitas::where('tipe', 'Full Day')->orderBy('urutan')->get();
+        $reguler = Aktivitas::where('tipe', 'Reguler')->orderBy('urutan')->get();
+        $halfDay = Aktivitas::where('tipe', 'Half Day')->orderBy('urutan')->get();
+        $fullDay = Aktivitas::where('tipe', 'Full Day')->orderBy('urutan')->get();
 
         return view('user.aktivitas', compact('reguler', 'halfDay', 'fullDay'));
     }
@@ -26,11 +26,12 @@ class aktivitasController extends Controller
     public function indexAdmin()
     {
         // $aktivitass = aktivitas::all();
-        // return view('admin.guru.guru', compact('aktivitass'));
+        // return view('admin.aktivitas.aktivitas', compact('aktivitass'));
 
-        $reguler = \App\Models\Aktivitas::where('tipe', 'Reguler')->orderBy('urutan')->get();
-        $halfDay = \App\Models\Aktivitas::where('tipe', 'Half Day')->orderBy('urutan')->get();
-        $fullDay = \App\Models\Aktivitas::where('tipe', 'Full Day')->orderBy('urutan')->get();
+        $reguler = Aktivitas::where('tipe', 'Reguler')->orderBy('urutan')->get();
+        $halfDay = Aktivitas::where('tipe', 'Half Day')->orderBy('urutan')->get();
+        $fullDay = Aktivitas::where('tipe', 'Full Day')->orderBy('urutan')->get();
+
 
         return view('admin.aktivitas.aktivitas', compact('reguler', 'halfDay', 'fullDay'));
     }
@@ -43,20 +44,17 @@ class aktivitasController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'nama' => 'required|string|max:255',
+            'nama_aktivitas' => 'required|string|max:255',
             'tipe' => 'required|string',
+            'urutan' => 'required|integer',
         ]);
         
-        Aktivitas::create([
-            'nama' => $request->nama,
-            'jabatan' => $request->jabatan,
-            'tanggal_bergabung' => $request->tanggal_bergabung,
-            'keterangan' => $request->keterangan,
-            'photo' => $path,
-        ]);
+        $this->adjustOrder($request->urutan, $request->tipe);
+
+        Aktivitas::create($request->all());
         
 
-        return redirect()->route('admin.guru.index')->with('success', 'Aktivitas berhasil ditambahkan.');
+        return redirect()->route('admin.aktivitas.index')->with('success', 'Aktivitas berhasil ditambahkan.');
     }
 
     /**
@@ -73,7 +71,7 @@ class aktivitasController extends Controller
     public function edit($id)
     {
         $aktivitas = Aktivitas::findOrFail($id);
-        return view('admin.guru.edit', compact('aktivitas'));
+        return view('admin.aktivitas.edit', compact('aktivitas'));
     }
 
 
@@ -82,44 +80,41 @@ class aktivitasController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $aktivitas = Aktivitas::findOrFail($id);
-
         // Validasi input
         $request->validate([
-            'nama' => 'required|string|max:255',
-            'jabatan' => 'required|string|max:255',
-            'tanggal_bergabung' => 'required|date',
-            'keterangan' => 'nullable|string',
-            'photo' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'nama_aktivitas' => 'required|string|max:255',
+            'tipe' => 'required|string',
+            'urutan' => 'required|integer',
         ]);
 
-        // Ambil semua data kecuali foto
-        $data = $request->except(['photo']);
+        $aktivitas = Aktivitas::findOrFail($id);
+        $tipe = $aktivitas->tipe;
+        $oldOrder = $aktivitas->urutan;
+        $newOrder = $request->input('urutan');
 
-        // Jika ada file foto yang diunggah
-        if ($request->hasFile('photo')) {
-            // Hapus foto lama jika ada
-            if ($aktivitas->photo && Storage::disk('public')->exists($aktivitas->photo)) {
-                Storage::disk('public')->delete($aktivitas->photo);
+        // Jika urutan berubah, sesuaikan urutan aktivitas lain
+        // Jika urutan berubah, sesuaikan aktivitas lain
+        if ($oldOrder != $newOrder) {
+            if ($newOrder < $oldOrder) {
+                // Jika urutan baru lebih kecil, geser ke bawah aktivitas di antara
+                Aktivitas::where('tipe', '=', $tipe)
+                    ->where('urutan', '>=', $newOrder)
+                    ->where('urutan', '<', $oldOrder)
+                    ->increment('urutan');
+            } else {
+                // Jika urutan baru lebih besar, geser ke atas aktivitas di antara
+                Aktivitas::where('tipe', '=', $tipe)
+                    ->where('urutan', '<=', $newOrder)
+                    ->where('urutan', '>', $oldOrder)
+                    ->decrement('urutan');
             }
-            
-            $filePath = public_path('storage/' . $aktivitas->photo);
-            if (File::exists($filePath)) {
-                File::delete($filePath);
-            }
-            
-
-            // Simpan foto baru
-            $path = $request->file('photo')->store('aktivitass', 'public');
-            File::copy(storage_path('app/public/' . $path), public_path('storage/' . $path));
-            $data['photo'] = $path; // Tambahkan path foto baru ke array data
         }
 
-        // Update data guru
-        $aktivitas->update($data);
+        $aktivitas->update($request->all());
 
-        // Redirect ke halaman daftar guru dengan pesan sukses
-        return redirect()->route('admin.guru.index')->with('success', 'Data updated successfully');
+
+        // Redirect ke halaman daftar aktivitas dengan pesan sukses
+        return redirect()->route('admin.aktivitas.index')->with('success', 'Data updated successfully');
     }
 
 
@@ -134,49 +129,44 @@ class aktivitasController extends Controller
         // Cari aktivitas berdasarkan ID
         $aktivitas = Aktivitas::findOrFail($id);
 
-        // Tentukan path file berdasarkan nama yang disimpan di database
-        $filePath = public_path('storage/' . $aktivitas->photo);
-
-        if ($aktivitas->photo && Storage::disk('public')->exists($aktivitas->photo)) {
-            Storage::disk('public')->delete($aktivitas->photo);
-        }
-
-        // Hapus file jika ada
-        if (File::exists($filePath)) {
-            File::delete($filePath);
-        }
+        // Adjust urutan aktivitas lainnya
+        $this->adjustOrderAfterDeletion($aktivitas->urutan, $aktivitas->tipe);
 
         // Hapus data aktivitas dari database
         $aktivitas->delete();
 
-        return redirect()->route('admin.guru.index')->with('success', 'Aktivitas berhasil dihapus!');
+        return redirect()->route('admin.aktivitas.index')->with('success', 'Aktivitas berhasil dihapus!');
     }
 
-    public function destroyPhoto($id)
+    protected function adjustOrder($newOrder, $tipe, $excludeId = null)
     {
-        $aktivitas = Aktivitas::findOrFail($id);
+        $conflictingActivities = Aktivitas::where('urutan', '>=', $newOrder)
+            ->where('tipe', $tipe);
 
-        // Hapus foto dari storage jika ada
-        // if ($aktivitas->photo && Storage::disk('public')->exists($aktivitas->photo)) {
-        //     Storage::disk('public')->delete($aktivitas->photo);
-        // }
-        $filePath = public_path('storage/' . $aktivitas->photo);
-
-        if ($aktivitas->photo && Storage::disk('public')->exists($aktivitas->photo)) {
-            Storage::disk('public')->delete($aktivitas->photo);
+        // Jika ada ID yang perlu dikecualikan (misalnya saat update)
+        if ($excludeId) {
+            $conflictingActivities->where('id', '!=', $excludeId);
         }
 
-        // Hapus file jika ada
-        if (File::exists($filePath)) {
-            File::delete($filePath);
-        }
-
-        // Set kolom photo menjadi null
-        $aktivitas->update(['photo' => null]);
-
-        return redirect()->route('admin.guru.edit', $id)->with('success', 'Foto berhasil dihapus.');
+        // Increment urutan untuk semua aktivitas yang bertabrakan
+        $conflictingActivities->orderBy('urutan', 'asc')->get()->each(function ($aktivitas) {
+            $aktivitas->update(['urutan' => $aktivitas->urutan + 1]);
+        });
     }
 
+    protected function adjustOrderAfterDeletion($deletedOrder, $tipe)
+    {
+        // Temukan semua aktivitas dengan urutan lebih besar dari aktivitas yang dihapus
+        $activitiesToAdjust = Aktivitas::where('urutan', '>', $deletedOrder)
+            ->where('tipe', $tipe)
+            ->orderBy('urutan', 'asc')
+            ->get();
+
+        // Kurangi nilai urutan setiap aktivitas yang relevan
+        $activitiesToAdjust->each(function ($aktivitas) {
+            $aktivitas->update(['urutan' => $aktivitas->urutan - 1]);
+        });
+    }
 
 
 

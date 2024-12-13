@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TK Islam Kinasih</title>
+    <title>Tambah Foto Galeri - Admin - TK Islam Kinasih</title>
+    <link rel="icon" href="{{ asset('images/LogoTK.jpg') }}" type="image/jpg">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
@@ -51,6 +52,15 @@
 <body>
     <div class="container">
         <h1>Tambah Foto</h1>
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
         <form action="{{ route('admin.galeri.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
             <!-- Contoh input form -->

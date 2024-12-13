@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TK Islam Kinasih</title>
+    <title>Admin - Edit Acara</title>
+    <link rel="icon" href="{{ asset('images/LogoTK.jpg') }}" type="image/jpg">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
@@ -70,19 +71,19 @@
             <!-- Nama Acara -->
             <div class="mb-3">
                 <label for="title" class="form-label">Nama</label>
-                <input type="text" class="form-control" id="title" name="title" value="{{ $event->title }}" required>
+                <input type="text" class="form-control" id="title" name="title" value="{{ $event->title }}" >
             </div>
 
             <!-- Deskripsi Acara -->
             <div class="mb-3">
                 <label for="descriptions" class="form-label">Deskripsi Acara</label>
-                <textarea class="form-control" id="descriptions" name="descriptions" required>{{ $event->descriptions }}</textarea>
+                <textarea class="form-control" id="descriptions" name="descriptions" >{{ $event->descriptions }}</textarea>
             </div>
 
             <!-- Tanggal -->
             <div class="mb-3">
                 <label for="date" class="form-label">Tanggal</label>
-                <input type="date" class="form-control" id="date" name="date" value="{{ $event->date }}" required>
+                <input type="date" class="form-control" id="date" name="date" value="{{ $event->date }}" >
             </div>
 
             <!-- Gambar -->
@@ -93,6 +94,7 @@
             </div>
 
             <button type="submit" class="btn btn-primary">Update</button>
+            <a href="{{ route('admin.acara.index') }}" class="btn btn-secondary">Cancel</a>
         </form>
     </div>
 

@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TK Islam Kinasih</title>
+    <title>Admin - Edit Guru</title>
+    <link rel="icon" href="{{ asset('images/LogoTK.jpg') }}" type="image/jpg">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
@@ -70,18 +71,18 @@
             <!-- Nama guru -->
             <div class="mb-3">
                 <label for="nama" class="form-label">Nama</label>
-                <input type="text" class="form-control" id="nama" name="nama" value="{{ $teacher->nama }}" required>
+                <input type="text" class="form-control" id="nama" name="nama" value="{{ $teacher->nama }}" >
             </div>
 
             <!-- Deskripsi guru -->
             <div class="mb-3">
                 <label for="jabatan" class="form-label">Jabatan</label>
-                <input class="form-control" id="jabatan" name="jabatan" value="{{ $teacher->jabatan }}" required>
+                <input class="form-control" id="jabatan" name="jabatan" value="{{ $teacher->jabatan }}" >
             </div>
 
             <div class="mb-3">
                 <label for="tanggal_bergabung" class="form-label">Tanggal bergabung</label>
-                <input type="date" class="form-control" id="tanggal_bergabung" name="tanggal_bergabung" value="{{ $teacher->tanggal_bergabung }}"  required>
+                <input type="date" class="form-control" id="tanggal_bergabung" name="tanggal_bergabung" value="{{ $teacher->tanggal_bergabung }}"  >
             </div>
 
             <div class="mb-3">
@@ -100,6 +101,7 @@
             
 
             <button type="submit" class="btn btn-primary">Update</button>
+            <a href="{{ route('admin.guru.index') }}" class="btn btn-secondary">Cancel</a>
         </form><br />
         <form action="{{ route('admin.guru.photo.destroy', $teacher->id) }}" method="POST" style="margin-bottom: 10px;">
             @csrf

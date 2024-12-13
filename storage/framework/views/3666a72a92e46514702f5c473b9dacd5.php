@@ -151,16 +151,9 @@
                 <div id="collapseRegular" class="accordion-collapse collapse show" aria-labelledby="headingRegular" data-bs-parent="#dailyActivitiesAccordion">
                     <div class="accordion-body">
                         <ul class="list-group">
-                            <li class="list-group-item">Jurnal pagi</li>
-                            <li class="list-group-item">Circle Time</li>
-                            <li class="list-group-item">Ikrar (Do'a Sebelum memulai aktivitas)</li>
-                            <li class="list-group-item">Muroja'ah (Juz 30 pilihan & hadist pilihan)</li>
-                            <li class="list-group-item">Berwudhu</li>
-                            <li class="list-group-item">Shalat dhuha</li>
-                            <li class="list-group-item">Bermain (indoor/outdoor)</li>
-                            <li class="list-group-item">Snack Time</li>
-                            <li class="list-group-item">Kegiatan Inti Sentra</li>
-                            <li class="list-group-item">Penutup (Diskusi pengalaman/recalling, doa penutup)</li>
+                            <?php $__currentLoopData = $reguler; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $aktivitas): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                <li class="list-group-item"><?php echo e($aktivitas->nama_aktivitas); ?></li>
+                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                         </ul>
                     </div>
                 </div>
@@ -174,18 +167,9 @@
                 <div id="collapseHalfDay" class="accordion-collapse collapse" aria-labelledby="headingHalfDay" data-bs-parent="#dailyActivitiesAccordion">
                     <div class="accordion-body">
                         <ul class="list-group">
-                            <li class="list-group-item">Jurnal pagi</li>
-                            <li class="list-group-item">Circle Time</li>
-                            <li class="list-group-item">Ikrar (Do'a Sebelum memulai aktivitas)</li>
-                            <li class="list-group-item">Muroja'ah (Juz 30 pilihan & hadist pilihan)</li>
-                            <li class="list-group-item">Berwudhu</li>
-                            <li class="list-group-item">Shalat dhuha</li>
-                            <li class="list-group-item">Bermain (indoor/outdoor)</li>
-                            <li class="list-group-item">Snack Time</li>
-                            <li class="list-group-item">Kegiatan Inti Sentra</li>
-                            <li class="list-group-item">Penutup (Diskusi pengalaman/recalling, doa penutup)</li>
-                            <li class="list-group-item">Makan siang</li>
-                            <li class="list-group-item">Sholat Dzuhur Berjamaah</li>
+                            <?php $__currentLoopData = $halfDay; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $aktivitas): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                <li class="list-group-item"><?php echo e($aktivitas->nama_aktivitas); ?></li>
+                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                         </ul>
                     </div>
                 </div>
@@ -199,24 +183,9 @@
                 <div id="collapseFullDay" class="accordion-collapse collapse" aria-labelledby="headingFullDay" data-bs-parent="#dailyActivitiesAccordion">
                     <div class="accordion-body">
                         <ul class="list-group">
-                            <li class="list-group-item">Jurnal pagi</li>
-                            <li class="list-group-item">Circle Time</li>
-                            <li class="list-group-item">Ikrar (Do'a Sebelum memulai aktivitas)</li>
-                            <li class="list-group-item">Muroja'ah (Juz 30 pilihan & hadist pilihan)</li>
-                            <li class="list-group-item">Berwudhu</li>
-                            <li class="list-group-item">Shalat dhuha</li>
-                            <li class="list-group-item">Bermain (indoor/outdoor)</li>
-                            <li class="list-group-item">Snack Time</li>
-                            <li class="list-group-item">Kegiatan Inti Sentra</li>
-                            <li class="list-group-item">Penutup (Diskusi pengalaman/recalling, doa penutup)</li>
-                            <li class="list-group-item">Makan siang</li>
-                            <li class="list-group-item">Sholat Dzuhur Berjamaah</li>
-                            <li class="list-group-item">Tidur Siang</li>
-                            <li class="list-group-item">Mandi</li>
-                            <li class="list-group-item">Jurnal Sore</li>
-                            <li class="list-group-item">Snack Sore</li>
-                            <li class="list-group-item">Sholat Ashar Berjamaah</li>
-                            <li class="list-group-item">Main indoor/outdoor</li>
+                            <?php $__currentLoopData = $fullDay; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $aktivitas): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                <li class="list-group-item"><?php echo e($aktivitas->nama_aktivitas); ?></li>
+                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                         </ul>
                     </div>
                 </div>

@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('nama_aktivitas');
             $table->string('tipe'); // 'Reguler', 'Half Day', atau 'Full Day'
+            $table->integer('urutan');
             $table->timestamps();
         });
     }

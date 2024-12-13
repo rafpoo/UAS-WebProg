@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TK Islam Kinasih</title>
+    <title>Admin - Tambah Guru - TK Islam Kinasih</title>
+    <link rel="icon" href="<?php echo e(asset('images/LogoTK.jpg')); ?>" type="image/jpg">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
@@ -92,6 +93,7 @@
             <!-- Tambahkan input lainnya sesuai dengan kolom di tabel -->
             
             <button type="submit" class="btn btn-primary">Tambahkan</button>
+            <a href="<?php echo e(route('admin.acara.index')); ?>" class="btn btn-secondary">Cancel</a>
         </form>
     </div>
 

@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TK Islam Kinasih</title>
+    <title>Admin - Edit Data PPDB</title>
+    <link rel="icon" href="{{ asset('images/LogoTK.jpg') }}" type="image/jpg">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
@@ -58,32 +59,35 @@
             <!-- Contoh input form -->
             <div class="mb-3">
                 <label for="nama" class="form-label">Nama</label>
-                <input type="text" class="form-control" id="nama" name="nama" value="{{ $ppdb->nama }}" required>
+                <input type="text" class="form-control" id="nama" name="nama" value="{{ $ppdb->nama }}" >
             </div>
     
             <div class="mb-3">
                 <label for="jenis_kelamin" class="form-label">Jenis Kelamin</label>
-                <input type="jenis_kelamin" class="form-control" id="jenis_kelamin" name="jenis_kelamin" value="{{ $ppdb->jenis_kelamin }}" required>
+                    <select id="jenis_kelamin" name="jenis_kelamin" class="form-select" >
+                        <option value="Laki-laki" {{ old('jenis_kelamin', $ppdb->jenis_kelamin) == 'Laki-laki' ? 'selected' : '' }}>Laki-laki</option>
+                        <option value="Perempuan" {{ old('jenis_kelamin', $ppdb->jenis_kelamin) == 'Perempuan' ? 'selected' : '' }}>Perempuan</option>
+                    </select>
             </div>
 
             <div class="mb-3">
                 <label for="tempat_lahir" class="form-label">Tempat Lahir</label>
-                <input type="tempat_lahir" class="form-control" id="tempat_lahir" name="tempat_lahir" value="{{ $ppdb->tempat_lahir }}" required>
+                <input type="tempat_lahir" class="form-control" id="tempat_lahir" name="tempat_lahir" value="{{ $ppdb->tempat_lahir }}" >
             </div>
 
             <div class="mb-3">
                 <label for="nama_orang_tua" class="form-label">Nama Orang Tua</label>
-                <input type="nama_orang_tua" class="form-control" id="nama_orang_tua" name="nama_orang_tua" value="{{ $ppdb->nama_orang_tua }}" required>
+                <input type="nama_orang_tua" class="form-control" id="nama_orang_tua" name="nama_orang_tua" value="{{ $ppdb->nama_orang_tua }}" >
             </div>
 
             <div class="mb-3">
                 <label for="no_telepon" class="form-label">Nomor Telepon</label>
-                <input type="no_telepon" class="form-control" id="no_telepon" name="no_telepon" value="{{ $ppdb->no_telepon }}" required>
+                <input type="no_telepon" class="form-control" id="no_telepon" name="no_telepon" value="{{ $ppdb->no_telepon }}" >
             </div>
 
             <div class="mb-3">
                 <label for="alamat" class="form-label">Alamat</label>
-                <input type="alamat" class="form-control" id="alamat" name="alamat" value="{{ $ppdb->alamat }}" required>
+                <input type="alamat" class="form-control" id="alamat" name="alamat" value="{{ $ppdb->alamat }}" >
             </div>
     
             <!-- Tambahkan input lainnya sesuai dengan kolom di tabel -->

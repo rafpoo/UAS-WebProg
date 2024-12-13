@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tambah Acara</title>
+    <title>Admin - Tambah Acara</title>
+    <link rel="icon" href="{{ asset('images/LogoTK.jpg') }}" type="image/jpg">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
@@ -65,8 +66,18 @@
             });
         </script>
     @endif
+
     <div class="container">
         <h1>Tambah Acara</h1>
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
         <form action="{{ route('admin.acara.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="mb-3">
@@ -91,8 +102,10 @@
                 {{-- <input type="file" name="photo" accept="image/*" onchange="validateFileSize(this)"> --}}
             </div>
 
-            <button type="submit" class="btn btn-primary w-100">Tambahkan</button>
+            <button type="submit" class="btn btn-primary">Tambahkan</button>
+            <a href="{{ route('admin.acara.index') }}" class="btn btn-secondary">Cancel</a>
         </form>
+
     </div>
     @include('partials.footer')
 

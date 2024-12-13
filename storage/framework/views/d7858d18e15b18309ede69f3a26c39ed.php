@@ -4,8 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin - Tambah Acara</title>
-    <link rel="icon" href="<?php echo e(asset('images/LogoTK.jpg')); ?>" type="image/jpg">
+    <title>Tambah Aktivitas</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
@@ -45,30 +44,9 @@
 </head>
 
 <body>
-
-    <?php if(session('success')): ?>
-        <script>
-            Swal.fire({
-                icon: 'success',
-                title: 'Berhasil!',
-                text: '<?php echo e(session('success')); ?>',
-                confirmButtonText: 'OK'
-            });
-        </script>
-    <?php endif; ?>
-    <?php if($errors->has('photo')): ?>
-        <script>
-            Swal.fire({
-                icon: 'error',
-                title: 'Oops...',
-                text: '<?php echo e($errors->first('photo')); ?>',
-                confirmButtonText: 'OK'
-            });
-        </script>
-    <?php endif; ?>
-
     <div class="container">
-        <h1>Tambah Acara</h1>
+    
+        <h1>Tambah Aktivitas</h1>
         <?php if($errors->any()): ?>
             <div class="alert alert-danger">
                 <ul>
@@ -78,38 +56,32 @@
                 </ul>
             </div>
         <?php endif; ?>
-        <form action="<?php echo e(route('admin.acara.store')); ?>" method="POST" enctype="multipart/form-data">
+        <form action="<?php echo e(route('admin.aktivitas.store')); ?>" method="POST" enctype="multipart/form-data">
             <?php echo csrf_field(); ?>
             <div class="mb-3">
-                <label for="title" class="form-label">Nama</label>
-                <input type="text" class="form-control" id="title" name="title" placeholder="Masukkan nama acara" required>
+                <label for="nama_aktivitas" class="form-label">Nama</label>
+                <input type="text" class="form-control" id="nama_aktivitas" name="nama_aktivitas" placeholder="Masukkan nama aktivitas" required>
             </div>
-
             <div class="mb-3">
-                <label for="descriptions" class="form-label">Deskripsi Acara</label>
-                <textarea class="form-control" id="descriptions" name="descriptions" rows="4" 
-                          placeholder="Masukkan deskripsi acara" required></textarea>
+                <label for="tipe" class="form-label">Tipe Aktivitas</label>
+                <select id="tipe" name="tipe" class="form-select" required>
+                    <option value="Reguler">Reguler</option>
+                    <option value="Half Day">Half Day</option>
+                    <option value="Full Day">Full Day</option>
+                </select>
             </div>
-
             <div class="mb-3">
-                <label for="date" class="form-label">Tanggal</label>
-                <input type="date" class="form-control" id="date" name="date" required>
+                <label for="urutan" class="form-label">Urutan</label>
+                <input type="number" name="urutan" class="form-control" required>
             </div>
-
-            <div class="mb-3">
-                <label for="image" class="form-label">Gambar (Ukuran Max 2MB)</label>
-                <input type="file" class="form-control" id="image" name="image" accept="image/*" onchange="validateFileSize(this)" required>
-                
-            </div>
+            
 
             <button type="submit" class="btn btn-primary w-100">Tambahkan</button>
-            <a href="<?php echo e(route('admin.acara.index')); ?>" class="btn btn-secondary w-100 mt-2">Cancel</a>
         </form>
-
     </div>
     <?php echo $__env->make('partials.footer', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 
-    <script src="<?php echo e(asset('js/validateImg.js')); ?>"></script>
+
 </body>
 </html>
-<?php /**PATH C:\xampp\htdocs\uazzzz\UAS-WebProg\resources\views/admin/acara/create.blade.php ENDPATH**/ ?>
+<?php /**PATH C:\xampp\htdocs\uazzzz\UAS-WebProg\resources\views/admin/aktivitas/create.blade.php ENDPATH**/ ?>
