@@ -156,7 +156,7 @@
 
 <?php if($galeris->isEmpty()): ?>
     <div class="gallery">
-      <p>Tidak ada data tersedia.</p>
+      <p>Tidak ada gambar tersedia.</p>
     </div>
 <?php else: ?>
     <div class="gallery-container">

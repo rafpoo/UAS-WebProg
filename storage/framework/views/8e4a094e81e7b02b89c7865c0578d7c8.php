@@ -14,6 +14,64 @@
     margin: 0 auto;
     max-width: 800px;
 }
+body {
+      background: linear-gradient(135deg, #85C7B3 0%, #68A895 100%);
+      color: white;
+      font-family: Arial, sans-serif;
+    }
+
+    .navbar {
+      background-color: #4F998A;
+    }
+
+    .navbar-brand img {
+      height: 50px;
+      /* Adjust logo height */
+    }
+
+    .nav-link {
+      color: white !important;
+    }
+
+    .welcome-section {
+      padding: 50px 20px;
+      text-align: center;
+
+      border-radius: 10px;
+      margin-top: 30px;
+    }
+
+    .menu-icon {
+      display: inline-block;
+      margin: auto auto;
+    }
+
+    .menu-icon-bar {
+      width: 25px;
+      height: 3px;
+      background-color: rgba(255, 255, 255, 1.0);
+      margin: 4px 0;
+    }
+
+    .card {
+      background-color: #2D6A4F;
+      border-radius: 20px;
+      padding: 20px;
+      color: white;
+      text-align: center;
+      margin: 20px;
+    }
+
+    .card img {
+      border-radius: 15px;
+      width: 100%;
+      height: auto;
+    }
+    .card-body h5,
+    .card-body h6,
+    .card-body p {
+        color: #000;
+    }
 </style>
   <?php echo $__env->make('global_css.css', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
   <?php echo $__env->make('css_in_view.acara_css', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
@@ -58,7 +116,7 @@
                       <!-- Body Card -->
                       <div class="card-body">
                           <h5 class="card-title"><?php echo e($event->title); ?></h5>
-                          <h6 class="card-subtitle mb-2" style="color:#ffffff"><?php echo e($event->date); ?></h6>
+                          <h6 class="card-subtitle mb-2" style="color:#000"><?php echo e($event->date); ?></h6>
                           <p class="card-text"><?php echo e($event->descriptions); ?></p>
                       </div>
 
@@ -76,5 +134,4 @@
   <?php echo $__env->make('partials.footer', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 </body>
 
-</html>
-<?php /**PATH C:\xampp\htdocs\uazzzz\UAS-WebProg\resources\views/user/acara.blade.php ENDPATH**/ ?>
+</html><?php /**PATH C:\xampp\htdocs\uazzzz\UAS-WebProg\resources\views/user/acara.blade.php ENDPATH**/ ?>
