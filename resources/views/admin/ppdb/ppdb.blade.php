@@ -85,10 +85,21 @@
             color: black
         }
     </style>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
     @include('partials.adminnav')
     <br />
+
+    @if(session('success'))
+        <script>
+            Swal.fire(
+                'Berhasil!',
+                '{{ session('success') }}',
+                'success'
+            );
+        </script>
+    @endif
 
     <div class="container">
         <h1 style="color: rgb(5, 70, 56);">Data PPDB</h1>
@@ -107,7 +118,7 @@
         @else
             <!-- Tabel Data PPDB dengan Tabel Responsif -->
             <div class="table-responsive">
-                <table class="table table-striped">
+                <table class="table table-striped table-bordered table-light">
                     <thead>
                         <tr>
                             @foreach (array_keys($ppdbs->first()->toArray()) as $column)
@@ -127,10 +138,17 @@
                                     <a href="{{ route('ppdb.edit', $ppdb->id) }}" class="btn btn-sm btn-primary"><i class="bi bi-pencil-square">Edit</i></a>
                                     
                                     <!-- Tombol Delete -->
-                                    <form action="{{ route('ppdb.destroy', $ppdb->id) }}" method="POST" style="display: inline-block;">
+                                    {{-- <form action="{{ route('ppdb.destroy', $ppdb->id) }}" method="POST" style="display: inline-block;">
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Yakin ingin menghapus data ini?')"><i class="bi bi-trash3">Del</i></button>
+                                    </form> --}}
+                                    <form id="delete-{{ $ppdb->id }}" action="{{ route('ppdb.destroy', $ppdb->id) }}" method="POST">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="button" class="btn btn-danger btn-sm" onclick="confirmDelete({{ $ppdb->id }})">
+                                            <i class="bi bi-trash3">Del</i>
+                                        </button>
                                     </form>
                                 </td>
                             </tr>
@@ -138,27 +156,24 @@
                     </tbody>
                 </table>
             </div>
+            
+            
         
             <!-- Menampilkan navigasi halaman -->
                 <div class="d-flex justify-content-center">
-                    {{ $ppdbs->links() }}
+                    {{ $ppdbs->links('vendor.pagination.bootstrap-5') }}
                 </div>
             @endif
         </div>
 
     
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
     
     
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
-    
-    
-    
-
-    
-
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ asset('js/confirmDeletion.js')}}"></script>
+    
+    
     @include('partials.footer')
 </body>
 </html>

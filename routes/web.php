@@ -9,7 +9,9 @@ use App\Http\Controllers\ActivityController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\PPDBController;
 use App\Http\Controllers\GaleriController;
+use App\Http\Controllers\AktivitasController;
 use App\Http\Controllers\Auth\RegisteredUserController;
+
 
 
 
@@ -39,9 +41,9 @@ Route::prefix('admin') // Menambahkan prefix 'admin' pada setiap URL route
             return view('admin.aboutUs');
         });
 
-        Route::get('/aktivitas', function () {
-            return view('admin.aktivitas.aktivitas');
-        });
+        // Route::get('/aktivitas', function () {
+        //     return view('admin.aktivitas.aktivitas');
+        // });
 
         Route::get('/PPDB', [PPDBController::class, 'index'])->name('ppdb.index');
         Route::get('/ppdb/{id}/edit', [PPDBController::class, 'edit'])->name('ppdb.edit');
@@ -66,6 +68,12 @@ Route::prefix('admin') // Menambahkan prefix 'admin' pada setiap URL route
         Route::get('/galeri/{id}/edit', [GaleriController::class, 'edit'])->name('admin.galeri.edit');
         Route::delete('/galeri/{id}', [GaleriController::class, 'destroy'])->name('admin.galeri.destroy');
         Route::put('/galeri/update/{id}', [GaleriController::class, 'update'])->name('admin.galeri.update');
+        Route::get('/aktivitas', [AktivitasController::class, 'indexAdmin'])->name('admin.aktivitas.index');
+        Route::get('/aktivitas/create', [AktivitasController::class, 'create'])->name('admin.aktivitas.create');
+        Route::post('/aktivitas/store', [AktivitasController::class, 'store'])->name('admin.aktivitas.store');
+        Route::get('/aktivitas/{id}/edit', [AktivitasController::class, 'edit'])->name('admin.aktivitas.edit');
+        Route::delete('/aktivitas/{id}', [AktivitasController::class, 'destroy'])->name('admin.aktivitas.destroy');
+        Route::put('/aktivitas/update/{id}', [AktivitasController::class, 'update'])->name('admin.aktivitas.update');
 
         Route::get('/register', [RegisteredUserController::class, 'create'])
         ->name('register');
@@ -101,6 +109,8 @@ Route::get('/guru', [TeacherController::class, 'index'])->name('user.acara.index
 // Route::get('/guru', function () {
 //     return view('user.guru');
 // });
+
+Route::get('/aktivitas', [AktivitasController::class, 'index'])->name('user.aktivitas.index');
 
 Route::post('/submit-ppdb', [PpdbController::class, 'store']);
 

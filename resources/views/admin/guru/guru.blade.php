@@ -7,6 +7,7 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
         
         <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&amp;family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet"/>
+        
     <style>
     body 
     {
@@ -201,10 +202,22 @@
         }
 
     </style>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     </head>
     <body>
 
     @include('partials.adminnav')
+
+    @if(session('success'))
+        <script>
+            Swal.fire(
+                'Berhasil!',
+                '{{ session('success') }}',
+                'success'
+            );
+        </script>
+    @endif
+
     <div class="container">
     <div class="header">
         <h1>Data Guru</h1>
@@ -218,8 +231,7 @@
     <div class="container">
         
             <div class="staff-profiles">
-                {{-- 
-                </div> --}}
+                
                 @foreach($teachers as $teacher)
                     <div class="staff-card">
                         <img src="{{ $teacher->photo ? asset('storage/' . $teacher->photo) : asset('storage/teachers/default-profile.jpg') }}" 
@@ -240,12 +252,11 @@
                             {{-- <a href="{{ route('admin.guru.edit', $teacher->id) }}" class="btn btn-warning btn-md"><i class="bi bi-pencil-square"></i>Edit</a> --}}
     
                             <!-- Tombol Delete -->
-                            <form action="{{ route('admin.guru.destroy', $teacher->id) }}" method="POST">
+                            <form id="delete-{{ $teacher->id }}" action="{{ route('admin.guru.destroy', $teacher->id) }}" method="POST">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" class="btn btn-danger btn-md"
-                                        onclick="return confirm('Apakah Anda yakin ingin menghapus guru ini?')">
-                                    <i class="bi bi-trash3"></i>Delete
+                                <button type="button" class="btn btn-danger btn-sm" onclick="confirmDelete({{ $teacher->id }})">
+                                    <i class="bi bi-trash3"></i> Delete
                                 </button>
                             </form>
                         </div>
@@ -264,16 +275,12 @@
         </div>
     </div>
     </div>
-    {{-- <footer style="background-color: #1a7f72; color: white; padding: 20px; display: flex; justify-content: center; align-items: center;">
-    <div style="text-align: center;">
-        <p style="margin: 0;">© 2023 TK Islam Kinasih</p>
-        <div style="display: flex; justify-content: center; gap: 20px; margin-top: 10px;">
-        <a href="https://wa.me/62895615460275" target="_blank" style="color: white; font-size: 20px;"><i class="fab fa-whatsapp"></i></a>
-        <a href="https://www.instagram.com/tkislamkinasih" target="_blank" style="color: white; font-size: 20px;"><i class="fab fa-instagram"></i></a>
-        <a href="https://youtu.be/1TFblh9GS6A" target="_blank" style="color: white; font-size: 20px;"><i class="fab fa-youtube"></i></a>
-        </div>
-    </div>
-    </footer> --}}
+    
     @include('partials.footer')
+
+    <script src="{{ asset('js/confirmDeletion.js')}}"></script>
+    {{-- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"></script> --}}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
     </body>
 </html>

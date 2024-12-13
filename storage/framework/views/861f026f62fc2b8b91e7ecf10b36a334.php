@@ -101,9 +101,22 @@
 
     <?php echo $__env->make('global_css.css', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
     <?php echo $__env->make('css_in_view.ppdb_css', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
   </head>
   <body>
     <?php echo $__env->make('partials.navbar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+
+    <?php if(session('success')): ?>
+        <script>
+            Swal.fire(
+                'Terima kasih sudah mendaftar!',
+                '<?php echo e(session('success')); ?>',
+                'success'
+            );
+        </script>
+    <?php endif; ?>
 
     <div class="container">
         <div class="row">
@@ -168,22 +181,7 @@
     <?php echo $__env->make('partials.footer', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 
     <!-- Modal -->
-    <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="successModalLabel">Pendaftaran Berhasil!</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <p>Terima kasih telah mendaftar, <span id="modalNama"></span>. Kami akan segera menghubungi Anda melalui nomor <span id="modalTelepon"></span>.</p>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Tutup</button>
-          </div>
-        </div>
-      </div>
-    </div>
+    
 
     <script>
 document.addEventListener('DOMContentLoaded', function() {
@@ -200,29 +198,29 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Form Submission Validation
-    const form = document.querySelector('form[action="/submit-ppdb"]');
-    form.addEventListener('submit', function(event) {
-        event.preventDefault(); // Prevent form from submitting
+    // const form = document.querySelector('form[action="/submit-ppdb"]');
+    // form.addEventListener('submit', function(event) {
+    //     event.preventDefault(); // Prevent form from submitting
 
-        const nama = document.getElementById('nama').value.trim();
-        const no_telepon = document.getElementById('no_telepon').value.trim();
+    //     const nama = document.getElementById('nama').value.trim();
+    //     const no_telepon = document.getElementById('no_telepon').value.trim();
 
-        // Periksa apakah nomor telepon lebih dari 15 karakter
-        if (no_telepon.length > 15) {
-            alert("Nomor telepon tidak boleh lebih dari 15 karakter.");
-            return;
-        }
+    //     // Periksa apakah nomor telepon lebih dari 15 karakter
+    //     if (no_telepon.length > 15) {
+    //         alert("Nomor telepon tidak boleh lebih dari 15 karakter.");
+    //         return;
+    //     }
 
-        // Jika semua field valid
-        if (nama && no_telepon) {
-            document.getElementById('modalNama').textContent = nama;
-            document.getElementById('modalTelepon').textContent = no_telepon;
-            const successModal = new bootstrap.Modal(document.getElementById('successModal'));
-            successModal.show();
-        } else {
-            alert("Mohon lengkapi semua field pendaftaran sebelum mengirim form!");
-        }
-    });
+    //     // Jika semua field valid
+    //     if (nama && no_telepon) {
+    //         document.getElementById('modalNama').textContent = nama;
+    //         document.getElementById('modalTelepon').textContent = no_telepon;
+    //         const successModal = new bootstrap.Modal(document.getElementById('successModal'));
+    //         successModal.show();
+    //     } else {
+    //         alert("Mohon lengkapi semua field pendaftaran sebelum mengirim form!");
+    //     }
+    // });
 
     // Slideshow Functions
     let slideIndex = 1;

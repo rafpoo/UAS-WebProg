@@ -46,6 +46,7 @@
       margin: 4px 0;
     }
     </style>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
     <div class="container">
@@ -89,12 +90,12 @@
             </div>
 
             <div class="mb-3">
-                <label for="photo" class="form-label">Gambar (kosongkan jika tidak ingin mengganti)</label>
+                <label for="photo" class="form-label">Gambar (kosongkan jika tidak ingin mengganti)(Ukuran Max 2MB)</label>
                 <img src="{{ asset('storage/' . $teacher->photo) }}" alt="Gambar Saat Ini" style="width: 150px; display: block; margin-bottom: 10px;">
             </div>
             
             <div class="mb-3">
-                <input type="file" class="form-control" id="photo" name="photo" accept="photo/*">
+                <input type="file" class="form-control" id="photo" name="photo" accept="photo/*" onchange="validateFileSize(this)">
             </div>
             
 
@@ -111,4 +112,5 @@
 
     @include('partials.footer')
 </body>
+<script src="{{ asset('js/validateImg.js') }}"></script>
 </html>

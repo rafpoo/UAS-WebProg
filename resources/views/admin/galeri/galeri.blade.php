@@ -150,9 +150,20 @@
       color: red;
     }
   </style>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
 @include('partials.adminnav')
+
+@if(session('success'))
+  <script>
+      Swal.fire(
+          'Berhasil!',
+          '{{ session('success') }}',
+          'success'
+      );
+  </script>
+@endif
 
 <div class="row row-cols-1 row-cols-md-3 g-4" style="display: flex; justify-content: center; margin-top: 20px;">
     <a href="{{ route('admin.galeri.create') }}" class="btn btn-warning">
@@ -181,12 +192,11 @@
                         <a href="{{ route('admin.galeri.edit', $galeri->id) }}" class="btn btn-warning btn-sm"><i class="bi bi-pencil-square"></i>Edit</a>
 
                         <!-- Tombol Delete -->
-                        <form action="{{ route('admin.galeri.destroy', $galeri->id) }}" method="POST">
+                        <form id="delete-{{ $galeri->id }}" action="{{ route('admin.galeri.destroy', $galeri->id) }}" method="POST">
                             @csrf
                             @method('DELETE')
-                            <button type="submit" class="btn btn-danger btn-sm"
-                                    onclick="return confirm('Apakah Anda yakin ingin menghapus foto ini?')">
-                                    <i class="bi bi-trash3"></i>Delete
+                            <button type="button" class="btn btn-danger btn-sm" onclick="confirmDelete({{ $galeri->id }})">
+                                <i class="bi bi-trash3"></i> Delete
                             </button>
                         </form>
                     </div>
@@ -214,6 +224,7 @@
     </div>
 </div>
 
+<script src="{{ asset('js/confirmDeletion.js')}}"></script>
 <script>
     // JavaScript for modal functionality
     const galleryImages = document.querySelectorAll('.gallery-item img');

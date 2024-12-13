@@ -38,10 +38,34 @@
             background-color: #3B7F6F;
         }
     </style>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 </head>
 
 <body>
-    <div class="form-container">
+
+    @if (session('success'))
+        <script>
+            Swal.fire({
+                icon: 'success',
+                title: 'Berhasil!',
+                text: '{{ session('success') }}',
+                confirmButtonText: 'OK'
+            });
+        </script>
+    @endif
+    @if ($errors->has('photo'))
+        <script>
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: '{{ $errors->first('photo') }}',
+                confirmButtonText: 'OK'
+            });
+        </script>
+    @endif
+    <div class="container">
         <h1>Tambah Acara</h1>
         <form action="{{ route('admin.acara.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
@@ -62,14 +86,16 @@
             </div>
 
             <div class="mb-3">
-                <label for="image" class="form-label">Gambar</label>
-                <input type="file" class="form-control" id="image" name="image" accept="image/*" required>
+                <label for="image" class="form-label">Gambar (Ukuran Max 2MB)</label>
+                <input type="file" class="form-control" id="image" name="image" accept="image/*" onchange="validateFileSize(this)" required>
+                {{-- <input type="file" name="photo" accept="image/*" onchange="validateFileSize(this)"> --}}
             </div>
 
             <button type="submit" class="btn btn-primary w-100">Tambahkan</button>
         </form>
     </div>
     @include('partials.footer')
-</body>
 
+    <script src="{{ asset('js/validateImg.js') }}"></script>
+</body>
 </html>

@@ -46,6 +46,7 @@
       margin: 4px 0;
     }
     </style>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
     <div class="container">
@@ -74,9 +75,9 @@
 
             <!-- Gambar -->
             <div class="mb-3">
-                <label for="image" class="form-label">Gambar (kosongkan jika tidak ingin mengganti)</label>
+                <label for="image" class="form-label">Gambar (kosongkan jika tidak ingin mengganti)(Ukuran Max 2MB)</label>
                 <img src="{{ asset('storage/' . $galeri->image) }}" alt="Gambar Saat Ini" style="width: 150px; display: block; margin-bottom: 10px;">
-                <input type="file" class="form-control" id="image" name="image" accept="image/*">
+                <input type="file" class="form-control" id="image" name="image" accept="image/*" onchange="validateFileSize(this)">
             </div>
 
             <button type="submit" class="btn btn-primary">Update</button>
@@ -85,4 +86,5 @@
 
     @include('partials.footer')
 </body>
+<script src="{{ asset('js/validateImg.js') }}"></script>
 </html>

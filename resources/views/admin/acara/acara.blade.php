@@ -69,11 +69,21 @@
 </style>
 
   </style>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body>
 
   @include('partials.adminnav')
+  @if(session('success'))
+        <script>
+            Swal.fire(
+                'Berhasil!',
+                '{{ session('success') }}',
+                'success'
+            );
+        </script>
+    @endif
   
   <div class="container">
   <h1 style="text-align: center;">Event</h1>
@@ -107,20 +117,22 @@
                 
                 <!-- Body Card -->
                 <div class="card-body">
-                    <h5 class="card-title">{{ $event->title }}</h5>
+                    <h5 class="card-title">{{ $event->title }} {{ $event->id }}</h5>
                     <h6 class="card-subtitle mb-2 text-muted" style="color: #000;">{{ $event->date }}</h6>
                     <p class="card-text">{{ $event->descriptions }}</p>
                 </div>
                 <div class="d-flex justify-content-between">
                     <a href="{{ route('admin.acara.edit', $event->id) }}" class="btn btn-warning btn-sm"><i class="bi bi-pencil-square"></i>Edit</a>
-                    <form action="{{ route('admin.acara.destroy', $event->id) }}" method="POST">
+
+                    <!-- Tombol Delete -->
+                    <form id="delete-{{ $event->id }}" action="{{ route('admin.acara.destroy', $event->id) }}" method="POST">
                         @csrf
                         @method('DELETE')
-                        <button type="submit" class="btn btn-danger btn-sm"
-                                onclick="return confirm('Apakah Anda yakin ingin menghapus event ini?')">
-                                <i class="bi bi-trash3"></i>Delete
+                        <button type="button" class="btn btn-danger btn-sm" onclick="confirmDelete({{ $event->id }})">
+                            <i class="bi bi-trash3"></i> Delete
                         </button>
                     </form>
+                  
                 </div>
             </div>
         </div>
@@ -136,6 +148,7 @@
 
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="{{ asset('js/confirmDeletion.js')}}"></script>
 
   @include('partials.footer')
 </body>

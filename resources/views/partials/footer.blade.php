@@ -1,3 +1,4 @@
+<br /><br />
 <footer class="text-white py-5" style="background-color: #114137">
     <!-- Menyisipkan library Bootstrap Icons untuk ikon -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">

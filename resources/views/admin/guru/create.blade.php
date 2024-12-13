@@ -46,20 +46,29 @@
       margin: 4px 0;
     }
     </style>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
+    @if ($errors->has('photo'))
+        <script>
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: '{{ $errors->first('photo') }}',
+                confirmButtonText: 'OK'
+            });
+        </script>
+    @endif
     <div class="container">
-        <h1>Tambah Foto</h1>
+        <h1>Tambah Guru</h1>
         <form action="{{ route('admin.guru.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
             <!-- Contoh input form -->
-            <!-- Nama guru -->
             <div class="mb-3">
                 <label for="nama" class="form-label">Nama</label>
                 <input type="text" class="form-control" id="nama" name="nama" required>
             </div>
-
-            <!-- Deskripsi guru -->
+    
             <div class="mb-3">
                 <label for="jabatan" class="form-label">Jabatan</label>
                 <input class="form-control" id="jabatan" name="jabatan" required>
@@ -67,7 +76,7 @@
 
             <div class="mb-3">
                 <label for="tanggal_bergabung" class="form-label">Tanggal bergabung</label>
-                <input type="date" class="form-control" id="tanggal_bergabung" name="tanggal_bergabung" required>
+                <input type="date" class="form-control" id="tanggal_bergabung" name="tanggal_bergabung"  required>
             </div>
 
             <div class="mb-3">
@@ -76,7 +85,8 @@
             </div>
 
             <div class="mb-3">
-                <input type="file" class="form-control" id="photo" name="photo" accept="photo/*">
+                <label for="photo" class="form-label">Foto Profil (Ukuran Max 2MB)</label>
+                <input type="file" class="form-control" id="photo" name="photo" accept="photo/*" onchange="validateFileSize(this)">
             </div>
     
             <!-- Tambahkan input lainnya sesuai dengan kolom di tabel -->
@@ -87,4 +97,6 @@
 
     @include('partials.footer')
 </body>
+<script src="{{ asset('js/validateImg.js') }}"></script>
+
 </html>
