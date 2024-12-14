@@ -110,7 +110,7 @@ Route::get('/galeri', [GaleriController::class, 'index'])->name('user.galeri.ind
 //     return view('user.galeri');
 // });
 
-Route::get('/guru', [TeacherController::class, 'index'])->name('user.acara.index');
+Route::get('/guru', [TeacherController::class, 'index'])->name('user.guru.index');
 
 // Route::get('/guru', function () {
 //     return view('user.guru');
