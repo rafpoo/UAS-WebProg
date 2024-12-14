@@ -7,7 +7,7 @@ use App\Http\Controllers\StudentController;
 use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\ActivityController;
 use App\Http\Controllers\EventController;
-use App\Http\Controllers\PPDBController;
+use App\Http\Controllers\PpdbController;
 use App\Http\Controllers\GaleriController;
 use App\Http\Controllers\AktivitasController;
 use App\Http\Controllers\EkstrakurikulerController;
