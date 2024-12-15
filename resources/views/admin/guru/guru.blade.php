@@ -11,6 +11,8 @@
 
         @include('global_css.css')
         @include('css_in_view.guru_css')
+
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     </head>
     <body>
         @include('partials.adminnav')
@@ -74,5 +76,6 @@
             </div>
         </div>
         @include('partials.footer')
+        <script src="{{ asset('js/confirmDeletion.js')}}"></script>
     </body>
 </html>
