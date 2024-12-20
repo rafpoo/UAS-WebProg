@@ -1,246 +1,323 @@
 <!DOCTYPE html>
 <html lang="id">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TK Islam Kinasih - Tentang Kami</title>
     <link rel="icon" href="{{ asset('images/LogoTK.jpg') }}" type="image/jpg">
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&amp;family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet" />
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-
-
-    @include('global_css.css')
-    @include('css_in_view.home_css')
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         :root {
-            --soft-emerald: #10B981;
-            --sage-green: #6B8E23;
-            --mint-green: #3CB371;
+            --primary-color: #4F998A;
+            --primary-dark: #3d7b6e;
+            --primary-light: #68A895;
+            --accent-color: #ECF8F6;
+            --text-color: #2C3E50;
+            --light-bg: #F5F9F8;
+            --border-color: rgba(79, 153, 138, 0.2);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
         }
 
         body {
-            font-family: 'Lato', sans-serif;
-            background: linear-gradient(135deg, #f4f7f6 0%, #e6efe7 100%);
-            color: #2c3e50;
+            background: var(--light-bg);
+            color: var(--text-color);
+            line-height: 1.6;
         }
 
-        .elegant-shadow {
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1), 0 15px 40px rgba(0, 0, 0, 0.05);
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
 
-        .emerald-gradient {
-            background: linear-gradient(45deg, var(--soft-emerald), var(--mint-green));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        .hero {
+            background: linear-gradient(135deg, #68A895 0%, #4F998A 100%);
+            padding: 80px 20px;
+            text-align: center;
+            color: white;
+            box-shadow: 0 4px 6px rgba(79, 153, 138, 0.2);
         }
 
-        .elegant-border {
-            position: relative;
-            overflow: hidden;
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            font-family: 'Garamond', serif;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
         }
 
-        .elegant-border::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(to right, var(--sage-green), var(--mint-green));
-            opacity: 0.7;
+        .hero p {
+            font-size: 1.25rem;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.95;
         }
 
-        .premium-card {
-            transition: all 0.4s ease-in-out;
-            border-radius: 1rem;
-        }
+       
+.card {
+    background: white;
+    color: var(--text-color); /* Pastikan warna ini cukup kontras */
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(79, 153, 138, 0.1);
+    padding: 30px;
+    margin: 20px 0;
+    border: 1px solid var(--border-color);
+}
 
-        .premium-card:hover {
-            transform: translateY(-15px);
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+/* Ensure text readability */
+.card h1, .card h2, .card h3, .card p, .card ul, .card li {
+    color: var(--text-color); /* Tetap gunakan warna teks yang kontras */
+}
+
+.visi-misi, .feature-card, .sentra-item {
+    color: var(--primary-dark); /* Gunakan warna sedikit lebih gelap untuk kontras */
+}
+
+        .section {
+            padding: 60px 0;
         }
 
         .section-title {
-            font-family: 'Cormorant Garamond', serif;
-            position: relative;
             text-align: center;
-            padding-bottom: 20px;
+            font-size: 2.5rem;
+            color: var(--primary-dark);
+            margin-bottom: 40px;
         }
 
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100px;
-            height: 2px;
-            background: linear-gradient(to right, transparent, var(--soft-emerald), transparent);
-            opacity: 0.6;
+        .grid {
+            display: grid;
+            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         }
 
-        .soft-background {
-            background: linear-gradient(to bottom right, #f9fafa, #f0f5f0);
+        .visi-misi {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 15px rgba(79, 153, 138, 0.1);
+        }
+
+        .visi-misi h3 {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .visi-misi h3 i {
+            margin-right: 12px;
+            color: var(--primary-light);
+        }
+
+        .mission-list {
+            list-style: none;
+        }
+
+        .mission-list li {
+            background: var(--accent-color);
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            transition: transform 0.2s;
+        }
+
+        .mission-list li:hover {
+            transform: translateX(5px);
+        }
+
+        .mission-list li i {
+            color: var(--primary-color);
+            margin-right: 15px;
+        }
+
+        /* Sentra Grid */
+        .sentra-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .sentra-item {
+            background: var(--accent-color);
+            padding: 15px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            border: 1px solid var(--border-color);
+            transition: transform 0.2s;
+        }
+
+        .sentra-item:hover {
+            transform: translateY(-3px);
+        }
+
+        .sentra-item i {
+            color: var(--primary-color);
+            margin-right: 10px;
+        }
+
+        /* Features Section */
+        .feature-card {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(79, 153, 138, 0.1);
+            border: 1px solid var(--border-color);
+        }
+
+        .feature-card h3 {
+            display: flex;
+            align-items: center;
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .feature-card i {
+            margin-right: 15px;
+            font-size: 1.25rem;
+            color: var(--primary-light);
+        }
+
+        /* Hover Effects */
+        .feature-card:hover {
+            box-shadow: 0 6px 20px rgba(79, 153, 138, 0.15);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+                color: white;
+            }
+
+            .grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 
 <body>
-    <!-- Navbar (Existing Implementation) -->
-    @include('partials.navbar')<br />
+    @include('partials.navbar')
 
-    <div class="container mx-auto px-8 py-16">
-        <!-- Header Section -->
-        <header class="text-center mb-24">
-            <h1 class="text-7xl font-bold text-white mb-8 font-['Cormorant_Garamond']">
-                TK Islam Kinasih
-            </h1>
-            <p class="text-2xl text-gray-700 max-w-4xl mx-auto leading-relaxed font-light">
-                Lembaga Pendidikan Anak Usia Dini yang Berdedikasi Mengembangkan Potensi Anak Secara Holistik
-            </p>
-        </header>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>TK Islam Kinasih</h1>
+            <p>Lembaga Pendidikan Anak Usia Dini yang Berdedikasi Mengembangkan Potensi Anak Secara Holistik</p>
+        </div>
+    </section>
 
-        <!-- Visi dan Misi Section -->
-        <section class="mb-24">
-            <div class="bg-white rounded-3xl elegant-shadow p-16 soft-background elegant-border premium-card">
-                <h2 class="text-5xl font-bold text-center emerald-gradient mb-16 section-title">
-                    Visi dan Misi
-                </h2>
-
-                <div class="grid md:grid-cols-2 gap-16">
-                    <!-- Visi -->
-                    <div class="bg-gray-50 p-10 rounded-2xl border border-opacity-20 border-green-600">
-                        <h3 class="font-semibold text-4xl mb-8 text-green-800">Visi</h3>
-                        <p class="italic text-gray-700 text-xl leading-relaxed font-['Cormorant_Garamond']">
-                            "Mewujudkan anak didik yang bahagia, mandiri memiliki kecerdasan spiritual (SQ),
-                            kecerdasan Emosi (EQ), kecerdasan Intelektual (IQ) dan mengikuti perintah Alqur'an dan Hadist"
-                        </p>
-                    </div>
-
-                    <!-- Misi -->
-                    <div>
-                        <h3 class="font-semibold text-4xl mb-8 text-green-800">Misi</h3>
-                        <ul class="space-y-8">
-                            @php
-                            $misis = [
-                            "Menyediakan sarana untuk mengembangkan kecerdasan dan potensi anak sejak dini",
-                            "Mewujudkan kegiatan bermakna untuk mengembangkan keterampilan menolong diri sendiri",
-                            "Menjalin kemitraan dengan para pakar (Ulama, dokter, psikolog, seniman, atlet)",
-                            "Mewujudkan Taman kanak-kanak yang bersih, hijau, nyaman dan dinamis"
-                            ];
-                            @endphp
-
-                            @foreach($misis as $misi)
-                            <li class="bg-gray-50 p-6 rounded-2xl border border-opacity-20 border-green-600 flex items-center">
-                                <i class="fas fa-leaf mr-6 text-2xl text-green-600"></i>
-                                <span class="text-gray-800 text-xl">{{ $misi }}</span>
-                            </li>
-                            @endforeach
-                        </ul>
-                    </div>
+    <!-- Visi Misi Section -->
+    <section class="section">
+        <div class="container">
+        <h2 class="section-title" style="color: white;">Visi dan Misi</h2>
+            <div class="grid">
+                <div class="visi-misi">
+                    <h3><i class="fas fa-eye"></i> Visi</h3>
+                    <p>"Mewujudkan anak didik yang bahagia, mandiri memiliki kecerdasan spiritual (SQ), kecerdasan Emosi (EQ), kecerdasan Intelektual (IQ) dan mengikuti perintah Alqur'an dan Hadist"</p>
+                </div>
+                <div class="visi-misi">
+                    <h3><i class="fas fa-bullseye"></i> Misi</h3>
+                    <ul class="mission-list">
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span>Menyediakan sarana untuk mengembangkan kecerdasan dan potensi anak sejak dini</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span>Mewujudkan kegiatan bermakna untuk mengembangkan keterampilan menolong diri sendiri</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span>Menjalin kemitraan dengan para pakar (Ulama, dokter, psikolog, seniman, atlet)</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span>Mewujudkan Taman kanak-kanak yang bersih, hijau, nyaman dan dinamis</span>
+                        </li>
+                    </ul>
                 </div>
             </div>
-        </section>
-
-        <!-- Kenapa Pilih TK Islam Kinasih -->
-        <section class="mb-24">
-            <h2 class="text-6xl font-bold text-white mb-8 text-center section-title">
-                Kenapa Memilih TK Islam Kinasih?
-            </h2>
-
-            <div class="grid md:grid-cols-2 gap-16 mb-16">
-                
-                <div class="bg-white rounded-3xl elegant-shadow p-12 soft-background elegant-border premium-card">
-                    <p class="text-gray-700 text-xl">
-                        TK Islam Kinasih merupakan lembaga Pendidikan Anak Usia Dini (PAUD) yang mencakup
-                        Taman Penitipan Anak (TPA), Kelompok Bermain (KB), dan Taman Kanak-Kanak (TK).
-                        Berada di bawah naungan Yayasan Islam Kinasih, lembaga ini berdedikasi untuk
-                        memberikan pendidikan berkualitas bagi anak-anak usia dini.
-                    </p>
+        </div>
+    </section>
+    <section class="section">
+        <div class="container">
+        <h2 class="section-title" style="color: white;">Kenapa Memilih TK Islam Kinasih?</h2>
+            <div class="grid">
+                <div class="feature-card">
+                    <p>TK Islam Kinasih merupakan lembaga Pendidikan Anak Usia Dini (PAUD) yang mencakup Taman Penitipan Anak (TPA), Kelompok Bermain (KB), dan Taman Kanak-Kanak (TK). Berada di bawah naungan Yayasan Islam Kinasih, lembaga ini berdedikasi untuk memberikan pendidikan berkualitas bagi anak-anak usia dini.</p>
                 </div>
-
-               
-                <div class="bg-white rounded-3xl elegant-shadow p-12 soft-background elegant-border premium-card">
-                    <p class="text-gray-700 mb-8 text-xl">
-                        Dengan tenaga pendidik yang profesional dan penyayang, kami bertujuan membangun
-                        karakter, keterampilan, dan pengetahuan anak-anak sebagai bekal mereka dalam
-                        menghadapi jenjang pendidikan berikutnya.
-                    </p>
+                <div class="feature-card">
+                    <p>Dengan tenaga pendidik yang profesional dan penyayang, kami bertujuan membangun karakter, keterampilan, dan pengetahuan anak-anak sebagai bekal mereka dalam menghadapi jenjang pendidikan berikutnya.</p>
                 </div>
             </div>
+        </div>
+    </section>
 
-        </section>
-
-        <!-- Kurikulum dan Pembelajaran -->
-        <section>
-            <div class="grid md:grid-cols-2 gap-16 mb-16">
-                <!-- Kurikulum -->
-                <div class="bg-white rounded-3xl elegant-shadow p-12 soft-background elegant-border premium-card">
-                    <h3 class="text-4xl font-semibold emerald-gradient mb-10 flex items-center">
-                        <i class="fas fa-book-open mr-6 text-3xl text-green-600 opacity-80"></i>
-                        Kurikulum
-                    </h3>
-                    <p class="text-gray-700 text-xl">
-                        Menerapkan kurikulum merdeka berlandaskan Al-Qur'an dan Hadist,
-                        serta sesuai dengan tahap perkembangan dan kebutuhan anak.
-                    </p>
+    <!-- Curriculum Section -->
+    <section class="section">
+        <div class="container">
+            <div class="grid">
+                <div class="feature-card">
+                    <h3><i class="fas fa-book"></i> Kurikulum</h3>
+                    <p>Menerapkan kurikulum merdeka berlandaskan Al-Qur'an dan Hadist, serta sesuai dengan tahap perkembangan dan kebutuhan anak.</p>
                 </div>
-
-                <!-- Model Pembelajaran -->
-                <div class="bg-white rounded-3xl elegant-shadow p-12 soft-background elegant-border premium-card">
-                    <h3 class="text-4xl font-semibold emerald-gradient mb-10 flex items-center">
-                        <i class="fas fa-book-open mr-6 text-3xl text-green-600 opacity-80"></i>
-                        Model Pembelajaran
-                    </h3>
-                    <p class="text-gray-700 mb-8 text-xl">
-                        Menggunakan pendekatan Sentra (BCCT) yang memenuhi tiga jenis main:
-                        sensorimotor, pembangunan, dan peran.
-                    </p>
-                    <div class="bg-gray-50 p-8 rounded-2xl border border-opacity-20 border-green-600">
-                        <h4 class="font-semibold text-green-800 mb-6 text-2xl">Sentra yang Diterapkan:</h4>
-                        @php
-                        $sentras = [
-                        "Sentra bahan alam",
-                        "Sentra balok",
-                        "Sentra seni",
-                        "Sentra persiapan",
-                        "Sentra imtaq",
-                        "Sentra main peran"
-                        ];
-                        @endphp
-                        <div class="grid grid-cols-2 gap-4 text-gray-700">
-                            @foreach($sentras as $sentra)
-                            <div class="flex items-center text-lg">
-                                <i class="fas fa-seedling mr-3 text-green-600"></i>
-                                {{ $sentra }}
-                            </div>
-                            @endforeach
+                <div class="feature-card">
+                    <h3><i class="fas fa-chalkboard-teacher"></i> Model Pembelajaran</h3>
+                    <p>Menggunakan pendekatan Sentra (BCCT) yang memenuhi tiga jenis main: sensorimotor, pembangunan, dan peran.</p>
+                    <div class="sentra-grid">
+                        <div class="sentra-item">
+                            <i class="fas fa-star"></i>
+                            <span>Sentra bahan alam</span>
+                        </div>
+                        <div class="sentra-item">
+                            <i class="fas fa-star"></i>
+                            <span>Sentra balok</span>
+                        </div>
+                        <div class="sentra-item">
+                            <i class="fas fa-star"></i>
+                            <span>Sentra seni</span>
+                        </div>
+                        <div class="sentra-item">
+                            <i class="fas fa-star"></i>
+                            <span>Sentra persiapan</span>
+                        </div>
+                        <div class="sentra-item">
+                            <i class="fas fa-star"></i>
+                            <span>Sentra imtaq</span>
+                        </div>
+                        <div class="sentra-item">
+                            <i class="fas fa-star"></i>
+                            <span>Sentra main peran</span>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Pendekatan Pembelajaran -->
-            <div class="bg-white rounded-3xl elegant-shadow p-16 soft-background elegant-border premium-card">
-                <h3 class="text-4xl font-semibold emerald-gradient mb-10 flex items-center">
-                    <i class="fas fa-book-open mr-6 text-3xl text-green-600 opacity-80"></i>
-                    Pendekatan Pembelajaran
-                </h3>
-                <p class="text-gray-700 text-xl">
-                    Menggunakan pendekatan holistik integratif, saintifik, dan diferensiasi
-                    untuk mengembangkan potensi anak secara menyeluruh.
-                </p>
+            <div class="feature-card" style="margin-top: 30px;">
+                <h3><i class="fas fa-graduation-cap"></i> Pendekatan Pembelajaran</h3>
+                <p>Menggunakan pendekatan holistik integratif, saintifik, dan diferensiasi untuk mengembangkan potensi anak secara menyeluruh.</p>
             </div>
-        </section>
-    </div>
+        </div>
+    </section>
 
-    <!-- Footer (Existing Implementation) -->
     @include('partials.footer')
 </body>
-
 </html>
