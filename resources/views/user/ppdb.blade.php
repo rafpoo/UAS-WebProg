@@ -139,6 +139,9 @@
                     <label for="tempat_lahir" class="form-label">Tempat Lahir</label>
                     <input type="text" id="tempat_lahir" name="tempat_lahir" class="form-control" placeholder="Kota/Kabupaten" required>
 
+                    <label for="tanggal_lahir" class="form-label">Tanggal Lahir</label>
+        <input type="date" id="tanggal_lahir" name="tanggal_lahir" class="form-control" required>
+
                     <label for="nama_orang_tua" class="form-label">Nama Orang Tua</label>
                     <input type="text" id="nama_orang_tua" name="nama_orang_tua" class="form-control" placeholder="Nama Ayah/Ibu" required>
 
