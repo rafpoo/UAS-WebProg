@@ -7,7 +7,6 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&amp;family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap" rel="stylesheet">
     <link rel="icon" href="{{ asset('images/LogoTK.jpg') }}" type="image/jpg">
 <style>
     @media (max-width: 768px) {
@@ -16,7 +15,6 @@
         margin-bottom:100px;
     }
     }
-    
  </style>
 
     @include('global_css.css')
@@ -76,9 +74,9 @@
         <div class="main-content">
             <div class="left-content">
                 <h2>Ayo Daftar!</h2>
-                <p>Bersama TK Islam Kinasih, temukan pendidikan terbaik untuk buah hati Anda dengan kurikulum berbasis nilai-nilai Islam untuk membentuk generasi cerdas, berakhlak mulia, dan siap menghadapi masa depan. Kami menghadirkan metode belajar interaktif dan menyenangkan melalui kegiatan belajar sambil bermain yang didukung oleh fasilitas yang aman dan nyaman. Dengan fasilitas modern serta lingkungan yang damai dan riang, kami mendukung tumbuh kembang anak secara optimal.</p>
+                <p>Mewujudkan anak didik yang bahagia, mandiri memiliki kecerdasan spiritual (SQ), kecerdasan Emosi (EQ), kecerdasan Intelektual (IQ) dan mengikuti perintah Alqur'an dan Hadist</p>
                 <div class="image-container">
-                    <img alt="Anak-anak sedang belajar di dalam kelas" height="300" src="{{ URL('images/illustration6.jpg') }}" width="500"/>
+                    <img alt="Anak-anak sedang belajar di dalam kelas" height="300" src="{{ URL('images/illustartion88.jpg') }}" width="500"/>
                 </div>
             </div>
             

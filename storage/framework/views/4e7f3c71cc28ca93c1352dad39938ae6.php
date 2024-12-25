@@ -74,9 +74,9 @@
         <div class="main-content">
             <div class="left-content">
                 <h2>Ayo Daftar!</h2>
-                <p>Bersama TK Islam Kinasih, temukan pendidikan terbaik untuk buah hati Anda dengan kurikulum berbasis nilai-nilai Islam untuk membentuk generasi cerdas, berakhlak mulia, dan siap menghadapi masa depan. Kami menghadirkan metode belajar interaktif dan menyenangkan melalui kegiatan belajar sambil bermain yang didukung oleh fasilitas yang aman dan nyaman. Dengan fasilitas modern serta lingkungan yang damai dan riang, kami mendukung tumbuh kembang anak secara optimal.</p>
+                <p>Mewujudkan anak didik yang bahagia, mandiri memiliki kecerdasan spiritual (SQ), kecerdasan Emosi (EQ), kecerdasan Intelektual (IQ) dan mengikuti perintah Alqur'an dan Hadist</p>
                 <div class="image-container">
-                    <img alt="Anak-anak sedang belajar di dalam kelas" height="300" src="<?php echo e(URL('images/illustration6.jpg')); ?>" width="500"/>
+                    <img alt="Anak-anak sedang belajar di dalam kelas" height="300" src="<?php echo e(URL('images/illustartion88.jpg')); ?>" width="500"/>
                 </div>
             </div>
             

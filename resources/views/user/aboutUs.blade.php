@@ -320,6 +320,78 @@
             </div>
         </div>
     </section>
+    <!-- Struktur Yayasan Section -->
+<section class="section">
+    <div class="container">
+        <h2 class="section-title" style="color: white;">Struktur Yayasan</h2>
+        <div class="grid">
+            <!-- Pembina Yayasan -->
+            <div class="feature-card">
+                <h3><i class="fas fa-user-tie"></i> Pembina Yayasan</h3>
+                <ul class="mission-list">
+                    <li>
+                        <i class="fas fa-user-circle"></i>
+                        <span>Dr. H. Ahmad Fauzi, M.Pd</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Pengurus Yayasan -->
+            <div class="feature-card">
+                <h3><i class="fas fa-users-cog"></i> Pengurus Yayasan</h3>
+                <ul class="mission-list">
+                    <li>
+                        <i class="fas fa-user-circle"></i>
+                        <span>Ketua: H. Muhammad Ridwan, S.Ag</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-user-circle"></i>
+                        <span>Sekretaris: Hj. Siti Aminah, S.Pd</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-user-circle"></i>
+                        <span>Bendahara: Hj. Fatimah Az-Zahra, S.E</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Pengawas dan Pengelola -->
+        <div class="grid" style="margin-top: 30px;">
+            <div class="feature-card">
+                <h3><i class="fas fa-user-shield"></i> Pengawas Yayasan</h3>
+                <ul class="mission-list">
+                    <li>
+                        <i class="fas fa-user-circle"></i>
+                        <span>H. Abdul Karim, M.Ag</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-user-circle"></i>
+                        <span>Hj. Khadijah Nur, M.Pd</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="feature-card">
+                <h3><i class="fas fa-school"></i> Pengelola Sekolah</h3>
+                <ul class="mission-list">
+                    <li>
+                        <i class="fas fa-user-circle"></i>
+                        <span>Kepala Sekolah: Siti Rahmah, S.Pd</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-user-circle"></i>
+                        <span>Wakil Kepala Sekolah: Nur Hidayah, S.Pd</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-user-circle"></i>
+                        <span>Koordinator Kurikulum: Ahmad Syafiq, S.Pd</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
 
     @include('partials.footer')
 </body>
