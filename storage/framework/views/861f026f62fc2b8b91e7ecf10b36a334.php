@@ -4,7 +4,7 @@
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <title>Form Pendaftaran</title>
-    <link rel="icon" href="{{ asset('images/LogoTK.jpg') }}" type="image/jpg">
+    <link rel="icon" href="<?php echo e(asset('images/LogoTK.jpg')); ?>" type="image/jpg">
     
     <!-- External CSS Libraries -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
@@ -167,23 +167,23 @@
     
     </style>
 
-    @include('global_css.css')
-    @include('css_in_view.ppdb_css')
+    <?php echo $__env->make('global_css.css', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+    <?php echo $__env->make('css_in_view.ppdb_css', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   </head>
   <body>
-    @include('partials.navbar')
+    <?php echo $__env->make('partials.navbar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 
-    @if(session('success'))
+    <?php if(session('success')): ?>
         <script>
             Swal.fire(
                 'Terima kasih sudah mendaftar!',
-                '{{ session('success') }}',
+                '<?php echo e(session('success')); ?>',
                 'success'
             );
         </script>
-    @endif
+    <?php endif; ?>
 
     <div class="container">
     <!-- Info Pendaftaran Section -->
@@ -239,7 +239,7 @@
        <!-- Form Column -->
        <div class="col-md-6">
            <form action="/submit-ppdb" method="POST" class="w-100 h-100">
-                @csrf
+                <?php echo csrf_field(); ?>
                <h2>Form Pendaftaran</h2>
 
                <label for="nama" class="form-label">Nama Lengkap</label>
@@ -288,13 +288,13 @@
         <Br /><br /><Br /><br /><br />
            <div class="slideshow-container">
                <div class="slide active">
-                   <img src="{{ URL('images/illustration9.jpg') }}" alt="Illustration 1">
+                   <img src="<?php echo e(URL('images/illustration9.jpg')); ?>" alt="Illustration 1">
                </div>
                <div class="slide">
-                   <img src="{{ URL('images/illustration12.jpg') }}" alt="Illustration 2">
+                   <img src="<?php echo e(URL('images/illustration12.jpg')); ?>" alt="Illustration 2">
                </div>
                <div class="slide">
-                   <img src="{{ URL('images/illustration10.jpg') }}" alt="Illustration 3">
+                   <img src="<?php echo e(URL('images/illustration10.jpg')); ?>" alt="Illustration 3">
                </div>
 
                <!-- Slideshow Controls -->
@@ -307,7 +307,7 @@
    </div>
 </div>
 
-    @include('partials.footer')
+    <?php echo $__env->make('partials.footer', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -358,4 +358,4 @@
         });
     </script>
   </body>
-</html>
+</html><?php /**PATH C:\xampp\htdocs\uazzzz\UAS-WebProg\resources\views/user/ppdb.blade.php ENDPATH**/ ?>

@@ -16,8 +16,11 @@ return new class extends Migration
         $table->string('nama');
         $table->string('jenis_kelamin');
         $table->string('tempat_lahir');
-        $table->string('nama_orang_tua');
-        $table->string('no_telepon');
+        $table->date('tanggal_lahir');
+        $table->string('nama_ayah');
+        $table->string('no_telepon_ayah');
+        $table->string('nama_ibu');
+        $table->string('no_telepon_ibu')->nullable();
         $table->text('alamat');
         $table->timestamps();
     });

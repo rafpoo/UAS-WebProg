@@ -27,9 +27,12 @@ class PpdbController extends Controller
         if ($search) {
             $ppdbs = PPDB::where('nama', 'like', "%$search%")
                 ->orWhere('tempat_lahir', 'like', "%$search%")
+                ->orWhere('tanggal_lahir', 'like', "%$search%")
                 ->orWhere('alamat', 'like', "%$search%")
-                ->orWhere('nama_orang_tua', 'like', "%$search%" )
-                ->orWhere('no_telepon', 'like', "%$search%" )
+                ->orWhere('nama_ayah', 'like', "%$search%")
+                ->orWhere('no_telepon_ayah', 'like', "%$search%")
+                ->orWhere('nama_ibu', 'like', "%$search%")
+                ->orWhere('no_telepon_ibu', 'like', "%$search%")
                 ->paginate(20);
         } else {
             // Jika tidak ada pencarian, ambil semua data
@@ -59,8 +62,11 @@ class PpdbController extends Controller
             'nama' => 'required|string|max:255',
             'jenis_kelamin' => 'required|string',
             'tempat_lahir' => 'required|string|max:255',
-            'nama_orang_tua' => 'required|string|max:255',
-            'no_telepon' => 'required|string|max:15',
+            'tanggal_lahir' => 'required|date',
+            'nama_ayah' => 'required|string|max:255',
+            'no_telepon_ayah' => 'required|string|max:15',
+            'nama_ibu' => 'required|string|max:255',
+            'no_telepon_ibu' => 'string|max:15',
             'alamat' => 'required|string',
         ]);
 
@@ -101,8 +107,11 @@ class PpdbController extends Controller
             'nama' => 'required|string|max:255',
             'jenis_kelamin' => 'required|string|max:255', // Pastikan jenis_kelamin sesuai dengan tipe data
             'tempat_lahir' => 'required|string|max:255',  // Tambahkan aturan validasi lainnya sesuai kebutuhan
-            'nama_orang_tua' => 'required|string|max:255',
-            'no_telepon' => 'required|numeric', // Validasi untuk nomor telepon
+            'tanggal_lahir' => 'required|date',
+            'nama_ayah' => 'required|string|max:255',
+            'no_telepon_ayah' => 'required|string|max:15',
+            'nama_ibu' => 'required|string|max:255',
+            'no_telepon_ibu' => 'string|max:15',
             'alamat' => 'required|string|max:255',
         ]);
 
@@ -112,8 +121,11 @@ class PpdbController extends Controller
             'nama' => $request->nama,
             'jenis_kelamin' => $request->jenis_kelamin,
             'tempat_lahir' => $request->tempat_lahir,
-            'nama_orang_tua' => $request->nama_orang_tua,
-            'no_telepon' => $request->no_telepon,
+            'tanggal_lahir' => $request->tanggal_lahir,
+            'nama_ayah' => $request->nama_ayah,
+            'no_telepon_ayah' => $request->no_telepon_ayah,
+            'nama_ibu' => $request->nama_ibu,
+            'no_telepon_ibu' => $request->no_telepon_ibu,
             'alamat' => $request->alamat,
         ]);
 

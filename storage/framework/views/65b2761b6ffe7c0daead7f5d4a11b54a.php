@@ -1,12 +1,8 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-  
-  <!-- Bootstrap JS + Popper -->
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
 
 <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
     <div class="container-fluid">
-        <a style="text-decoration: none;" class="navbar-brand" href="/">
+        <a class="navbar-brand" href="/">
             <img class="rounded-circle" src="<?php echo e(URL('images/LogoTK.jpg')); ?>" alt="School Logo" style="height: 50px;">
             <h3 style="color: white; display: inline-block; margin-left: 10px;">TK Islam Kinasih</h3>
         </a>
@@ -36,16 +32,9 @@
             </ul>
         </div>
     </div>
-  </nav>
-  
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-  
-  <!-- Bootstrap JS + Popper -->
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
-  
-  <style>
+</nav>
+
+<style>
     body {
         background: linear-gradient(135deg, #68A895 0%, #4F998A 100%);
         color: white;
@@ -54,31 +43,30 @@
         padding: 0;
         background-attachment: fixed;
     }
-  
+
     .navbar {
         background-color: #1a6354;
     }
-  
+
     .navbar-brand img {
         height: 50px;
     }
-  
+
     .nav-link {
         color: white !important;
     }
-  
+
     .nav-link:hover {
         text-decoration: underline;
     }
-  
+
     .container-fluid {
-        padding: 15px 30px; /* Ruang lebih kecil untuk navbar */
+        padding: 15px 30px;
     }
-  
-    /* Custom Spacing for Nav Items */
+
     .custom-nav-spacing .nav-item {
-        margin-left: 15px; /* Memberikan jarak antar item */
-        margin-right: 15px; /* Memberikan jarak antar item */
+        margin-left: 15px;
+        margin-right: 15px;
     }
-  </style>
-  <?php /**PATH C:\xampp\htdocs\uazzzz\UAS-WebProg\resources\views/partials/navbar.blade.php ENDPATH**/ ?>
+</style>
+<?php /**PATH C:\xampp\htdocs\uazzzz\UAS-WebProg\resources\views/partials/navbar.blade.php ENDPATH**/ ?>

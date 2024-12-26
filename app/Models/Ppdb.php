@@ -11,9 +11,12 @@ class Ppdb extends Model
     protected $fillable = [
         'nama', 
         'jenis_kelamin', 
-        'tempat_lahir', 
-        'nama_orang_tua', 
-        'no_telepon', 
+        'tempat_lahir',
+        'tanggal_lahir',
+        'nama_ayah', 
+        'no_telepon_ayah',
+        'nama_ibu', 
+        'no_telepon_ibu', 
         'alamat'
     ];
 }

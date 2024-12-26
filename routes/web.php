@@ -118,7 +118,7 @@ Route::get('/guru', [TeacherController::class, 'index'])->name('user.guru.index'
 
 Route::get('/aktivitas', [AktivitasController::class, 'index'])->name('user.aktivitas.index');
 
-Route::post('/submit-ppdb', [PpdbController::class, 'store']);
+Route::post('/submit-ppdb', [PpdbController::class, 'store'])->middleware('throttle:2,1');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
