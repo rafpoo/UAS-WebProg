@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TK Islam Kinasih - Gallery</title>
+  <title>Admin - TK Islam Kinasih - Gallery</title>
   <link rel="icon" href="{{ asset('images/LogoTK.jpg') }}" type="image/jpg">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css">
@@ -33,11 +33,14 @@
     }
 
     .gallery-item {
-      position: relative;
-      overflow: hidden;
-      border-radius: 15px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden; /* Memastikan gambar tetap dalam bingkai */
+        border-radius: 10px; /* Bingkai melengkung opsional */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        background-color: #f8f8f8; /* Latar belakang jika gambar transparan */
     }
 
     .gallery-item:hover {
@@ -46,10 +49,10 @@
     }
 
     .gallery-item img {
-      width: 100%;
-      height: 300px;
-      object-fit: cover;
-      transition: opacity 0.3s ease;
+        width: 100%; /* Sesuaikan lebar kontainer */
+        height: auto; /* Pertahankan rasio asli gambar */
+        display: block; /* Hilangkan margin bawaan */
+        object-fit: contain; /* Gambar tidak dipotong, proporsi asli tetap */
     }
 
     .gallery-item .overlay {
@@ -151,23 +154,56 @@
       color: red;
     }
   </style>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
 @include('partials.navbar')
 
+@if(session('success'))
+  <script>
+      Swal.fire(
+          'Berhasil!',
+          '{{ session('success') }}',
+          'success'
+      );
+  </script>
+@endif
+
+{{-- <div class="row row-cols-1 row-cols-md-3 g-4" style="display: flex; justify-content: center; margin-top: 20px;">
+    <a href="{{ route('admin.galeri.create') }}" class="btn btn-warning">
+      Tambah Foto Baru
+    </a>
+</div> --}}
+
 @if($galeris->isEmpty())
     <div class="gallery">
-      <p>Tidak ada gambar tersedia.</p>
+      <p>Tidak ada data tersedia.</p>
     </div>
-@else
+  @else
     <div class="gallery-container">
+        
         <div class="gallery">
             @foreach ($galeris as $galeri)
-                <div class="gallery-item">
-                    <img src="{{ asset('storage/' . $galeri->image) }}" alt="{{ $galeri->nama }}" data-index="0">
-                    <div class="overlay">
-                        <div class="overlay-text">{{ $galeri->nama }}</div>
-                    </div>
+                <div>
+                    <div class="gallery-item">
+                        <img src="{{ asset('storage/' . $galeri->image) }}" alt="{{ $galeri->nama }}" data-index="0">
+                        <div class="overlay">
+                            <div class="overlay-text">{{ $galeri->nama }}</div>
+                        </div>
+                    </div><br />
+                    {{-- <div class="d-flex justify-content-between">
+                        <!-- Tombol Edit -->
+                        <a href="{{ route('admin.galeri.edit', $galeri->id) }}" class="btn btn-warning btn-sm"><i class="bi bi-pencil-square"></i>Edit</a>
+
+                        <!-- Tombol Delete -->
+                        <form id="delete-{{ $galeri->id }}" action="{{ route('admin.galeri.destroy', $galeri->id) }}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <button type="button" class="btn btn-danger btn-sm" onclick="confirmDelete({{ $galeri->id }})">
+                                <i class="bi bi-trash3"></i> Delete
+                            </button>
+                        </form>
+                    </div> --}}
                 </div>
             @endforeach
             {{-- <div class="gallery-item">
@@ -177,21 +213,22 @@
                 </div>
             </div> --}}
         </div>
+    </div>  
+  @endif
+
+@include('partials.footer')
+
+<!-- Modal -->
+<div class="modal" id="imageModal">
+    <button class="close" id="closeModal">&times;</button>
+    <img src="" alt="Modal Image" id="modalImage">
+    <div class="controls">
+        <button id="prevImage">&lt;</button>
+        <button id="nextImage">&gt;</button>
     </div>
- @endif  
+</div>
 
-    @include('partials.footer')
-
-    <!-- Modal -->
-    <div class="modal" id="imageModal">
-        <button class="close" id="closeModal">&times;</button>
-        <img src="" alt="Modal Image" id="modalImage">
-        <div class="controls">
-            <button id="prevImage">&lt;</button>
-            <button id="nextImage">&gt;</button>
-        </div>
-    </div>
-
+<script src="{{ asset('js/confirmDeletion.js')}}"></script>
 <script>
     // JavaScript for modal functionality
     const galleryImages = document.querySelectorAll('.gallery-item img');

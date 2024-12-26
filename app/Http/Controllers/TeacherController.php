@@ -34,6 +34,7 @@ class TeacherController extends Controller
             'tanggal_bergabung' => 'required|date',
             'keterangan' => 'nullable|string',
             'photo' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'motto' => 'nullable|string'
         ]);
         
         $path = $request->file('photo')->store('teachers', 'public');
@@ -45,6 +46,7 @@ class TeacherController extends Controller
             'tanggal_bergabung' => $request->tanggal_bergabung,
             'keterangan' => $request->keterangan,
             'photo' => $path,
+            'motto' => $request->motto,
         ]);
         
 
@@ -83,6 +85,7 @@ class TeacherController extends Controller
             'tanggal_bergabung' => 'required|date',
             'keterangan' => 'nullable|string',
             'photo' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'motto' => 'nullable|string'
         ]);
 
         // Ambil semua data kecuali foto

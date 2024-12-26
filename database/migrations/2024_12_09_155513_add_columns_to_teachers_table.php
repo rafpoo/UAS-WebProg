@@ -19,6 +19,7 @@ class AddColumnsToTeachersTable extends Migration
             $table->string('jenjang_pendidikan')->default('Tidak Tersedia')->after('jabatan');  // Menambahkan kolom 'jenjang_pendidikan' dengan default 'Tidak Tersedia'
             $table->date('tanggal_bergabung')->nullable()->after('jenjang_pendidikan');  // Menambahkan kolom 'tanggal_bergabung'
             $table->text('keterangan')->nullable()->after('tanggal_bergabung');  // Menambahkan kolom 'keterangan'
+            $table->text('motto')->nullable()->after('keterangan');
         });
     }
 

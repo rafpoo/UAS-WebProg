@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tambah Foto Galeri - Admin - TK Islam Kinasih</title>
-    <link rel="icon" href="{{ asset('images/LogoTK.jpg') }}" type="image/jpg">
+    <link rel="icon" href="<?php echo e(asset('images/LogoTK.jpg')); ?>" type="image/jpg">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
@@ -52,17 +52,17 @@
 <body>
     <div class="container">
         <h1>Tambah Foto</h1>
-        @if ($errors->any())
+        <?php if($errors->any()): ?>
             <div class="alert alert-danger">
                 <ul>
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
+                    <?php $__currentLoopData = $errors->all(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $error): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                        <li><?php echo e($error); ?></li>
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                 </ul>
             </div>
-        @endif
-        <form action="{{ route('admin.galeri.store') }}" method="POST" enctype="multipart/form-data">
-            @csrf
+        <?php endif; ?>
+        <form action="<?php echo e(route('admin.galeri.store')); ?>" method="POST" enctype="multipart/form-data">
+            <?php echo csrf_field(); ?>
             <!-- Contoh input form -->
             <div class="mb-3">
                 <label for="nama" class="form-label">Keterangan Foto</label>
@@ -77,12 +77,13 @@
             <!-- Tambahkan input lainnya sesuai dengan kolom di tabel -->
             
             <button type="submit" class="btn btn-primary">Tambahkan</button>
-            <a href="{{ route('admin.galeri.index') }}" class="btn btn-secondary">Cancel</a>
+            <a href="<?php echo e(route('admin.galeri.index')); ?>" class="btn btn-secondary">Cancel</a>
         </form>
     </div>
 
-    @include('partials.footer')
-    <script src="{{ asset('js/validateImg.js') }}"></script>
+    <?php echo $__env->make('partials.footer', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+    <script src="<?php echo e(asset('js/validateImg.js')); ?>"></script>
 </body>
 
 </html>
+<?php /**PATH C:\xampp\htdocs\uazzzz\UAS-WebProg\resources\views/admin/galeri/create.blade.php ENDPATH**/ ?>

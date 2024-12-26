@@ -33,14 +33,11 @@
     }
 
     .gallery-item {
-        position: relative;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        overflow: hidden; /* Memastikan gambar tetap dalam bingkai */
-        border-radius: 10px; /* Bingkai melengkung opsional */
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-        background-color: #f8f8f8; /* Latar belakang jika gambar transparan */
+      position: relative;
+      overflow: hidden;
+      border-radius: 15px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     .gallery-item:hover {
@@ -49,10 +46,10 @@
     }
 
     .gallery-item img {
-        width: 100%; /* Sesuaikan lebar kontainer */
-        height: auto; /* Pertahankan rasio asli gambar */
-        display: block; /* Hilangkan margin bawaan */
-        object-fit: contain; /* Gambar tidak dipotong, proporsi asli tetap */
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      transition: opacity 0.3s ease;
     }
 
     .gallery-item .overlay {
@@ -157,7 +154,7 @@
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
-<?php echo $__env->make('partials.navbar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+<?php echo $__env->make('partials.adminnav', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 
 <?php if(session('success')): ?>
   <script>
@@ -169,7 +166,11 @@
   </script>
 <?php endif; ?>
 
-
+<div class="row row-cols-1 row-cols-md-3 g-4" style="display: flex; justify-content: center; margin-top: 20px;">
+    <a href="<?php echo e(route('admin.galeri.create')); ?>" class="btn btn-warning">
+      Tambah Foto Baru
+    </a>
+</div>
 
 <?php if($galeris->isEmpty()): ?>
     <div class="gallery">
@@ -187,7 +188,19 @@
                             <div class="overlay-text"><?php echo e($galeri->nama); ?></div>
                         </div>
                     </div><br />
-                    
+                    <div class="d-flex justify-content-between">
+                        <!-- Tombol Edit -->
+                        <a href="<?php echo e(route('admin.galeri.edit', $galeri->id)); ?>" class="btn btn-warning btn-sm"><i class="bi bi-pencil-square"></i>Edit</a>
+
+                        <!-- Tombol Delete -->
+                        <form id="delete-<?php echo e($galeri->id); ?>" action="<?php echo e(route('admin.galeri.destroy', $galeri->id)); ?>" method="POST">
+                            <?php echo csrf_field(); ?>
+                            <?php echo method_field('DELETE'); ?>
+                            <button type="button" class="btn btn-danger btn-sm" onclick="confirmDelete(<?php echo e($galeri->id); ?>)">
+                                <i class="bi bi-trash3"></i> Delete
+                            </button>
+                        </form>
+                    </div>
                 </div>
             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
             
@@ -263,4 +276,4 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
 </body>
 </html>
-<?php /**PATH C:\xampp\htdocs\uazzzz\UAS-WebProg\resources\views/user/galeri.blade.php ENDPATH**/ ?>
+<?php /**PATH C:\xampp\htdocs\uazzzz\UAS-WebProg\resources\views/admin/galeri/galeri.blade.php ENDPATH**/ ?>

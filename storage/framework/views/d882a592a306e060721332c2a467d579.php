@@ -43,6 +43,9 @@
         
         .staff-card:hover {
             transform: translateY(-5px);
+            background-color: #0bbe56;
+            color: #ffffff; /* Pastikan teks tetap terlihat */
+            transition: background-color 0.3s ease, color 0.3s ease; /* Animasi yang halus */
         }
         
         .staff-card img {
@@ -50,6 +53,8 @@
             margin-bottom: 1rem;
             width: 100%;
             height: 300px;
+            /* width: 5cm;
+            height: 6cm;  */
             object-fit: cover;
         }
         
@@ -127,7 +132,7 @@
                         <div class="experience"><?php echo e($teacher->keterangan); ?></div>
                         <div class="motto">
                             <div class="motto-label">Motto Mengajar</div>
-                            <div class="motto-text"><?php echo e($teacher->motto); ?></div>
+                            <div class="motto-text"><?php echo e($teacher->motto ?? '-'); ?></div>
                         </div>
                     </article>
                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
