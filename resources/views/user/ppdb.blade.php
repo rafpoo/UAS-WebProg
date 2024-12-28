@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <title>Form Pendaftaran</title>
+    <title>Form Pendaftaran - TK Islam Kinasih</title>
     <link rel="icon" href="{{ asset('images/LogoTK.jpg') }}" type="image/jpg">
     
     <!-- External CSS Libraries -->
