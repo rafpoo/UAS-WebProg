@@ -93,36 +93,48 @@
                     ></iframe>
                 </div>
 
-                <div class="features">
-                    <div class="feature">
-                        <img alt="Ikon Number Sense and Operations" height="50" src="https://storage.googleapis.com/a1aa/image/fdW58VayfefCKQE5ykvXTc4NeffcyLjVwInglRwYAArWmMS8JA.jpg" width="50"/>
-                        <div>
-                            <h3>Number Sense and Operations</h3>
-                            <p>Memperkenalkan konsep angka dan operasi dasar matematika.</p>
-                        </div>
-                    </div>
-                    <div class="feature">
-                        <img alt="Ikon Geometry" height="50" src="https://storage.googleapis.com/a1aa/image/ATBtl1AdRlbRJVeUlMfrQaIdKhgIoMKcxiD9IRNDUjQJZk4TA.jpg" width="50"/>
-                        <div>
-                            <h3>Geometry</h3>
-                            <p>Mengenal bentuk 2D dan 3D, serta memahami konsep ruang dan ukuran.</p>
-                        </div>
-                    </div>
-                    <div class="feature">
-                        <img alt="Ikon Logic and Patterns" height="50" src="https://storage.googleapis.com/a1aa/image/ey29fGhU8ZjvUEp14VUKzQQWTcLUSv0Lxnn4frEQa8wXyIxnA.jpg" width="50"/>
-                        <div>
-                            <h3>Logic and Patterns</h3>
-                            <p>Melatih kemampuan berpikir logis dan mengenali pola.</p>
-                        </div>
-                    </div>
-                    <div class="feature">
-                        <img alt="Ikon Problem Solving" height="50" src="https://storage.googleapis.com/a1aa/image/kLlEeDsKdsTaYiGzBwXWeVQRW6yMxC0MvSfIcMn9dfVYkRiPB.jpg" width="50"/>
-                        <div>
-                            <h3>Problem Solving</h3>
-                            <p>Mengasah kemampuan memecahkan masalah dengan strategi yang tepat.</p>
-                        </div>
-                    </div>
+                <div class="container">
+    <h2 class="text-center mb-4">Prestasi TK Islam Kinasih</h2>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="container p-3 rounded shadow-sm d-flex align-items-center mb-4" style="background-color: rgba(76, 127, 112, 0.9);">
+                <i class="fas fa-trophy achievement-icon me-3" style="font-size: 30px; color: gold;"></i>
+                <div>
+                    <h5 class="mb-1 text-white">Juara....</h5>
+                    <p class="mb-0 text-white-20">Deskripsi.</p>
                 </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="container p-3 rounded shadow-sm d-flex align-items-center mb-4" style="background-color: rgba(76, 127, 112, 0.9);">
+                <i class="fas fa-award achievement-icon me-3" style="font-size: 30px; color: silver;"></i>
+                <div>
+                    <h5 class="mb-1 text-white">Juara...</h5>
+                    <p class="mb-0 text-white">Deskripsi.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="container p-3 rounded shadow-sm d-flex align-items-center mb-4" style="background-color: rgba(76, 127, 112, 0.9);">
+                <i class="fas fa-star achievement-icon me-3" style="font-size: 30px; color: #FFD700;"></i>
+                <div>
+                    <h5 class="mb-1 text-white">Juara...</h5>
+                    <p class="mb-0 text-white">Deskripsi.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="container p-3 rounded shadow-sm d-flex align-items-center mb-4" style="background-color: rgba(76, 127, 112, 0.9);">
+                <i class="fas fa-medal achievement-icon me-3" style="font-size: 30px; color: #CD7F32;"></i>
+                <div>
+                    <h5 class="mb-1 text-white">Penghargaan......</h5>
+                    <p class="mb-0 text-white">Deskripsi.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
             </div>
         </div>
     </div>

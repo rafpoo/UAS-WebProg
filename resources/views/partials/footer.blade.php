@@ -17,7 +17,6 @@
                     <p>NPSN: 69907801</p>
                 </div>
             </div>
-
             <!-- Kolom 2: Ikon Media Sosial di Tengah -->
             <div class="col-md-4 mb-4 text-center">
                 <h5><i class="bi bi-share"></i> Media Sosial</h5>

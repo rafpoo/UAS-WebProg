@@ -17,17 +17,16 @@
                     <p>NPSN: 69907801</p>
                 </div>
             </div>
-
             <!-- Kolom 2: Ikon Media Sosial di Tengah -->
             <div class="col-md-4 mb-4 text-center">
                 <h5><i class="bi bi-share"></i> Media Sosial</h5>
                 <div class="d-flex justify-content-center">
                     <!-- Ikon YouTube -->
-                    <a href="https://www.youtube.com" target="_blank" class="text-white me-3" style="font-size: 1.5rem;">
+                    <a href="https://youtu.be/1TFblh9GS6A?si=b9UJyTAIWOhqkIBp" target="_blank" class="text-white me-3" style="font-size: 1.5rem;">
                         <i class="bi bi-youtube"></i>
                     </a>
                     <!-- Ikon Instagram -->
-                    <a href="https://www.instagram.com" target="_blank" class="text-white me-3" style="font-size: 1.5rem;">
+                    <a href="https://www.instagram.com/tkislamkinasih?igsh=MTliMGc1cXA5cm9kbQ==" target="_blank" class="text-white me-3" style="font-size: 1.5rem;">
                         <i class="bi bi-instagram"></i>
                     </a>
                     <!-- Ikon WhatsApp -->

@@ -3,9 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TK Islam Kinasih - Tentang Kami</title>
+    <title>Tentang Kami - TK Islam Kinasih</title>
     <link rel="icon" href="<?php echo e(asset('images/LogoTK.jpg')); ?>" type="image/jpg">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <!-- Bootstrap CSS dan JS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <style>
         :root {
             --primary-color: #4F998A;
@@ -317,6 +320,78 @@
             </div>
         </div>
     </section>
+    <!-- Struktur Yayasan Section -->
+<section class="section">
+    <div class="container">
+        <h2 class="section-title" style="color: white;">Struktur Yayasan</h2>
+        <div class="grid">
+            <!-- Pembina Yayasan -->
+            <div class="feature-card">
+                <h3><i class="fas fa-user-tie"></i> Pembina Yayasan</h3>
+                <ul class="mission-list">
+                    <li>
+                        <i class="fas fa-user-circle"></i>
+                        <span>Dr. H. Ahmad Fauzi, M.Pd</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Pengurus Yayasan -->
+            <div class="feature-card">
+                <h3><i class="fas fa-users-cog"></i> Pengurus Yayasan</h3>
+                <ul class="mission-list">
+                    <li>
+                        <i class="fas fa-user-circle"></i>
+                        <span>Ketua: H. Muhammad Ridwan, S.Ag</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-user-circle"></i>
+                        <span>Sekretaris: Hj. Siti Aminah, S.Pd</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-user-circle"></i>
+                        <span>Bendahara: Hj. Fatimah Az-Zahra, S.E</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Pengawas dan Pengelola -->
+        <div class="grid" style="margin-top: 30px;">
+            <div class="feature-card">
+                <h3><i class="fas fa-user-shield"></i> Pengawas Yayasan</h3>
+                <ul class="mission-list">
+                    <li>
+                        <i class="fas fa-user-circle"></i>
+                        <span>H. Abdul Karim, M.Ag</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-user-circle"></i>
+                        <span>Hj. Khadijah Nur, M.Pd</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="feature-card">
+                <h3><i class="fas fa-school"></i> Pengelola Sekolah</h3>
+                <ul class="mission-list">
+                    <li>
+                        <i class="fas fa-user-circle"></i>
+                        <span>Kepala Sekolah: Siti Rahmah, S.Pd</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-user-circle"></i>
+                        <span>Wakil Kepala Sekolah: Nur Hidayah, S.Pd</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-user-circle"></i>
+                        <span>Koordinator Kurikulum: Ahmad Syafiq, S.Pd</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
 
     <?php echo $__env->make('partials.footer', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 </body>
