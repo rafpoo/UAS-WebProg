@@ -98,7 +98,7 @@
             <!-- Tambahkan input lainnya sesuai dengan kolom di tabel -->
             
             <button type="submit" class="btn btn-primary">Tambahkan</button>
-            <a href="{{ route('admin.acara.index') }}" class="btn btn-secondary">Cancel</a>
+            <a href="{{ route('admin.guru.index') }}" class="btn btn-secondary">Cancel</a>
         </form>
     </div>
 

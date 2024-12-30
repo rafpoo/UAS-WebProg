@@ -331,7 +331,7 @@
                 <ul class="mission-list">
                     <li>
                         <i class="fas fa-user-circle"></i>
-                        <span>Dr. H. Ahmad Fauzi, M.Pd</span>
+                        <span>Menunggu dari TK</span>
                     </li>
                 </ul>
             </div>
@@ -342,15 +342,15 @@
                 <ul class="mission-list">
                     <li>
                         <i class="fas fa-user-circle"></i>
-                        <span>Ketua: H. Muhammad Ridwan, S.Ag</span>
+                        <span>Menunggu dari TK</span>
                     </li>
                     <li>
                         <i class="fas fa-user-circle"></i>
-                        <span>Sekretaris: Hj. Siti Aminah, S.Pd</span>
+                        <span>Menunggu dari TK</span>
                     </li>
                     <li>
                         <i class="fas fa-user-circle"></i>
-                        <span>Bendahara: Hj. Fatimah Az-Zahra, S.E</span>
+                        <span>Menunggu dari TK</span>
                     </li>
                 </ul>
             </div>
@@ -363,11 +363,11 @@
                 <ul class="mission-list">
                     <li>
                         <i class="fas fa-user-circle"></i>
-                        <span>H. Abdul Karim, M.Ag</span>
+                        <span>Menunggu dari TK</span>
                     </li>
                     <li>
                         <i class="fas fa-user-circle"></i>
-                        <span>Hj. Khadijah Nur, M.Pd</span>
+                        <span>Menunggu dari TK</span>
                     </li>
                 </ul>
             </div>
@@ -377,15 +377,15 @@
                 <ul class="mission-list">
                     <li>
                         <i class="fas fa-user-circle"></i>
-                        <span>Kepala Sekolah: Siti Rahmah, S.Pd</span>
+                        <span>Menunggu dari TK</span>
                     </li>
                     <li>
                         <i class="fas fa-user-circle"></i>
-                        <span>Wakil Kepala Sekolah: Nur Hidayah, S.Pd</span>
+                        <span>Menunggu dari TK</span>
                     </li>
                     <li>
                         <i class="fas fa-user-circle"></i>
-                        <span>Koordinator Kurikulum: Ahmad Syafiq, S.Pd</span>
+                        <span>Menunggu dari TK</span>
                     </li>
                 </ul>
             </div>

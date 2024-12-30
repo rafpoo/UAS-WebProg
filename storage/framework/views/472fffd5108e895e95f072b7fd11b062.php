@@ -86,6 +86,11 @@
             </div>
 
             <div class="mb-3">
+                <label for="motto" class="form-label">Motto</label>
+                <textarea type="date" class="form-control" id="motto" name="motto"></textarea>
+            </div>
+
+            <div class="mb-3">
                 <label for="photo" class="form-label">Foto Profil (Ukuran Max 2MB)</label>
                 <input type="file" class="form-control" id="photo" name="photo" accept="photo/*" onchange="validateFileSize(this)">
             </div>
@@ -93,7 +98,7 @@
             <!-- Tambahkan input lainnya sesuai dengan kolom di tabel -->
             
             <button type="submit" class="btn btn-primary">Tambahkan</button>
-            <a href="<?php echo e(route('admin.acara.index')); ?>" class="btn btn-secondary">Cancel</a>
+            <a href="<?php echo e(route('admin.guru.index')); ?>" class="btn btn-secondary">Cancel</a>
         </form>
     </div>
 

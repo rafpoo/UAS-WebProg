@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TK Islam Kinasih - Gallery</title>
+  <title>Gallery - TK Islam Kinasih</title>
   <link rel="icon" href="<?php echo e(asset('images/LogoTK.jpg')); ?>" type="image/jpg">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css">
@@ -151,42 +151,60 @@
       color: red;
     }
   </style>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
 <?php echo $__env->make('partials.navbar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 
+<?php if(session('success')): ?>
+  <script>
+      Swal.fire(
+          'Berhasil!',
+          '<?php echo e(session('success')); ?>',
+          'success'
+      );
+  </script>
+<?php endif; ?>
+
+
+
 <?php if($galeris->isEmpty()): ?>
     <div class="gallery">
-      <p>Tidak ada gambar tersedia.</p>
+      <p>Tidak ada data tersedia.</p>
     </div>
-<?php else: ?>
+  <?php else: ?>
     <div class="gallery-container">
+        
         <div class="gallery">
             <?php $__currentLoopData = $galeris; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $galeri): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                <div class="gallery-item">
-                    <img src="<?php echo e(asset('storage/' . $galeri->image)); ?>" alt="<?php echo e($galeri->nama); ?>" data-index="0">
-                    <div class="overlay">
-                        <div class="overlay-text"><?php echo e($galeri->nama); ?></div>
-                    </div>
+                <div>
+                    <div class="gallery-item">
+                        <img src="<?php echo e(asset('storage/' . $galeri->image)); ?>" alt="<?php echo e($galeri->nama); ?>" data-index="0">
+                        <div class="overlay">
+                            <div class="overlay-text"><?php echo e($galeri->nama); ?></div>
+                        </div>
+                    </div><br />
+                    
                 </div>
             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
             
         </div>
+    </div>  
+  <?php endif; ?>
+
+<?php echo $__env->make('partials.footer', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+
+<!-- Modal -->
+<div class="modal" id="imageModal">
+    <button class="close" id="closeModal">&times;</button>
+    <img src="" alt="Modal Image" id="modalImage">
+    <div class="controls">
+        <button id="prevImage">&lt;</button>
+        <button id="nextImage">&gt;</button>
     </div>
- <?php endif; ?>  
+</div>
 
-    <?php echo $__env->make('partials.footer', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-
-    <!-- Modal -->
-    <div class="modal" id="imageModal">
-        <button class="close" id="closeModal">&times;</button>
-        <img src="" alt="Modal Image" id="modalImage">
-        <div class="controls">
-            <button id="prevImage">&lt;</button>
-            <button id="nextImage">&gt;</button>
-        </div>
-    </div>
-
+<script src="<?php echo e(asset('js/confirmDeletion.js')); ?>"></script>
 <script>
     // JavaScript for modal functionality
     const galleryImages = document.querySelectorAll('.gallery-item img');
