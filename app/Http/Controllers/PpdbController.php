@@ -33,6 +33,7 @@ class PpdbController extends Controller
                 ->orWhere('no_telepon_ayah', 'like', "%$search%")
                 ->orWhere('nama_ibu', 'like', "%$search%")
                 ->orWhere('no_telepon_ibu', 'like', "%$search%")
+                ->orWhere('created_at', 'like', "%$search%")
                 ->paginate(20);
         } else {
             // Jika tidak ada pencarian, ambil semua data
