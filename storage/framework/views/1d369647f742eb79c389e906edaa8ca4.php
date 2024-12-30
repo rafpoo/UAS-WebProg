@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <title>Form Pendaftaran</title>
+    <title>Form Pendaftaran - TK Islam Kinasih</title>
     <link rel="icon" href="<?php echo e(asset('images/LogoTK.jpg')); ?>" type="image/jpg">
     
     <!-- External CSS Libraries -->
@@ -239,6 +239,7 @@
        <!-- Form Column -->
        <div class="col-md-6">
            <form action="/submit-ppdb" method="POST" class="w-100 h-100">
+                <?php echo csrf_field(); ?>
                <h2>Form Pendaftaran</h2>
 
                <label for="nama" class="form-label">Nama Lengkap</label>
@@ -256,13 +257,22 @@
                <label for="tanggal_lahir" class="form-label">Tanggal Lahir</label>
                <input type="date" id="tanggal_lahir" name="tanggal_lahir" class="form-control" required>
 
-               <label for="nama_orang_tua" class="form-label">Nama Orang Tua</label>
-               <input type="text" id="nama_orang_tua" name="nama_orang_tua" class="form-control" placeholder="Nama Ayah/Ibu" required>
+               <label for="nama_ayah" class="form-label">Nama Ayah</label>
+               <input type="text" id="nama_ayah" name="nama_ayah" class="form-control" placeholder="Nama Ayah" required>
 
-               <label for="no_telepon" class="form-label">No Telepon Orang Tua</label>
+               <label for="no_telepon" class="form-label">No Telepon Ayah</label>
                <div class="input-group">
                    <input readonly="" style="width: 50px; margin-right: 10px;" type="text" value="+62"/>
-                   <input class="form-control" id="no_telepon" placeholder="Phone number" type="tel" name="no_telepon" required inputmode="numeric" pattern="[0-9]*" />
+                   <input class="form-control" id="no_telepon_ayah" placeholder="Phone number" type="tel" name="no_telepon_ayah" required inputmode="numeric" pattern="[0-9]*" />
+               </div>
+
+               <label for="nama_ibu" class="form-label">Nama Ibu</label>
+               <input type="text" id="nama_ibu" name="nama_ibu" class="form-control" placeholder="Nama ibu" required>
+
+               <label for="no_telepon" class="form-label">No Telepon Ibu (Kosongkan jika tidak ada)</label>
+               <div class="input-group">
+                   <input readonly="" style="width: 50px; margin-right: 10px;" type="text" value="+62"/>
+                   <input class="form-control" id="no_telepon_ibu" placeholder="Phone number" type="tel" name="no_telepon_ibu" inputmode="numeric" pattern="[0-9]*" />
                </div>
 
                <label for="alamat" class="form-label">Alamat</label>
@@ -275,6 +285,7 @@
        
        <!-- Slideshow Column -->
        <div class="col-md-6">
+        <Br /><br /><Br /><br /><br />
            <div class="slideshow-container">
                <div class="slide active">
                    <img src="<?php echo e(URL('images/illustration9.jpg')); ?>" alt="Illustration 1">
@@ -300,10 +311,18 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            const noTeleponInput = document.getElementById('no_telepon');
+            const noTeleponInputAyah = document.getElementById('no_telepon_ayah');
+            const noTeleponInputIbu = document.getElementById('no_telepon_ibu');
 
             // Pastikan hanya angka yang bisa dimasukkan
-            noTeleponInput.addEventListener('input', function(event) {
+            noTeleponInputAyah.addEventListener('input', function(event) {
+                this.value = this.value.replace(/\D/g, '');
+                if (this.value.length > 15) {
+                    this.value = this.value.slice(0, 15);
+                }
+            });
+
+            noTeleponInputIbu.addEventListener('input', function(event) {
                 this.value = this.value.replace(/\D/g, '');
                 if (this.value.length > 15) {
                     this.value = this.value.slice(0, 15);
