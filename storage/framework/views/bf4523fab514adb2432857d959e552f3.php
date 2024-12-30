@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Galeri - TK Islam Kinasih</title>
+  <title>Gallery - TK Islam Kinasih</title>
   <link rel="icon" href="<?php echo e(asset('images/LogoTK.jpg')); ?>" type="image/jpg">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css">
@@ -33,14 +33,11 @@
     }
 
     .gallery-item {
-        position: relative;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        overflow: hidden; /* Memastikan gambar tetap dalam bingkai */
-        border-radius: 10px; /* Bingkai melengkung opsional */
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-        background-color: #f8f8f8; /* Latar belakang jika gambar transparan */
+      position: relative;
+      overflow: hidden;
+      border-radius: 15px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     .gallery-item:hover {
@@ -49,10 +46,10 @@
     }
 
     .gallery-item img {
-        width: 100%; /* Sesuaikan lebar kontainer */
-        height: auto; /* Pertahankan rasio asli gambar */
-        display: block; /* Hilangkan margin bawaan */
-        object-fit: contain; /* Gambar tidak dipotong, proporsi asli tetap */
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      transition: opacity 0.3s ease;
     }
 
     .gallery-item .overlay {

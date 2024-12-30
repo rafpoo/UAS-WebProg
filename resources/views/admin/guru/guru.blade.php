@@ -102,9 +102,19 @@
             line-height: 1.4;
         }
     </style>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
     @include('partials.adminnav')
+    @if(session('success'))
+        <script>
+            Swal.fire(
+                'Berhasil!',
+                '{{ session('success') }}',
+                'success'
+            );
+        </script>
+    @endif
 
     <main class="container">
         <div class="header">
@@ -161,6 +171,7 @@
     @include('partials.footer')
 
     <!-- Scripts -->
+    <script src="{{ asset('js/confirmDeletion.js')}}"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

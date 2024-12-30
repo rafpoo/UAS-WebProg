@@ -102,9 +102,19 @@
             line-height: 1.4;
         }
     </style>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
     <?php echo $__env->make('partials.adminnav', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+    <?php if(session('success')): ?>
+        <script>
+            Swal.fire(
+                'Berhasil!',
+                '<?php echo e(session('success')); ?>',
+                'success'
+            );
+        </script>
+    <?php endif; ?>
 
     <main class="container">
         <div class="header">
@@ -161,6 +171,7 @@
     <?php echo $__env->make('partials.footer', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 
     <!-- Scripts -->
+    <script src="<?php echo e(asset('js/confirmDeletion.js')); ?>"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html><?php /**PATH C:\xampp\htdocs\uazzzz\UAS-WebProg\resources\views/admin/guru/guru.blade.php ENDPATH**/ ?>

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <title>Form Pendaftaran</title>
+    <title>Form Pendaftaran - TK Islam Kinasih</title>
     <link rel="icon" href="<?php echo e(asset('images/LogoTK.jpg')); ?>" type="image/jpg">
     
     <!-- External CSS Libraries -->
@@ -228,8 +228,8 @@
         <!-- Section Google Form dipindahkan ke dalam info-section -->
         <div class="row mt-4">
             <div class="col-12">
-                <h4>Mendaftar Dengan Google Form</h4>
-                <a href="https://forms.gle/ECq2JYT17uejMygv5" class="btn btn-success" target="_blank">Isi Formulir</a>
+                <h4>Daftar melalui form pendaftaran di bawah, atau lewat link berikut:</h4>
+                <a href="https://forms.gle/ECq2JYT17uejMygv5" class="btn btn-success" target="_blank">Daftar</a>
             </div>
         </div>
     </div>
