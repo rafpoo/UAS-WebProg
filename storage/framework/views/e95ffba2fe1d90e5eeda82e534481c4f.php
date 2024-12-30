@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Profil Guru TK Islam Kinasih">
-    <title>Data Guru - TK Islam Kinasih</title>
+    <title>Admin - Data Guru</title>
     
     <!-- Favicon -->
     <link rel="icon" href="<?php echo e(asset('images/LogoTK.jpg')); ?>" type="image/jpg">
