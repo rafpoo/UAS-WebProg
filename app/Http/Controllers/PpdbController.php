@@ -71,6 +71,8 @@ class PpdbController extends Controller
             'alamat' => 'required|string',
         ]);
 
+        $validatedData['no_telepon_ayah'] = '0' . ltrim($validatedData['no_telepon_ayah'], '0');
+        $validatedData['no_telepon_ibu'] = '0' . ltrim($validatedData['no_telepon_ibu'], '0');
         // Simpan data ke database
         Ppdb::create($validatedData);
 
