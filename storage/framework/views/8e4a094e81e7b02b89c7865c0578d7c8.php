@@ -100,7 +100,7 @@ body {
 
   <?php if($events->isEmpty()): ?>
     <div class="card h-100">
-      <p>Tidak ada data tersedia.</p>
+      <p style="color: black;">Tidak ada data tersedia.</p>
     </div>
   <?php else: ?>
   
