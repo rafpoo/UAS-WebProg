@@ -8,7 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&amp;family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet"/>
-    
+    <link rel="icon" href="{{ asset('images/LogoTK.jpg') }}" type="image/jpg">
 <style>
     @media (max-width: 768px) {
     .video-player {
@@ -75,9 +75,9 @@
         <div class="main-content">
             <div class="left-content">
                 <h2>Ayo Daftar!</h2>
-                <p>Bersama TK Islam Kinasih, temukan pendidikan terbaik untuk buah hati Anda dengan kurikulum berbasis nilai-nilai Islam untuk membentuk generasi cerdas, berakhlak mulia, dan siap menghadapi masa depan. Kami menghadirkan metode belajar interaktif dan menyenangkan melalui kegiatan belajar sambil bermain yang didukung oleh fasilitas yang aman dan nyaman. Dengan fasilitas modern serta lingkungan yang damai dan riang, kami mendukung tumbuh kembang anak secara optimal.</p>
+                <p>Mewujudkan anak didik yang bahagia, mandiri memiliki kecerdasan spiritual (SQ), kecerdasan Emosi (EQ), kecerdasan Intelektual (IQ) dan mengikuti perintah Alqur'an dan Hadist</p>
                 <div class="image-container">
-                    <img alt="Anak-anak sedang belajar di dalam kelas" height="300" src="{{ URL('images/illustration6.jpg') }}" width="500"/>
+                    <img alt="Anak-anak sedang belajar di dalam kelas" height="300" src="{{ URL('images/illustartion88.jpg') }}" width="500"/>
                 </div>
             </div>
             
@@ -94,36 +94,49 @@
                     ></iframe>
                 </div>
 
-                <div class="features">
-                    <div class="feature">
-                        <img alt="Ikon Number Sense and Operations" height="50" src="https://storage.googleapis.com/a1aa/image/fdW58VayfefCKQE5ykvXTc4NeffcyLjVwInglRwYAArWmMS8JA.jpg" width="50"/>
-                        <div>
-                            <h3>Number Sense and Operations</h3>
-                            <p>Memperkenalkan konsep angka dan operasi dasar matematika.</p>
-                        </div>
-                    </div>
-                    <div class="feature">
-                        <img alt="Ikon Geometry" height="50" src="https://storage.googleapis.com/a1aa/image/ATBtl1AdRlbRJVeUlMfrQaIdKhgIoMKcxiD9IRNDUjQJZk4TA.jpg" width="50"/>
-                        <div>
-                            <h3>Geometry</h3>
-                            <p>Mengenal bentuk 2D dan 3D, serta memahami konsep ruang dan ukuran.</p>
-                        </div>
-                    </div>
-                    <div class="feature">
-                        <img alt="Ikon Logic and Patterns" height="50" src="https://storage.googleapis.com/a1aa/image/ey29fGhU8ZjvUEp14VUKzQQWTcLUSv0Lxnn4frEQa8wXyIxnA.jpg" width="50"/>
-                        <div>
-                            <h3>Logic and Patterns</h3>
-                            <p>Melatih kemampuan berpikir logis dan mengenali pola.</p>
-                        </div>
-                    </div>
-                    <div class="feature">
-                        <img alt="Ikon Problem Solving" height="50" src="https://storage.googleapis.com/a1aa/image/kLlEeDsKdsTaYiGzBwXWeVQRW6yMxC0MvSfIcMn9dfVYkRiPB.jpg" width="50"/>
-                        <div>
-                            <h3>Problem Solving</h3>
-                            <p>Mengasah kemampuan memecahkan masalah dengan strategi yang tepat.</p>
-                        </div>
-                    </div>
+                <div class="container">
+    <h2 class="text-center mb-4">Prestasi TK Islam Kinasih</h2>
+    <p class="text-center mb-4">(Saat ini masih kosong karena masih menunggu konten dari TK)</p>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="container p-3 rounded shadow-sm d-flex align-items-center mb-4" style="background-color: rgba(76, 127, 112, 0.9);">
+                <i class="fas fa-trophy achievement-icon me-3" style="font-size: 30px; color: gold;"></i>
+                <div>
+                    <h5 class="mb-1 text-white">Juara....</h5>
+                    <p class="mb-0 text-white-20">Deskripsi.</p>
                 </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="container p-3 rounded shadow-sm d-flex align-items-center mb-4" style="background-color: rgba(76, 127, 112, 0.9);">
+                <i class="fas fa-award achievement-icon me-3" style="font-size: 30px; color: silver;"></i>
+                <div>
+                    <h5 class="mb-1 text-white">Juara...</h5>
+                    <p class="mb-0 text-white">Deskripsi.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="container p-3 rounded shadow-sm d-flex align-items-center mb-4" style="background-color: rgba(76, 127, 112, 0.9);">
+                <i class="fas fa-star achievement-icon me-3" style="font-size: 30px; color: #FFD700;"></i>
+                <div>
+                    <h5 class="mb-1 text-white">Juara...</h5>
+                    <p class="mb-0 text-white">Deskripsi.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="container p-3 rounded shadow-sm d-flex align-items-center mb-4" style="background-color: rgba(76, 127, 112, 0.9);">
+                <i class="fas fa-medal achievement-icon me-3" style="font-size: 30px; color: #CD7F32;"></i>
+                <div>
+                    <h5 class="mb-1 text-white">Penghargaan......</h5>
+                    <p class="mb-0 text-white">Deskripsi.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
             </div>
         </div>
     </div>
